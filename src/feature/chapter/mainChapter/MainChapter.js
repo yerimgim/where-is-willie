@@ -19,14 +19,8 @@ const MainChapter = () => {
           size="40px"
           color="white"
           onClick={closeModal}
-          // onMouseOver={({ target }) => (target.style.color = "yellow")}
-          // onMouseOut={({ target }) => (target.style.color = "white")}
         />
         {modalOpen && <Modal closeModal={closeModal} />}
-        <section>
-          {/* <img src="assets/mainchapterImg.png" width="100%" height="100%" /> */}
-        </section>
-
         <section>
           <div>text</div>
         </section>
@@ -36,11 +30,10 @@ const MainChapter = () => {
 };
 
 const Main = styled.main`
+  position: relative;
   width: 100%;
   height: 100vh;
   background-color: var(--black-color);
-  display: flex;
-  position: relative;
 
   .mail {
     position: absolute;
@@ -52,7 +45,5 @@ const Main = styled.main`
     width: 50%;
   }
 `;
-
-// const Section = styled.section``;
 
 export default MainChapter;

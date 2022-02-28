@@ -5,14 +5,6 @@ import styled from "styled-components";
 import letter from "../../../data/letter.json";
 
 const Modal = ({ children, closeModal }) => {
-  // useEffect(() => {
-  //   document.body.style.overflow = "hidden";
-
-  //   return () => {
-  //     document.body.style.overflow = "auto";
-  //   };
-  // }, []);
-
   return (
     <>
       <ModalWrapper>
@@ -27,7 +19,7 @@ const Modal = ({ children, closeModal }) => {
             </div>
 
             <div className="last-page">
-              <button onClick={closeModal}>xxxxxxxxxxx</button>
+              <button onClick={closeModal}>x</button>
               <h4>{letter.messaga}</h4>
               <div className="content">{letter.content}</div>
             </div>
@@ -106,11 +98,11 @@ const Container = styled.div`
 
   .cover,
   .back-cover {
+    position: absolute;
     width: 300px;
     height: 400px;
-    background-color: #e5e5e5;
     border-radius: 2px 20px 20px 2px;
-    position: absolute;
+    background-color: #e5e5e5;
     box-shadow: 1px 1px 10px var(--light-grey-color);
     transform: rotateX(10deg);
     transform-origin: center left;
@@ -118,11 +110,11 @@ const Container = styled.div`
 
   .page,
   .last-page {
+    position: absolute;
     height: 380px;
     width: 290px;
-    background-color: var(--white-color);
-    position: absolute;
     border-radius: 2px 10px 10px 2px;
+    background-color: var(--white-color);
     transform: rotateX(10deg);
     transform-origin: center left;
     z-index: -1;
@@ -145,9 +137,9 @@ const Container = styled.div`
   }
 
   .last-page img {
+    position: relative;
     width: 280px;
     height: 350px;
-    position: relative;
     z-index: -1;
   }
 
