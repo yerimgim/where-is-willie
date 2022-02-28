@@ -39,11 +39,9 @@ function App() {
 
       <Switch>
         <Route path="/" exact>
-          <h1>윌리를 찾아서 (메인페이지)</h1>
           <Main />
         </Route>
         <Route path="/mainChapter">
-          <h1>메인 챕터</h1>
           <MainChapter />
         </Route>
         <Route path="/mainHiddenChapter">
