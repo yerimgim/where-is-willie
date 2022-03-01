@@ -1,0 +1,8 @@
+{
+  "no": "1",
+  "content": "숨겨진 물체를 찾으시오",
+  "cssBefore": "visibility: hidden",
+  "answer": "",
+  "result": "/mainHiddenChapter",
+  "fail":"/secondChapter"
+}

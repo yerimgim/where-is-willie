@@ -1,18 +1,24 @@
 import React, { useState } from "react";
 
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
+import { getUserName } from "../../modules/nameSlice";
+
 const Main = () => {
   const [value, setValue] = useState("");
+  const dispatch = useDispatch();
   const history = useHistory();
-  const handleSubmit = (event) => {
+
+  const handleClick = (event) => {
     event.preventDefault();
     history.push("/mainChapter");
   };
 
-  const onChange = (e) => {
-    setValue(e.target.value);
+  const onChange = (event) => {
+    setValue(event.target.value);
+    dispatch(getUserName(event.target.value));
   };
 
   return (
@@ -20,8 +26,8 @@ const Main = () => {
       <MainContent>
         <Section>
           <span>유명 화가의 예술품을 훔친</span>
-          <h1>윌리를 찾아서</h1>
-          <form onSubmit={handleSubmit}>
+          <h1 className="typing-title">윌리를 찾아서</h1>
+          <form>
             <input
               className="text-box"
               type="text"
@@ -29,11 +35,14 @@ const Main = () => {
               onChange={onChange}
               placeholder="이름을 입력해주세요."
             />
-            <input
+            <button
               className="submit-button"
-              type="submit"
-              value="게임 시작하기"
-            />
+              type="button"
+              disabled={!value}
+              onClick={handleClick}
+            >
+              게임 시작하기
+            </button>
           </form>
         </Section>
       </MainContent>
@@ -46,6 +55,10 @@ const MainContent = styled.main`
   height: 100vh;
   background: beige;
   position: relative;
+  background-image: url("/assets/main.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 const Section = styled.section`
@@ -71,6 +84,9 @@ const Section = styled.section`
     margin: 20px 0;
     padding: 10px 0;
     border-bottom: 2px solid var(--light-grey-color);
+    &:focus {
+      outline: none;
+    }
   }
 
   .submit-button {

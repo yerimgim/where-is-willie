@@ -2,31 +2,12 @@ import React from "react";
 
 import styled from "styled-components";
 
-import letter from "../../../data/letter.json";
-
-const Modal = ({ children, closeModal }) => {
+const Modal = ({ children, visible }) => {
   return (
     <>
       <ModalWrapper>
-        <Overlay />
-        <Container>
-          {children}
-
-          <div className="book">
-            <div className="cover"></div>
-            <div className="page">
-              <img src="assets/mainchapterImg.png" />
-            </div>
-
-            <div className="last-page">
-              <button onClick={closeModal}>x</button>
-              <h4>{letter.messaga}</h4>
-              <div className="content">{letter.content}</div>
-            </div>
-
-            <div className="back-cover"></div>
-          </div>
-        </Container>
+        <Overlay visible={visible} />
+        <Container>{children}</Container>
       </ModalWrapper>
     </>
   );
@@ -39,18 +20,18 @@ const ModalWrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 90%;
   opacity: 1;
-  z-index: 999;
+  z-index: 9;
 `;
 
 const Overlay = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 20%;
+  height: 30%;
   background: #00000080;
   z-index: 1;
 `;
@@ -61,91 +42,14 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 95%;
-  height: 95%;
-  background: var(--white-color);
+  width: 100%;
+  height: 100%;
+  /* background: var(--black-color); */
   overflow: hidden;
   z-index: 10;
   perspective: 1000px;
-
-  .content {
-    font-family: var(--nanum-myenogjo-font);
-  }
-
-  .book {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
-
-  .book:hover .cover {
-    transform: rotateX(10deg) rotateY(-180deg);
-  }
-
-  .book:hover .page {
-    transform: rotateX(10deg) rotateY(-180deg);
-    z-index: 2;
-  }
-
-  .cover {
-    z-index: 1;
-    transition: all 3s;
-  }
-
-  .back-cover {
-    z-index: -2;
-  }
-
-  .cover,
-  .back-cover {
-    position: absolute;
-    width: 300px;
-    height: 400px;
-    border-radius: 2px 20px 20px 2px;
-    background-color: #e5e5e5;
-    box-shadow: 1px 1px 10px var(--light-grey-color);
-    transform: rotateX(10deg);
-    transform-origin: center left;
-  }
-
-  .page,
-  .last-page {
-    position: absolute;
-    height: 380px;
-    width: 290px;
-    border-radius: 2px 10px 10px 2px;
-    background-color: var(--white-color);
-    transform: rotateX(10deg);
-    transform-origin: center left;
-    z-index: -1;
-  }
-
-  .page:nth-child(2) {
-    transition-duration: 3s;
-  }
-
-  .page:nth-child(3) {
-    transition-duration: 2.6s;
-  }
-
-  .book:hover .page:nth-child(2) {
-    transition-duration: 6s;
-  }
-
-  .book:hover .page:nth-child(3) {
-    transition-duration: 5.6s;
-  }
-
-  .last-page img {
-    position: relative;
-    width: 280px;
-    height: 350px;
-    z-index: -1;
-  }
-
-  .img-page h2 {
-    text-align: center;
-  }
+  font-family: var(--nanum-my-daughter-font);
+  white-space: pre-wrap;
 `;
 
 export default Modal;
