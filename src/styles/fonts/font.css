@@ -69,10 +69,19 @@
   font-weight: 700;
   font-style: normal;
 }
+
 @font-face {
   font-family: NotoSansKr;
   font-display: block;
   src: local("BlackHanSans-Regular"), url("./NotoSansKR/NotoSansKR-Black.woff") format("woff");
   font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: NanumMyDaughter;
+  font-display: block;
+  src: local("nanum-my-daughter"), url("./NaunumMyDaughter/nanum-my-daughter.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
