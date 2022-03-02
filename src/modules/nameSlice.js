@@ -14,9 +14,6 @@ export const nameSlice = createSlice({
   },
 });
 
-// export default nameSlice;
 export const { getUserName } = nameSlice.actions;
-
-export const selectUser = (state) => state.user.name;
 
 export default nameSlice.reducer;
