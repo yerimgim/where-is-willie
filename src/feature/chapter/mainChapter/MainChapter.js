@@ -4,14 +4,16 @@ import { AiOutlineMail, AiOutlineFile } from "react-icons/ai";
 import styled from "styled-components";
 
 import Modal from "../../../common/components/modal/Modal";
+import Quiz from "../../../common/components/Quiz";
 import SoundIcon from "../../../common/components/SoundIcon";
+import quiz from "../../../data/mainChapterQuiz.json";
 import Letter from "./Letter";
-import Quiz from "./Quiz";
 
 const MainChapter = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [time, setTime] = useState(false);
   const [isVisible, setVisible] = useState(false);
+  const [value, setValue] = useState("");
 
   const closeModal = () => {
     setModalOpen(!modalOpen);
@@ -27,8 +29,6 @@ const MainChapter = () => {
   const showQuiz = () => {
     setVisible(!isVisible);
   };
-
-  const [value, setValue] = useState("");
 
   return (
     <>
@@ -63,7 +63,7 @@ const MainChapter = () => {
 
         <SoundIcon />
 
-        {isVisible && <Quiz setValue={setValue} value={value} />}
+        {isVisible && <Quiz setValue={setValue} value={value} quiz={quiz} />}
       </Main>
     </>
   );

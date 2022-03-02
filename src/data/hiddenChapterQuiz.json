@@ -1,9 +1,0 @@
-{
-  "no": "1-1",
-  "content": "티켓 내용을 확인하시오.",
-  "cssBefore": "#ticket {",
-  "cssAfter": "}",
-  "answer": "position:static",
-  "success": "/secondChapter",
-  "fail":"/secondChapter"
-}

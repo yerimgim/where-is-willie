@@ -49,7 +49,6 @@ function App() {
           <MainChapter />
         </Route>
         <Route path="/mainHiddenChapter">
-          <h1>메인 1의 히든 챕터</h1>
           <MainHiddenChapter />
         </Route>
         <Route path="/secondChapter">

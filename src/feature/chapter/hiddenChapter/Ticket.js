@@ -26,13 +26,13 @@ const Entry = styled.div`
 
   position: absolute;
   left: 20%;
-  bottom: 10%;
+  bottom: -30%;
   transform: translateX(-20%);
 
   .ticket-container {
-    height: 10rem;
-    width: 10rem;
-    perspective: 600rem;
+    height: 40rem;
+    width: 40rem;
+    perspective: 300rem;
     background: none;
   }
 
@@ -43,7 +43,7 @@ const Entry = styled.div`
     background-size: contain;
     animation: deal 3s cubic-bezier(0.1, 0.5, 0.3, 1.5) forwards;
     animation-delay: 1s;
-    filter: drop-shadow(0rem 0.5rem 2rem var(--yellow-color));
+    filter: drop-shadow(0rem 0.3rem 3rem var(--yellow-color));
   }
 
   @keyframes deal {

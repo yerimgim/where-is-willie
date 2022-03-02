@@ -1,0 +1,12 @@
+{
+  "no": "2",
+  "willieInfo": "수상한 자의 정보",
+  "willieInfos": ["숨겨둔 티켓 조각을 확인했습니다."],
+  "content": "10장의 사진들 중 마지막 장에 있는 \n윌리의 최근 모습을 확인하시오.",
+  "cssBefore": "#photo { ",
+  "cssAfter": "}",
+  "answer": "last-child",
+  "placeholder":"/* use CSS pseudo-class \n ex) li element -child...  \n*/",
+  "success": "/secondHiddenChaper",
+  "fail":"/thirdChappter"
+}
