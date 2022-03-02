@@ -1,9 +1,11 @@
 {
   "no": "1",
+  "willieInfo": "윌리의 정보",
   "content": "수상한 자가 숨겨진 물체를 찾으시오",
   "cssBefore": "#hidden-object {",
   "cssAfter": "}",
   "answer": "display:block",
-  "result": "/mainHiddenChapter",
+  "placeholder": "/* use display property */",
+  "success": "/mainHiddenChapter",
   "fail":"/secondChapter"
 }

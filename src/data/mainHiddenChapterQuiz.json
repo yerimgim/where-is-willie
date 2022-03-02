@@ -1,0 +1,12 @@
+{
+  "no": "1-1",
+  "willieInfo": "수상한 자의 정보",
+  "willieInfos": ["숨겨둔 티켓 조각을 확인했습니다."],
+  "content": "티켓 내용을 확인하시오.",
+  "cssBefore": "#ticket {",
+  "cssAfter": "}",
+  "answer": "position:static",
+  "placeholder":"/* use position property */",
+  "success": "/secondChapter",
+  "fail":"/secondChapter"
+}
