@@ -1,0 +1,9 @@
+{
+  "no": "1",
+  "content": "수상한 자가 숨겨진 물체를 찾으시오",
+  "cssBefore": "#hidden-object {",
+  "cssAfter": "}",
+  "answer": "display:block",
+  "result": "/mainHiddenChapter",
+  "fail":"/secondChapter"
+}

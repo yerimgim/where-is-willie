@@ -4,10 +4,9 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 import letter from "../../../data/letter.json";
-import { selectUser } from "../../../modules/nameSlice";
 
 const Letter = ({ closeModal }) => {
-  const user = useSelector(selectUser);
+  const user = useSelector((state) => state.user.name);
   return (
     <Entry>
       <div className="book">
@@ -18,7 +17,7 @@ const Letter = ({ closeModal }) => {
         </div>
 
         <div className="last-page">
-          <button onClick={closeModal}>xXXXXXXX</button>
+          <button onClick={closeModal}>XXXXXXX</button>
           <h4>안녕하세요, {user} 탐정님</h4>
           <div className="content">{letter.content}</div>
         </div>
@@ -105,6 +104,10 @@ const Entry = styled.div`
 
   .last-page .content {
     margin: 40px;
+  }
+
+  .last-page button {
+    font-size: 40px;
   }
 `;
 

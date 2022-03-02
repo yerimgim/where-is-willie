@@ -7,6 +7,7 @@ import SecondHiddenChapter from "../feature/chapter/hiddenChapter/SecondHiddenCh
 import LastChapter from "../feature/chapter/lastChapter/LastChapter";
 import MainChapter from "../feature/chapter/mainChapter/MainChapter";
 import SecondChapter from "../feature/chapter/secondChapter/SecondChapter";
+import ThirdChapter from "../feature/chapter/thirdChapter/ThirdChapter";
 import Success from "../feature/ending/Success";
 import Main from "../feature/main/Main";
 
@@ -28,6 +29,9 @@ function App() {
         </li>
         <li>
           <Link to="/secondHiddenChaper">3B Jack의 방(히든 페이지)</Link>
+        </li>
+        <li>
+          <Link to="/thirdChappter">식당 칸</Link>
         </li>
         <li>
           <Link to="/lastChapter">범인 검거</Link>
@@ -53,6 +57,9 @@ function App() {
         </Route>
         <Route path="/secondHiddenChaper">
           <SecondHiddenChapter />
+        </Route>
+        <Route path="/thirdChappter">
+          <ThirdChapter />
         </Route>
         <Route path="/lastChapter">
           <h1>범인 검거 페이지</h1>
