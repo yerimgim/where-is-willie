@@ -8,13 +8,11 @@ const Ticket = ({ setIsOpen, isOpen }) => {
   };
 
   return (
-    <>
-      <Entry>
-        <div className="ticket-container">
-          <div className="ticket" onClick={onClick}></div>
-        </div>
-      </Entry>
-    </>
+    <Entry>
+      <div className="ticket-container">
+        <div className="ticket" onClick={onClick}></div>
+      </div>
+    </Entry>
   );
 };
 

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import styled from "styled-components";
 
+import ImgSection from "../../../common/components/ImgSection";
 import Quiz from "../../../common/components/Quiz";
 import quiz from "../../../data/mainHiddenChapterQuiz.json";
 import Ticket from "./Ticket";
@@ -13,9 +14,7 @@ const MainHiddenChapter = () => {
   return (
     <>
       <Main>
-        <ImgSection>
-          <img src="/assets/corridor.png" height="100%" alt="복도 이미지" />
-        </ImgSection>
+        <ImgSection imgSrc="/assets/corridor.png" imgAlt="기차 복도 이미지" />
         <Ticket setIsOpen={setIsOpen} isOpen={isOpen} />
         {isOpen && <Quiz setValue={setValue} value={value} quiz={quiz} />}
       </Main>
@@ -28,11 +27,6 @@ const Main = styled.main`
   height: 100vh;
   display: flex;
   background-color: var(--black-color);
-`;
-
-const ImgSection = styled.section`
-  width: 55%;
-  height: 100vh;
 `;
 
 export default MainHiddenChapter;

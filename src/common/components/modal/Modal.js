@@ -4,12 +4,10 @@ import styled from "styled-components";
 
 const Modal = ({ children, visible }) => {
   return (
-    <>
-      <ModalWrapper>
-        <Overlay visible={visible} />
-        <Container>{children}</Container>
-      </ModalWrapper>
-    </>
+    <ModalWrapper>
+      <Overlay visible={visible} />
+      <Container>{children}</Container>
+    </ModalWrapper>
   );
 };
 
@@ -18,21 +16,24 @@ const ModalWrapper = styled.div`
   justify-content: center;
   align-items: center;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
   height: 90%;
+  background: yellow;
   opacity: 1;
-  z-index: 9;
+  z-index: 10;
 `;
 
 const Overlay = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: 20%;
-  height: 30%;
-  background: #00000080;
+  /* width: 100%; */
+  /* height: 100%; */
+  /* background: #00000080; */
+  /* background: blue; */
   z-index: 1;
 `;
 
