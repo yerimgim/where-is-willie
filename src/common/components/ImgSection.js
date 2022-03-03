@@ -1,5 +1,6 @@
 import React from "react";
 
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const ImgSection = ({ imgSrc, imgAlt }) => {
@@ -14,5 +15,10 @@ const Img = styled.section`
   width: 55%;
   height: 100vh;
 `;
+
+ImgSection.PropTypes = {
+  imgSrc: PropTypes.string,
+  imgAlt: PropTypes.string,
+};
 
 export default ImgSection;

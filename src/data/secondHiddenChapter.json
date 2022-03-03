@@ -1,0 +1,13 @@
+{
+  "no": "2-1",
+  "strangerInfo": "수상한 자의 정보",
+  "willieInfo": "윌리의 정보",
+  "willieInfos": ["파랑색 상의를 자주 입는다는 정보가 들어 있었다"],
+  "content": "쇼파 위의 쿠션 사이에 수상한게 있다 ",
+  "cssBefore": "#letters { ",
+  "cssAfter": "}",
+  "answer": "",
+  "placeholder":"display: flex; \n /* use flex property */",
+  "success": "/thirdChapter",
+  "fail":"/ending/DeadEnding"
+}

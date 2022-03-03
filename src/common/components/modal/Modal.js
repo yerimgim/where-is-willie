@@ -19,9 +19,9 @@ const ModalWrapper = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90%;
-  height: 90%;
-  background: yellow;
+  width: 100%;
+  height: 100%;
+
   opacity: 1;
   z-index: 10;
 `;
@@ -30,10 +30,10 @@ const Overlay = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  /* width: 100%; */
-  /* height: 100%; */
-  /* background: #00000080; */
-  /* background: blue; */
+  width: 100%;
+  height: 100%;
+  background: #00000080;
+
   z-index: 1;
 `;
 
@@ -45,7 +45,7 @@ const Container = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  /* background: var(--black-color); */
+
   overflow: hidden;
   z-index: 10;
   perspective: 1000px;

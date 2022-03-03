@@ -30,9 +30,14 @@ const Entry = styled.div`
   }
 
   img {
-    width: 30%;
+    width: 25%;
+    opacity: 0.6;
     transform: skew(330deg, 20deg);
-    opacity: 0.7;
+
+    &:hover {
+      cursor: pointer;
+      filter: drop-shadow(0.3rem 0.3rem 0.8rem var(--yellow-color));
+    }
   }
 `;
 

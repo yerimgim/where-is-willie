@@ -78,19 +78,23 @@ const Quiz = ({ setValue, value, quiz }) => {
               </Markup>
             </MarkupBox>
             {isLoading || (
-              <input
-                type="submit"
-                onClick={handleClick}
-                disabled={!value}
-                value="확인"
-              />
+              <div className="submit-box">
+                <input
+                  type="submit"
+                  onClick={handleClick}
+                  disabled={!value}
+                  value="확인"
+                />
+              </div>
             )}
           </form>
 
           {isLoading && (
-            <button onClick={goNextChapter} className="next-btn">
-              계속
-            </button>
+            <div className="submit-box">
+              <button onClick={goNextChapter} className="next-btn">
+                계속
+              </button>
+            </div>
           )}
         </div>
       </QuizSection>
@@ -115,6 +119,12 @@ const QuizSection = styled.section`
       width: 95%;
       height: 93vh;
     }
+  }
+
+  .submit-box {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
   }
 
   .next-btn {
@@ -188,10 +198,10 @@ const MarkupBox = styled.div`
 `;
 
 const Markup = styled.div`
-  display: flex;
-  flex-direction: column;
   position: relative;
   left: 8%;
+  display: flex;
+  flex-direction: column;
 `;
 
 export default Quiz;

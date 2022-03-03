@@ -23,9 +23,9 @@ const MainHiddenChapter = () => {
 };
 
 const Main = styled.main`
+  display: flex;
   width: 100%;
   height: 100vh;
-  display: flex;
   background-color: var(--black-color);
 `;
 

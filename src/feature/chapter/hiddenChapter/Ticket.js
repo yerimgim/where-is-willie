@@ -1,5 +1,6 @@
 import React from "react";
 
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Ticket = ({ setIsOpen, isOpen }) => {
@@ -28,10 +29,10 @@ const Entry = styled.div`
   transform: translateX(-20%);
 
   .ticket-container {
-    height: 40rem;
     width: 40rem;
-    perspective: 300rem;
+    height: 40rem;
     background: none;
+    perspective: 300rem;
   }
 
   .ticket {
@@ -58,5 +59,10 @@ const Entry = styled.div`
     }
   }
 `;
+
+Ticket.propTypes = {
+  setIsOpen: PropTypes.func,
+  isOpen: PropTypes.bool,
+};
 
 export default Ticket;

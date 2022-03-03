@@ -58,6 +58,7 @@ const NewsPaperImg = styled.img`
 
   &:hover {
     filter: grayscale(0);
+    filter: drop-shadow(0.2rem 0.3rem 1rem var(--yellow-color));
     transition: all 0.3s ease-in-out;
   }
 `;
