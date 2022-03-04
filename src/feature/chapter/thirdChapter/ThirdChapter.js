@@ -1,13 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
+import Evidence from "../../../common/components/Evidence";
+import ImgSection from "../../../common/components/ImgSection";
+import Quiz from "../../../common/components/Quiz";
+import quiz from "../../../data/thirdChapter.json";
+import Glasses from "./Glasses";
+
 const ThirdChapter = () => {
+  const [value, setValue] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const [timer, setTimer] = useState(false);
+
+  useEffect(() => {
+    const delayTime = setTimeout(() => {
+      setTimer(!timer);
+    }, 1000);
+
+    return () => clearTimeout(delayTime);
+  }, [location.state]);
+
   return (
     <Main>
-      <ImgSection>
-        <img src="/assets/restaurant.png" height="100%" alt="식당칸" />
-      </ImgSection>
+      <ImgSection imgSrc="/assets/restaurant.png" imgAlt="북적거리는 식당칸" />
+
+      <Glasses setIsOpen={setIsOpen} isOpen={isOpen} />
+
+      {location.state && timer === true ? (
+        <Evidence summary={location.state.info || null} />
+      ) : null}
+      {isOpen && <Quiz setValue={setValue} value={value} quiz={quiz} />}
     </Main>
   );
 };
@@ -18,11 +43,6 @@ const Main = styled.main`
   height: 100vh;
   position: relative;
   background-color: var(--black-color);
-`;
-
-const ImgSection = styled.section`
-  width: 55%;
-  height: 100vh;
 `;
 
 export default ThirdChapter;

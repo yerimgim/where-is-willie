@@ -15,9 +15,8 @@ const SecondChapter = () => {
   const [value, setValue] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
-  const location = useLocation();
-
   const [timer, setTimer] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const delayTime = setTimeout(() => {
@@ -40,14 +39,16 @@ const SecondChapter = () => {
       <Main>
         <ImgSection imgSrc="/assets/detective-room.png" imgAlt="탐정의 방" />
         <Photo setIsOpen={setIsOpen} isOpen={isOpen} />
+
         <NewsPaperImg src="assets/newspaper.png" onClick={openModal} />
         {modalOpen && (
           <Modal>
             <NewsPaper closeModal={closeModal} />
           </Modal>
         )}
+
         {location.state && timer === true ? (
-          <Evidence summay={location.state.info || null} />
+          <Evidence summary={location.state.info || null} />
         ) : null}
 
         {isOpen && <Quiz setValue={setValue} value={value} quiz={quiz} />}

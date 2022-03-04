@@ -1,5 +1,4 @@
 {
-  "no": "2-1",
   "strangerInfo": "수상한 자의 정보",
   "willieInfo": "윌리의 정보",
   "willieInfos": ["파랑색 상의를 자주 입는다는 정보가 들어 있었다"],
@@ -7,7 +6,10 @@
   "cssBefore": "#letters {  \n display: flex;",
   "cssAfter": "}",
   "answer": "align-content:space-around",
+  "hint":"* flex의 속성 사용해보자 -",
   "placeholder":"/* use flex property */",
-  "success": "/thirdChapter",
-  "fail":"/ending/DeadEnding"
+  "success": ["/thirdChapter", "Chapter 3 북적거리는 식당칸"],
+  "successHint": "Jack은 윌리의 미들네임이었다는 것을 알게 되었고,\n접선 장소가 식당칸이라는 것을 알게되었다.",
+  "fail": ["/ending/fail", "The end"],
+  "failureHint": "나를 지켜보고 있던 윌리에게 들켰다."
 }

@@ -29,7 +29,7 @@ const MainHiddenChapter = () => {
       <ImgSection imgSrc="/assets/corridor.png" imgAlt="기차 복도 이미지" />
       <Ticket setIsOpen={setIsOpen} isOpen={isOpen} />
       {!isOpen && location.state && timer === true ? (
-        <Evidence summay={location.state.info || null} />
+        <Evidence summary={location.state.info || null} />
       ) : null}
 
       {isOpen && <Quiz setValue={setValue} value={value} quiz={quiz} />}

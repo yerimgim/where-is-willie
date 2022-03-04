@@ -1,12 +1,14 @@
 {
-  "no": "2",
   "willieInfo": "수상한 자의 정보",
   "willieInfos": ["숨겨둔 티켓 조각을 확인했습니다."],
   "content": "10장의 사진들 중 마지막 장에 있는 \n윌리의 최근 모습을 확인하시오.",
   "cssBefore": "#photo { ",
   "cssAfter": "}",
   "answer": "last-child",
+  "hint":"* 이거 바꿔야할거 같음",
   "placeholder":"/* use CSS pseudo-class \n ex) li element -child...  \n*/",
-  "success": "/secondHiddenChaper",
-  "fail":"/thirdChappter"
+  "success": ["/secondHiddenChaper", "Chapter 2 - Hidden Page\nJack의 3B칸"],
+  "successHint": "즐겨 입는 옷의 색상은 파랑색, 브라운 색인 것으로 확인하였다.\n수상한 자의 방을 살펴보세요.",
+  "fail": ["/thirdChapter", "Chapter3 북적거리는 식당"],
+  "failureHint": "윌리에 대한 정보를 얻지 못했습니다.\n식당에 많은 사람들이 식사를 하고 있습니다.\n수상한 곳을 조사해보세요."
 }

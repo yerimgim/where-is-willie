@@ -25,12 +25,12 @@ const Quiz = ({ setValue, value, quiz }) => {
     if (quiz.answer === finalResult) {
       history.push({
         pathname: quiz.success[0],
-        state: { info: quiz.success[1] },
+        state: { info: [quiz.success[1], quiz.successHint] },
       });
     } else {
       return history.push({
         pathname: quiz.fail[0],
-        state: { info: quiz.fail[1] },
+        state: { info: [quiz.fail[1], quiz.failureHint] },
       });
     }
   };
@@ -46,66 +46,64 @@ const Quiz = ({ setValue, value, quiz }) => {
   };
 
   return (
-    <>
-      <QuizSection>
-        <div className="img-box">
-          <img src="/assets/file-folder.png" alt="파일 폴더 이미지" />
+    <QuizSection>
+      <div className="img-box">
+        <img src="/assets/file-folder.png" alt="파일 폴더 이미지" />
+      </div>
+
+      <div className="text-box">
+        <div className="info-box">
+          <h3>{quiz.willieInfos && quiz.willieInfo}</h3>
+          <ul>
+            {quiz.willieInfos &&
+              quiz.willieInfos.map((info) => {
+                return <li key={makeKey()}>{info}</li>;
+              })}
+          </ul>
+          <h3>임무</h3>
+          <ul>
+            <li>
+              <span className="highlight">
+                <span className="pen">{quiz.content}</span>
+              </span>
+            </li>
+          </ul>
+          <span className="hint">{quiz.hint}</span>
         </div>
-
-        <div className="text-box">
-          <div className="info-box">
-            <h3>{quiz.willieInfos && quiz.willieInfo}</h3>
-            <ul>
-              {quiz.willieInfos &&
-                quiz.willieInfos.map((info) => {
-                  return <li key={makeKey()}>{info}</li>;
-                })}
-            </ul>
-            <h3>임무</h3>
-            <ul>
-              <li>
-                <span className="highlight">
-                  <span className="pen">{quiz.content}</span>
-                </span>
-              </li>
-            </ul>
-            <span className="hint">{quiz.hint}</span>
-          </div>
-          <form>
-            <MarkupBox>
-              <NumberLine />
-              <Markup>
-                {quiz.cssBefore}
-                <StyledTextarea
-                  placeholder={quiz.placeholder}
-                  onChange={onChange}
-                  value={value}
-                />
-                {quiz.cssAfter}
-              </Markup>
-            </MarkupBox>
-            {isLoading || (
-              <div className="submit-box">
-                <input
-                  type="submit"
-                  onClick={handleClick}
-                  disabled={!value}
-                  value="확인"
-                />
-              </div>
-            )}
-          </form>
-
-          {isLoading && (
+        <form>
+          <MarkupBox>
+            <NumberLine />
+            <Markup>
+              {quiz.cssBefore}
+              <StyledTextarea
+                placeholder={quiz.placeholder}
+                onChange={onChange}
+                value={value}
+              />
+              {quiz.cssAfter}
+            </Markup>
+          </MarkupBox>
+          {isLoading || (
             <div className="submit-box">
-              <button onClick={goNextChapter} className="next-btn">
-                계속
-              </button>
+              <input
+                type="submit"
+                onClick={handleClick}
+                disabled={!value}
+                value="확인"
+              />
             </div>
           )}
-        </div>
-      </QuizSection>
-    </>
+        </form>
+
+        {isLoading && (
+          <div className="submit-box">
+            <button onClick={goNextChapter} className="next-btn">
+              계속
+            </button>
+          </div>
+        )}
+      </div>
+    </QuizSection>
   );
 };
 
@@ -160,7 +158,11 @@ const QuizSection = styled.section`
     }
 
     .hint {
-      font-size: 20px;
+      padding: 3px;
+      font-size: 16px;
+      background-color: var(--light-grey-color);
+      color: var(--white-color);
+      font-family: var(--noto-sans-kr-font);
     }
 
     h3 {

@@ -1,41 +1,37 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import styled from "styled-components";
 
-const Evidence = ({ summay }) => {
-  const txt = summay;
-  const [text, setText] = useState("");
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    const interval = setTimeout(() => {
-      setText(text + txt[count]);
-      setCount(count + 1);
-    }, 100);
-
-    if (count === txt.length) {
-      clearTimeout(interval);
-    }
-    return () => clearTimeout(interval);
-  });
-
+const Evidence = ({ summary }) => {
   return (
     <Entry>
-      <div>{text}</div>
+      {summary.map((value, index) => {
+        return <li key={index}>{value}</li>;
+      })}
     </Entry>
   );
 };
 
-const Entry = styled.div`
-  div {
-    position: absolute;
-    width: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 55%;
+const Entry = styled.ul`
+  position: absolute;
+  left: 58%;
+  top: 40%;
+  transform: translateY(-50%);
+  font-family: var(--noto-sans-kr-font);
 
+  li:first-child {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  li {
+    width: 100%;
+    padding: 10px 0;
     color: var(--white-color);
     font-size: 25px;
+    list-style: none;
+    line-height: 1.6;
+    white-space: pre-wrap;
   }
 `;
 

@@ -1,0 +1,15 @@
+{
+  "strangerInfo": "수상한 자의 정보",
+  "willieInfo": "윌리의 정보",
+  "willieInfos": ["파랑색 상의를 자주 입는다는 정보가 들어 있었다"],
+  "content": "쇼파 위의 쿠션 사이에 수상한게 있다",
+  "cssBefore": "#letters {  \n display: flex;",
+  "cssAfter": "}",
+  "answer": "align-content:space-around",
+  "hint":"* grid의 속성 사용해보자",
+  "placeholder":"/* use grid property */",
+  "success": ["/lastChapter", "범인은 누구일까?"],
+  "successHint": "",
+  "fail": ["/ending/fail", "The end"],
+  "failureHint": "누군가 내 어깨를 잡는다."
+}
