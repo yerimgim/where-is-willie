@@ -16,7 +16,7 @@ const Img = styled.section`
   height: 100vh;
 `;
 
-ImgSection.PropTypes = {
+ImgSection.propTypes = {
   imgSrc: PropTypes.string,
   imgAlt: PropTypes.string,
 };

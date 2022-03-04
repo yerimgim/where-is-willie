@@ -32,7 +32,7 @@ function App() {
           <Link to="/secondHiddenChaper">3B Jack의 방(히든 페이지)</Link>
         </li>
         <li>
-          <Link to="/thirdChappter">식당 칸</Link>
+          <Link to="/thirdChapter">식당 칸</Link>
         </li>
         <li>
           <Link to="/lastChapter">범인 검거</Link>
@@ -60,7 +60,7 @@ function App() {
         <Route path="/secondHiddenChaper">
           <SecondHiddenChapter />
         </Route>
-        <Route path="/thirdChappter">
+        <Route path="/thirdChapter">
           <ThirdChapter />
         </Route>
         <Route path="/lastChapter">

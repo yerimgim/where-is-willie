@@ -169,7 +169,7 @@ const Main = styled.main`
 
   .main-title {
     grid-column: 1 / -2;
-    font-size: 3.4rem;
+    font-size: 3rem;
   }
 
   .main-article {
@@ -203,7 +203,7 @@ const Main = styled.main`
     }
   }
 
-  .dvertisement {
+  .advertisement {
     grid-column: 1 / -1;
     grid-row: 6;
     padding-top: 1rem;

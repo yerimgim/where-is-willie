@@ -23,9 +23,15 @@ const Quiz = ({ setValue, value, quiz }) => {
     event.preventDefault();
 
     if (quiz.answer === finalResult) {
-      history.push(quiz.success);
+      history.push({
+        pathname: quiz.success[0],
+        state: { info: quiz.success[1] },
+      });
     } else {
-      return history.push(quiz.fail);
+      return history.push({
+        pathname: quiz.fail[0],
+        state: { info: quiz.fail[1] },
+      });
     }
   };
 
@@ -63,6 +69,7 @@ const Quiz = ({ setValue, value, quiz }) => {
                 </span>
               </li>
             </ul>
+            <span className="hint">{quiz.hint}</span>
           </div>
           <form>
             <MarkupBox>
@@ -150,6 +157,10 @@ const QuizSection = styled.section`
 
     .info-box {
       margin-bottom: 5%;
+    }
+
+    .hint {
+      font-size: 20px;
     }
 
     h3 {

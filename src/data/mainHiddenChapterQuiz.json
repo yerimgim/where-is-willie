@@ -6,7 +6,8 @@
   "cssBefore": "#ticket {",
   "cssAfter": "}",
   "answer": "position:static",
+  "hint": [],
   "placeholder":"/* use position property */",
-  "success": "/secondChapter",
-  "fail":"/secondChapter"
+  "success": ["/secondChapter", "수상한 자의 미들네임은 Jack, 3B칸을 사용하는 것으로 확인하였다. "],
+  "fail":["/secondChapter", "힌트 획득에 실패하셨습니다"]
 }

@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
+import Evidence from "../../../common/components/Evidence";
 import ImgSection from "../../../common/components/ImgSection";
 import Modal from "../../../common/components/modal/Modal";
 import Quiz from "../../../common/components/Quiz";
@@ -13,6 +15,17 @@ const SecondChapter = () => {
   const [value, setValue] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const location = useLocation();
+
+  const [timer, setTimer] = useState(false);
+
+  useEffect(() => {
+    const delayTime = setTimeout(() => {
+      setTimer(!timer);
+    }, 1000);
+
+    return () => clearTimeout(delayTime);
+  }, []);
 
   const closeModal = () => {
     setModalOpen(!modalOpen);
@@ -33,6 +46,10 @@ const SecondChapter = () => {
             <NewsPaper closeModal={closeModal} />
           </Modal>
         )}
+        {location.state && timer === true ? (
+          <Evidence summay={location.state.info || null} />
+        ) : null}
+
         {isOpen && <Quiz setValue={setValue} value={value} quiz={quiz} />}
       </Main>
     </>

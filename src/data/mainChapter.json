@@ -1,0 +1,13 @@
+{
+  "no": "1",
+  "willieInfo": "윌리의 정보",
+  "content": "수상한 사람이 돌아오기 전에 숨겨둔 물체를 확인하시오.",
+  "cssBefore": "#hidden-object {",
+  "cssAfter": "}",
+  "answer": "display:block",
+  "hint": "* display 속성을 사용하자",
+  "placeholder": "/* use display property */",
+  "success": ["/mainHiddenChapter", "숨겨둔 물체를 확인했다.", "티켓을 확인해보세요"],
+  "fail": ["/secondChapter", "숨겨둔 물체 확인에 실패 하셨습니다."]
+}
+

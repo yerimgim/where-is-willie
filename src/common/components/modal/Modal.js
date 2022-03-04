@@ -1,11 +1,12 @@
 import React from "react";
 
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
-const Modal = ({ children, visible }) => {
+const Modal = ({ children }) => {
   return (
     <ModalWrapper>
-      <Overlay visible={visible} />
+      <Overlay />
       <Container>{children}</Container>
     </ModalWrapper>
   );
@@ -21,7 +22,6 @@ const ModalWrapper = styled.div`
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
-
   opacity: 1;
   z-index: 10;
 `;
@@ -45,12 +45,15 @@ const Container = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-
   overflow: hidden;
   z-index: 10;
   perspective: 1000px;
   font-family: var(--nanum-my-daughter-font);
   white-space: pre-wrap;
 `;
+
+Modal.propTypes = {
+  children: PropTypes.element,
+};
 
 export default Modal;
