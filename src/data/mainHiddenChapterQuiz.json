@@ -1,12 +1,14 @@
 {
-  "no": "1-1",
   "willieInfo": "수상한 자의 정보",
   "willieInfos": ["숨겨둔 티켓 조각을 확인했습니다."],
   "content": "티켓 내용을 확인하시오.",
   "cssBefore": "#ticket {",
   "cssAfter": "}",
   "answer": "position:static",
+  "hint": "* position 속성을 사용하자 - static, relative, fixed...",
   "placeholder":"/* use position property */",
-  "success": "/secondChapter",
-  "fail":"/secondChapter"
+  "success": ["/secondChapter", "Chapter2 탐정의 열차칸"],
+  "successHint": "수상한 자의 미들네임은 Jack, 3B칸을 사용하는 것으로 확인하였다.\n전 형사가 숨겨둔 메시지를 확인하세요.",
+  "fail": ["/secondChapter", "Chapter2 탐정의 열차칸"],
+  "failureHint": "수상한 자가 숨겨둔 물체를 확인하지 못했습니다.\n전 형사가 숨겨둔 메시지를 확인하세요."
 }

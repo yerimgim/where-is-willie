@@ -1,5 +1,6 @@
 import React from "react";
 
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Ticket = ({ setIsOpen, isOpen }) => {
@@ -8,13 +9,11 @@ const Ticket = ({ setIsOpen, isOpen }) => {
   };
 
   return (
-    <>
-      <Entry>
-        <div className="ticket-container">
-          <div className="ticket" onClick={onClick}></div>
-        </div>
-      </Entry>
-    </>
+    <Entry>
+      <div className="ticket-container">
+        <div className="ticket" onClick={onClick}></div>
+      </div>
+    </Entry>
   );
 };
 
@@ -26,21 +25,23 @@ const Entry = styled.div`
 
   position: absolute;
   left: 20%;
-  bottom: -30%;
-  transform: translateX(-20%);
+  bottom: 0%;
+  transform: translate(-20%, 20%);
 
   .ticket-container {
-    height: 40rem;
     width: 40rem;
-    perspective: 300rem;
+    height: 40rem;
     background: none;
+    perspective: 300rem;
   }
 
   .ticket {
-    position: relative;
+    /* position: relative; */
     transform: translateY(300%);
+
     background: url("/assets/ticket.png") no-repeat center center;
     background-size: contain;
+    overflow: hidden;
     animation: deal 3s cubic-bezier(0.1, 0.5, 0.3, 1.5) forwards;
     animation-delay: 1s;
     filter: drop-shadow(0rem 0.3rem 3rem var(--yellow-color));
@@ -60,5 +61,10 @@ const Entry = styled.div`
     }
   }
 `;
+
+Ticket.propTypes = {
+  setIsOpen: PropTypes.func,
+  isOpen: PropTypes.bool,
+};
 
 export default Ticket;

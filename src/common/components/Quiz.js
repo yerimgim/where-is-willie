@@ -23,9 +23,15 @@ const Quiz = ({ setValue, value, quiz }) => {
     event.preventDefault();
 
     if (quiz.answer === finalResult) {
-      history.push(quiz.success);
+      history.push({
+        pathname: quiz.success[0],
+        state: { info: [quiz.success[1], quiz.successHint] },
+      });
     } else {
-      return history.push(quiz.fail);
+      return history.push({
+        pathname: quiz.fail[0],
+        state: { info: [quiz.fail[1], quiz.failureHint] },
+      });
     }
   };
 
@@ -40,61 +46,64 @@ const Quiz = ({ setValue, value, quiz }) => {
   };
 
   return (
-    <>
-      <QuizSection>
-        <div className="img-box">
-          <img src="/assets/file-folder.png" alt="파일 폴더 이미지" />
-        </div>
+    <QuizSection>
+      <div className="img-box">
+        <img src="/assets/file-folder.png" alt="파일 폴더 이미지" />
+      </div>
 
-        <div className="text-box">
-          <div className="info-box">
-            <h3>{quiz.willieInfos && quiz.willieInfo}</h3>
-            <ul>
-              {quiz.willieInfos &&
-                quiz.willieInfos.map((info) => {
-                  return <li key={makeKey()}>{info}</li>;
-                })}
-            </ul>
-            <h3>임무</h3>
-            <ul>
-              <li>
-                <span className="highlight">
-                  <span className="pen">{quiz.content}</span>
-                </span>
-              </li>
-            </ul>
-          </div>
-          <form>
-            <MarkupBox>
-              <NumberLine />
-              <Markup>
-                {quiz.cssBefore}
-                <StyledTextarea
-                  placeholder={quiz.placeholder}
-                  onChange={onChange}
-                  value={value}
-                />
-                {quiz.cssAfter}
-              </Markup>
-            </MarkupBox>
-            {isLoading || (
+      <div className="text-box">
+        <div className="info-box">
+          <h3>{quiz.willieInfos && quiz.willieInfo}</h3>
+          <ul>
+            {quiz.willieInfos &&
+              quiz.willieInfos.map((info) => {
+                return <li key={makeKey()}>{info}</li>;
+              })}
+          </ul>
+          <h3>임무</h3>
+          <ul>
+            <li>
+              <span className="highlight">
+                <span className="pen">{quiz.content}</span>
+              </span>
+            </li>
+          </ul>
+          <span className="hint">{quiz.hint}</span>
+        </div>
+        <form>
+          <MarkupBox>
+            <NumberLine />
+            <Markup>
+              {quiz.cssBefore}
+              <StyledTextarea
+                placeholder={quiz.placeholder}
+                onChange={onChange}
+                value={value}
+              />
+              {quiz.cssAfter}
+            </Markup>
+          </MarkupBox>
+          {isLoading || (
+            <div className="submit-box">
               <input
                 type="submit"
                 onClick={handleClick}
                 disabled={!value}
                 value="확인"
               />
-            )}
-          </form>
+            </div>
+          )}
+        </form>
 
-          {isLoading && (
+        {isLoading && (
+          <div className="submit-box">
             <button onClick={goNextChapter} className="next-btn">
               계속
             </button>
-          )}
-        </div>
-      </QuizSection>
-    </>
+          </div>
+        )}
+      </div>
+    </QuizSection>
   );
 };
 
@@ -115,6 +124,12 @@ const QuizSection = styled.section`
       width: 95%;
       height: 93vh;
     }
+  }
+
+  .submit-box {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
   }
 
   .next-btn {
@@ -140,6 +155,14 @@ const QuizSection = styled.section`
 
     .info-box {
       margin-bottom: 5%;
+    }
+
+    .hint {
+      padding: 3px;
+      font-size: 16px;
+      background-color: var(--light-grey-color);
+      color: var(--white-color);
+      font-family: var(--noto-sans-kr-font);
     }
 
     h3 {
@@ -188,10 +211,10 @@ const MarkupBox = styled.div`
 `;
 
 const Markup = styled.div`
-  display: flex;
-  flex-direction: column;
   position: relative;
   left: 8%;
+  display: flex;
+  flex-direction: column;
 `;
 
 export default Quiz;

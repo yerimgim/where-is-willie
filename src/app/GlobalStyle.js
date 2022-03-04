@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
     --light-grey-color: #C4C4C4;
     --yellow-color: #FED548;
     --white-color: #fff;
+    --blue-color: #111039;
 
     --middle-font-size: 22px;
   }
@@ -34,6 +35,10 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     border: 0;
     vertical-align: middle;
+  }
+
+  button {
+    cursor: pointer;
   }
 `;
 

@@ -31,7 +31,7 @@ function App() {
           <Link to="/secondHiddenChaper">3B Jack의 방(히든 페이지)</Link>
         </li>
         <li>
-          <Link to="/thirdChappter">식당 칸</Link>
+          <Link to="/thirdChapter">식당 칸</Link>
         </li>
         <li>
           <Link to="/lastChapter">범인 검거</Link>
@@ -39,8 +39,10 @@ function App() {
         <li>
           <Link to="/ending">엔딩</Link>
         </li>
+        <li>
+          <Link to="/ending/deadEnding">??</Link>
+        </li>
       </ul>
-
       <Switch>
         <Route path="/" exact>
           <Main />
@@ -57,16 +59,19 @@ function App() {
         <Route path="/secondHiddenChaper">
           <SecondHiddenChapter />
         </Route>
-        <Route path="/thirdChappter">
+        <Route path="/thirdChapter">
           <ThirdChapter />
         </Route>
         <Route path="/lastChapter">
           <h1>범인 검거 페이지</h1>
           <LastChapter />
         </Route>
-        <Route path="/ending">
+        <Route path="/ending" exact>
           <h1>엔딩 페이지</h1>
           <Success />
+        </Route>
+        <Route path="/ending/fail">
+          <h1>죽음엔딩 페이지</h1>
         </Route>
       </Switch>
     </>
