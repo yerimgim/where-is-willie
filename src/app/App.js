@@ -8,6 +8,7 @@ import LastChapter from "../feature/chapter/lastChapter/LastChapter";
 import MainChapter from "../feature/chapter/mainChapter/MainChapter";
 import SecondChapter from "../feature/chapter/secondChapter/SecondChapter";
 import ThirdChapter from "../feature/chapter/thirdChapter/ThirdChapter";
+import Failure from "../feature/ending/Failure";
 import Success from "../feature/ending/Success";
 import Main from "../feature/main/Main";
 
@@ -72,6 +73,7 @@ function App() {
         </Route>
         <Route path="/ending/fail">
           <h1>죽음엔딩 페이지</h1>
+          <Failure />
         </Route>
       </Switch>
     </>
