@@ -1,10 +1,12 @@
 import React from "react";
 
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Evidence = ({ summary }) => {
   return (
     <Entry>
+      <h1 className="ending">{Text}</h1>
       {summary.map((value, index) => {
         return <li key={index}>{value}</li>;
       })}
@@ -34,5 +36,9 @@ const Entry = styled.ul`
     white-space: pre-wrap;
   }
 `;
+
+Evidence.propTypes = {
+  summary: PropTypes.array,
+};
 
 export default Evidence;

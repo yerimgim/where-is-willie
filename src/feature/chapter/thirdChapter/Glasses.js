@@ -19,6 +19,8 @@ const Btn = styled.button`
   color: red;
   background-color: blue;
   padding: 30px;
+  position: absolute;
+  top: 50%;
 `;
 
 export default Glasses;
