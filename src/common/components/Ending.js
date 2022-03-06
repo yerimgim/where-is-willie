@@ -23,18 +23,22 @@ const Entry = styled.ul`
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+  width: 50%;
+  margin: 0 auto;
+  color: var(--white-color);
+  font-size: 35px;
   text-align: center;
-  width: 100%;
+  list-style: none;
+
+  button {
+    padding: 10px;
+    font-size: 26px;
+    color: var(--white-color);
+  }
 
   li:last-child {
-    /* width: 50%; */
-    /* padding: 10px 0; */
     background: var(--black-color);
     color: var(--white-color);
-    width: 50%;
-    font-size: 25px;
-    list-style: none;
-    line-height: 1.6;
     white-space: pre-wrap;
   }
 `;

@@ -1,11 +1,12 @@
 import React from "react";
 
-import { Route, Switch, Link } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import MainHiddenChapter from "../feature/chapter/hiddenChapter/MainHiddenChapter";
 import SecondHiddenChapter from "../feature/chapter/hiddenChapter/SecondHiddenChapter";
 import LastChapter from "../feature/chapter/lastChapter/LastChapter";
 import MainChapter from "../feature/chapter/mainChapter/MainChapter";
+import MainStory from "../feature/chapter/mainChapter/MainStory";
 import SecondChapter from "../feature/chapter/secondChapter/SecondChapter";
 import ThirdChapter from "../feature/chapter/thirdChapter/ThirdChapter";
 import Failure from "../feature/ending/Failure";
@@ -15,7 +16,7 @@ import Main from "../feature/main/Main";
 function App() {
   return (
     <>
-      <ul>
+      {/* <ul>
         <li>
           <Link to="/">로그인페이지</Link>
         </li>
@@ -43,10 +44,13 @@ function App() {
         <li>
           <Link to="/ending/deadEnding">??</Link>
         </li>
-      </ul>
+      </ul> */}
       <Switch>
         <Route path="/" exact>
           <Main />
+        </Route>
+        <Route path="/mainStory">
+          <MainStory />
         </Route>
         <Route path="/mainChapter">
           <MainChapter />
@@ -72,7 +76,6 @@ function App() {
           <Success />
         </Route>
         <Route path="/ending/fail">
-          <h1>죽음엔딩 페이지</h1>
           <Failure />
         </Route>
       </Switch>

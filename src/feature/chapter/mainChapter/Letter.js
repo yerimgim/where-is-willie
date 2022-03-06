@@ -1,12 +1,19 @@
 import React from "react";
 
 import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 import letter from "../../../data/letter.json";
 
 const Letter = ({ closeModal }) => {
+  const history = useHistory();
   const user = useSelector((state) => state.user.name);
+
+  const onClick = () => {
+    closeModal;
+    history.push("/mainChapter");
+  };
   return (
     <Entry>
       <div className="book">
@@ -17,7 +24,9 @@ const Letter = ({ closeModal }) => {
         </div>
 
         <div className="last-page">
-          <button onClick={closeModal}>XXXXXXX</button>
+          <div className="button-box">
+            <button onClick={onClick}>X 닫기</button>
+          </div>
           <h4>안녕하세요, {user} 탐정님</h4>
           <div className="content">{letter.content}</div>
         </div>
@@ -94,20 +103,25 @@ const Entry = styled.div`
   }
 
   .last-page {
-    font-size: 40px;
+    font-size: 28px;
     line-height: 60px;
   }
 
   .last-page h4 {
-    margin: 40px;
+    margin: 10px 40px;
   }
 
   .last-page .content {
     margin: 40px;
   }
 
-  .last-page button {
-    font-size: 40px;
+  .button-box {
+    padding: 20px;
+    text-align: right;
+
+    button {
+      font-size: 30px;
+    }
   }
 `;
 

@@ -13,7 +13,7 @@ const Main = () => {
 
   const handleClick = (event) => {
     event.preventDefault();
-    history.push("/mainChapter");
+    history.push("/mainStory");
   };
 
   const onChange = (event) => {
