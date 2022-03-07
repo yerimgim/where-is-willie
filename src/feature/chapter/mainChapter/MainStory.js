@@ -48,7 +48,7 @@ const MainStory = () => {
           </p>
           <br />
           <p>
-            수사에 참여하시려면 <span> 참여하기 버튼 </span>을 클릭해주세요.
+            수사에 참여하시려면 <span> 참여하기 버튼</span>을 클릭해주세요.
           </p>
         </Text>
 
@@ -83,7 +83,11 @@ const fadeIn = keyframes`
 `;
 
 const Entry = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 100vh;
+  min-height: 100%;
   background-color: var(--black-color);
   font-size: 24px;
 `;
@@ -91,11 +95,9 @@ const Entry = styled.div`
 const Content = styled.div`
   margin: 0 auto;
   text-align: center;
-
   animation: ${fadeIn} 3s ease-in-out;
-  .img-box {
-    padding: 50px 0;
 
+  .img-box {
     img {
       width: 230px;
       height: 270px;
@@ -104,8 +106,9 @@ const Content = styled.div`
 `;
 
 const Text = styled.div`
-  width: 50%;
-  margin: 10px auto 50px auto;
+  width: 70%;
+  margin: 0 auto;
+  padding: 35px 0;
   color: var(--light-grey-color);
 
   p {
@@ -120,7 +123,7 @@ const Text = styled.div`
 
 const Buttons = styled.div`
   button.start {
-    margin: 5px;
+    margin: 0 5px;
     padding: 10px 40px;
     height: 100%;
     font-size: 24px;

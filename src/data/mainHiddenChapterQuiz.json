@@ -5,10 +5,10 @@
   "cssBefore": "#ticket {",
   "cssAfter": "}",
   "answer": "position:static",
-  "hint": "* position 속성을 사용하자 - static, relative, fixed...",
-  "placeholder":"/* use position property */",
+  "hint": ["* position 속성을 사용하자", "https://developer.mozilla.org/ko/docs/Web/CSS/position"],
+  "placeholder": "/* use position property */",
   "success": ["/secondChapter", "Chapter2 탐정의 열차칸"],
-  "successHint": "수상한 자의 미들네임은 Jack, \n열차칸은 3B칸을 사용하는 것으로 확인하였다.\n 내 열차 칸으로 가서 전 형사의 메시지를 확인하자",
+  "successHint": "수상한 자의 미들네임은 Jack, \n열차칸은 3B칸을 사용하는 것으로 확인하였다.\n나의 열차 칸으로 가서 전 형사의 메시지를 확인하자",
   "fail": ["/secondChapter", "Chapter2 탐정의 열차칸"],
   "failureHint": "수상한 자가 숨겨둔 물체를 확인하지 못했습니다.\n전 형사가 남겨둔 메시지를 확인하세요."
 }

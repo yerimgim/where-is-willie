@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
+import { AiTwotoneBulb } from "react-icons/ai";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 import { getResult } from "../../modules/quizSlice";
@@ -45,6 +46,11 @@ const Quiz = ({ setValue, value, quiz }) => {
     setValue(event.target.value);
   };
 
+  const [isToggle, setIsToggle] = useState(false);
+  const toggleHint = () => {
+    setIsToggle(!isToggle);
+  };
+
   return (
     <QuizSection>
       <div className="img-box">
@@ -68,7 +74,18 @@ const Quiz = ({ setValue, value, quiz }) => {
               </span>
             </li>
           </ul>
-          <span className="hint">{quiz.hint}</span>
+
+          <AiTwotoneBulb onClick={toggleHint} className="hint-icon">
+            ㅇㅇㅇㅇㅇ
+          </AiTwotoneBulb>
+
+          <Link
+            to={{ pathname: quiz.hint[1] }}
+            target="_blank"
+            className={isToggle ? "show-toggle" : "hide-toggle"}
+          >
+            <span className="hint">{quiz.hint[0]}</span>
+          </Link>
         </div>
         <form>
           <MarkupBox>
@@ -124,6 +141,19 @@ const QuizSection = styled.section`
       width: 95%;
       height: 93vh;
     }
+  }
+
+  .hint-icon {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .show-toggle {
+    display: inline-block;
+  }
+
+  .hide-toggle {
+    display: none;
   }
 
   .submit-box {

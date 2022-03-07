@@ -23,10 +23,10 @@ const Entry = styled.div`
   left: 3%;
 
   img {
-    filter: grayscale(100%);
     width: 60%;
-    opacity: 0.8;
     cursor: pointer;
+    filter: grayscale(100%);
+    opacity: 0.8;
 
     &:hover {
       filter: grayscale(0);

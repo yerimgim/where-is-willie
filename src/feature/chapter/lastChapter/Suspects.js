@@ -25,7 +25,7 @@ const Suspects = () => {
             >
               <span>{person.no}</span>
               <div className="img-box">
-                <img src="assets/suspect1.png" alt="용의자 1" />
+                <img src={person.img} alt="용의자 1" />
               </div>
               <div className="text-box">
                 <h3>{person.name}</h3>
@@ -61,6 +61,9 @@ const Entry = styled.section`
 
   .suspect {
     width: 20%;
+    margin: 0 3px;
+    padding: 10px 0;
+    background-color: var(--white-color);
     box-sizing: border-box;
 
     h3 {
@@ -81,7 +84,7 @@ const Entry = styled.section`
   .text-box ul {
     display: flex;
     flex-direction: column;
-    background-color: var(--white-color);
+    padding: 10px;
   }
 
   .text-box ul li {

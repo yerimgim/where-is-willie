@@ -1,5 +1,6 @@
 import React from "react";
 
+import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
@@ -7,13 +8,14 @@ import styled from "styled-components";
 import letter from "../../../data/letter.json";
 
 const Letter = ({ closeModal }) => {
-  const history = useHistory();
   const user = useSelector((state) => state.user.name);
+  const history = useHistory();
 
   const onClick = () => {
     closeModal;
     history.push("/mainChapter");
   };
+
   return (
     <Entry>
       <div className="book">
@@ -124,5 +126,9 @@ const Entry = styled.div`
     }
   }
 `;
+
+Letter.propTypes = {
+  closeModal: PropTypes.func,
+};
 
 export default Letter;

@@ -1,24 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-import { AiOutlineFile } from "react-icons/ai";
-import styled from "styled-components";
+import { IoMailUnreadOutline } from "react-icons/io5";
+import styled, { keyframes } from "styled-components";
 
 import Quiz from "../../../common/components/Quiz";
 import SoundIcon from "../../../common/components/SoundIcon";
 import quiz from "../../../data/mainChapter.json";
 
 const MainChapter = () => {
-  const [time, setTime] = useState(false);
   const [isVisible, setVisible] = useState(false);
   const [value, setValue] = useState("");
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setTime(!time);
-    }, 6500);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   const showQuiz = () => {
     setVisible(!isVisible);
@@ -33,14 +24,12 @@ const MainChapter = () => {
           </video>
         </VideoSection>
 
-        {time === true ? (
-          <AiOutlineFile
-            size="30px"
-            color="white"
-            className="file-icon"
-            onClick={showQuiz}
-          />
-        ) : null}
+        <IoMailUnreadOutline
+          size="34px"
+          color="white"
+          className="file-icon"
+          onClick={showQuiz}
+        />
 
         <SoundIcon />
 
@@ -50,6 +39,16 @@ const MainChapter = () => {
   );
 };
 
+const blink = keyframes`
+  from {
+    opacity: 1;
+    color: var(--yellow-color);
+  } to {
+    opacity: 0.3;
+  }
+
+`;
+
 const Main = styled.main`
   display: flex;
   position: relative;
@@ -57,17 +56,13 @@ const Main = styled.main`
   height: 100vh;
   background-color: var(--black-color);
 
-  .mail-icon {
-    position: absolute;
-    top: 50px;
-    right: 150px;
-    transition: all 30000s ease-in-out;
-  }
-
   .file-icon {
     position: absolute;
     top: 50px;
     right: 100px;
+    animation: ${blink} 1.5s infinite;
+    animation-delay: 6s;
+    opacity: 0;
   }
 
   .play-icon {

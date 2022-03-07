@@ -40,7 +40,8 @@ const Main = styled.div`
   width: 100%;
   height: 100vh;
   position: relative;
-  background-color: var(--black-color);
+  background: var(--black-color) url("assets/blood.png") no-repeat right bottom;
+  /* background: var(--black-color) */
   overflow: hidden;
 
   .deco {
@@ -58,13 +59,14 @@ const Main = styled.div`
   }
 
   .ending {
-    color: var(--white-color);
-    text-align: center;
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-48%, -50%);
+    color: var(--white-color);
+    text-align: center;
     font-size: 50px;
+    font-family: var(--nanum-myenogjo-font);
   }
 `;
 
