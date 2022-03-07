@@ -7,20 +7,28 @@ const Glasses = ({ setIsOpen, isOpen }) => {
     setIsOpen(!isOpen);
   };
   return (
-    <>
-      <Btn onClick={onClick}>dddd</Btn>
-    </>
+    <Entry>
+      <div className="photo-container" onClick={onClick}>
+        <img src="assets/wine.png" alt="와인 이미지" />
+      </div>
+    </Entry>
   );
 };
 
-const Btn = styled.button`
-  width: 200px;
-  height: 50px;
-  color: red;
-  background-color: blue;
-  padding: 30px;
+const Entry = styled.div`
   position: absolute;
-  top: 50%;
+  top: 42%;
+  left: 26%;
+
+  img {
+    width: 69%;
+    opacity: 0.9;
+
+    &:hover {
+      cursor: pointer;
+      filter: drop-shadow(0.1rem 0.1rem 0.8rem var(--yellow-color));
+    }
+  }
 `;
 
 export default Glasses;

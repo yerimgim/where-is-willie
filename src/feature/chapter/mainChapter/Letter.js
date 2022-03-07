@@ -116,10 +116,10 @@ const Entry = styled.div`
   }
 
   .button-box {
-    padding: 20px;
     text-align: right;
 
     button {
+      padding: 20px;
       font-size: 30px;
     }
   }

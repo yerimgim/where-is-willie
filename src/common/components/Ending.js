@@ -9,6 +9,7 @@ const Ending = ({ summary }) => {
   const onClick = () => {
     history.push("/");
   };
+
   return (
     <Entry>
       {summary.map((value, index) => {

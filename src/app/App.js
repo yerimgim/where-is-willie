@@ -68,11 +68,9 @@ function App() {
           <ThirdChapter />
         </Route>
         <Route path="/lastChapter">
-          <h1>범인 검거 페이지</h1>
           <LastChapter />
         </Route>
         <Route path="/ending" exact>
-          <h1>엔딩 페이지</h1>
           <Success />
         </Route>
         <Route path="/ending/fail">

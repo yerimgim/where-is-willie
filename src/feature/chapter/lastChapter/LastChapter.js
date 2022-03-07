@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import Modal from "../../../common/components/modal/Modal";
 import Folder from "./Folder";
+import Suspects from "./Suspects";
 
 const LastChapter = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -13,20 +14,43 @@ const LastChapter = () => {
   };
 
   return (
-    <>
-      <H1 onClick={closeModal}>범인 검거 페이지</H1>
-
-      {modalOpen && (
-        <Modal>
-          <Folder closeModal={closeModal} />
-        </Modal>
-      )}
-    </>
+    <Entry>
+      <div className="button-box">
+        <button onClick={closeModal}>사건파일</button>
+      </div>
+      <Content>
+        {modalOpen && (
+          <Modal>
+            <Folder closeModal={closeModal} />
+          </Modal>
+        )}
+        <Suspects />
+      </Content>
+    </Entry>
   );
 };
 
-const H1 = styled.button`
-  color: red;
+const Entry = styled.main`
+  width: 100%;
+  height: 100vh;
+  background: url("assets/paper.png");
+  border: 25px solid var(--yellow-color);
+  box-sizing: border-box;
+
+  .button-box {
+    text-align: right;
+  }
+  button {
+    font-size: 50px;
+    color: red;
+  }
+`;
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 export default LastChapter;
