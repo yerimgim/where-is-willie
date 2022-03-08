@@ -3,12 +3,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled, { keyframes } from "styled-components";
 
+import Button from "../../../common/components/Button";
+
 const NewsPaper = ({ closeModal }) => {
   return (
     <Paper>
-      <div className="click-button">
-        <button onClick={closeModal}>X</button>
-      </div>
+      <Button closeModal={closeModal} text="X" />
       <Main>
         <h1>The Detactive Times</h1>
 
