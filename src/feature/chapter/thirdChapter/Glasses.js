@@ -19,14 +19,8 @@ const Glasses = ({ setIsOpen, isOpen }) => {
 
 const Entry = styled.div`
   position: absolute;
-  top: 52%;
-  left: 30%;
-  transform: translate(-52%, -30%);
 
   img {
-    width: 64%;
-    opacity: 0.9;
-
     &:hover {
       cursor: pointer;
       filter: drop-shadow(0.1rem 0.1rem 0.8rem var(--yellow-color));
@@ -34,16 +28,17 @@ const Entry = styled.div`
   }
 
   @media only screen and (min-width: 1700px) {
-    left: 29%;
-
     img {
-      width: 69%;
+      min-width: 68%;
     }
   }
 
   @media only screen and (min-width: 1200px) {
+    left: 30%;
+    top: 52%;
+    transform: translate(-52%, -30%);
     img {
-      min-width: 41%;
+      width: 56%;
     }
   }
 `;

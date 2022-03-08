@@ -1,19 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { IoMailUnreadOutline } from "react-icons/io5";
+import { useLocation } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 
+import Evidence from "../../../common/components/Evidence";
 import Quiz from "../../../common/components/Quiz";
 import SoundIcon from "../../../common/components/SoundIcon";
 import quiz from "../../../data/mainChapter.json";
 
 const MainChapter = () => {
-  const [isVisible, setVisible] = useState(false);
   const [value, setValue] = useState("");
+  const [isVisible, setVisible] = useState(false);
+  const [timer, setTimer] = useState(false);
+
+  useEffect(() => {
+    const delayTime = setTimeout(() => {
+      setTimer(!timer);
+    }, 6000);
+
+    return () => clearTimeout(delayTime);
+  }, []);
 
   const showQuiz = () => {
     setVisible(!isVisible);
   };
+
+  const location = useLocation();
 
   return (
     <>
@@ -33,6 +46,10 @@ const MainChapter = () => {
 
         <SoundIcon />
 
+        {location.state.info && timer === true ? (
+          <Evidence summary={location.state.info || null} className="info" />
+        ) : null}
+
         {isVisible && <Quiz setValue={setValue} value={value} quiz={quiz} />}
       </Main>
     </>
@@ -46,7 +63,6 @@ const blink = keyframes`
   } to {
     opacity: 0.3;
   }
-
 `;
 
 const Main = styled.main`
@@ -61,7 +77,7 @@ const Main = styled.main`
     top: 50px;
     right: 100px;
     animation: ${blink} 1.5s infinite;
-    animation-delay: 6s;
+    animation-delay: 7s;
     opacity: 0;
   }
 

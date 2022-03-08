@@ -41,7 +41,6 @@ const Main = styled.div`
   height: 100vh;
   position: relative;
   background: var(--black-color) url("assets/blood.png") no-repeat right bottom;
-  /* background: var(--black-color) */
   overflow: hidden;
 
   .deco {
@@ -55,7 +54,7 @@ const Main = styled.div`
     position: absolute;
     top: 100%;
     right: 0;
-    transform: translate(-600px, 10px) rotate(20deg) scale(0.8);
+    transform: translate(-400px, 10px) rotate(20deg) scale(0.8);
   }
 
   .ending {

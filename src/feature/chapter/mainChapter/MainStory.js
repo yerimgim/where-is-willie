@@ -8,9 +8,9 @@ import Modal from "../../../common/components/modal/Modal";
 import Letter from "./Letter";
 
 const MainStory = () => {
-  const [modalOpen, setModalOpen] = useState(false);
   const user = useSelector((state) => state.user.name);
   const history = useHistory();
+  const [modalOpen, setModalOpen] = useState(false);
 
   const closeModal = () => {
     setModalOpen(!modalOpen);
@@ -28,25 +28,22 @@ const MainStory = () => {
         </div>
         <Text>
           <p>새벽 동이 틀 무렵,</p>
-          <br />
           <p>A경찰서의 전 형사한테 급한 연락이 왔다.</p>
-          <br />
-          <p>
-            <span>{user} 탐정: 이른 아침부터 무슨 일 인가요?</span>
-          </p>
-          <br />
           <p>
             <span>
-              전형사:
-              {user} 탐정님, 어제 밤 미술관에서 람브람스의 대작이 사라졌습니다.
+              {user} 탐정: &ldquo; 이른 아침부터 무슨 일 인가요? &quot;
             </span>
           </p>
-          <br />
+          <p>
+            <span>
+              전형사: &ldquo; {user} 탐정님, 어제 밤 미술관에서 람브람스의
+              대작이 사라졌습니다. &quot;
+            </span>
+          </p>
           <p>
             <span>범인 윌리(가명)</span>로 추정되는 사람이 열차를 타고 유럽을
             빠져나간다는 소문을 입수 하였습니다.
           </p>
-          <br />
           <p>
             수사에 참여하시려면 <span> 참여하기 버튼</span>을 클릭해주세요.
           </p>
@@ -62,6 +59,7 @@ const MainStory = () => {
               <Letter closeModal={closeModal} />
             </Modal>
           )}
+
           <button className="start" onClick={onClick}>
             거절하기
           </button>
@@ -113,6 +111,7 @@ const Text = styled.div`
 
   p {
     text-align: left;
+    line-height: 1.7;
   }
 
   span {

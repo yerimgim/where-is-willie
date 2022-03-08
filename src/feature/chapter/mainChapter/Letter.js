@@ -7,13 +7,15 @@ import styled from "styled-components";
 
 import letter from "../../../data/letter.json";
 
-const Letter = ({ closeModal }) => {
+const Letter = () => {
   const user = useSelector((state) => state.user.name);
   const history = useHistory();
 
   const onClick = () => {
-    closeModal;
-    history.push("/mainChapter");
+    history.push({
+      pathname: letter.success[0],
+      state: { info: [letter.success[1], letter.successHint] },
+    });
   };
 
   return (

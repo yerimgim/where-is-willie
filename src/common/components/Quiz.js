@@ -12,6 +12,8 @@ import StyledTextarea from "./StyledTextarea";
 
 const Quiz = ({ setValue, value, quiz }) => {
   const [isLoading, setIsLoading] = useState(false);
+  const [isToggle, setIsToggle] = useState(false);
+
   const dispatch = useDispatch();
   const history = useHistory();
   const result = useSelector((state) => state.quiz.result);
@@ -46,7 +48,6 @@ const Quiz = ({ setValue, value, quiz }) => {
     setValue(event.target.value);
   };
 
-  const [isToggle, setIsToggle] = useState(false);
   const toggleHint = () => {
     setIsToggle(!isToggle);
   };

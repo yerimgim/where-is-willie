@@ -16,7 +16,7 @@ const LastChapter = () => {
   return (
     <Entry>
       <div className="button-box">
-        {/* <button onClick={closeModal}>사건파일</button> */}
+        <button onClick={closeModal}>..</button>
       </div>
       <Content>
         {modalOpen && (

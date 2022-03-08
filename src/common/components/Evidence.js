@@ -1,7 +1,10 @@
 import React from "react";
 
 import PropTypes from "prop-types";
+// import { useDispatch } from "react-redux";
 import styled from "styled-components";
+
+// import { getClue } from "../../modules/quizSlice";
 
 const Evidence = ({ summary }) => {
   return (
@@ -22,7 +25,7 @@ const Entry = styled.ul`
   font-family: var(--noto-sans-kr-font);
 
   li:first-of-type {
-    font-size: 2.6rem;
+    font-size: 2.2rem;
     font-weight: bold;
   }
 
@@ -30,7 +33,7 @@ const Entry = styled.ul`
     width: 100%;
     padding: 10px 0;
     color: var(--white-color);
-    font-size: 25px;
+    font-size: 1.6rem;
     list-style: none;
     line-height: 1.6;
     white-space: pre-wrap;

@@ -1,10 +1,10 @@
 {
   "willieInfo": "수상한 자의 정보",
   "willieInfos": ["숨겨둔 티켓 조각을 확인했습니다."],
-  "content": "티켓의 Name, Seat의 글자가 뭉쳐있습니다.\n내용을 확인하시오.",
+  "content": "티켓의 내용이 겹쳐져있습니다.\n겹쳐있는 내용을 확인하시오.",
   "cssBefore": "#ticket {",
   "cssAfter": "}",
-  "answer": ["position:static"],
+  "answer": ["position:static", "position:relative"],
   "hint": ["* position 속성을 사용하자", "https://developer.mozilla.org/ko/docs/Web/CSS/position"],
   "placeholder": "/* use position property */",
   "success": ["/secondChapter", "Chapter2 탐정의 열차칸"],
