@@ -16,35 +16,6 @@ import Main from "../feature/main/Main";
 function App() {
   return (
     <>
-      {/* <ul>
-        <li>
-          <Link to="/">로그인페이지</Link>
-        </li>
-        <li>
-          <Link to="/mainChapter">어두운 복도</Link>
-        </li>
-        <li>
-          <Link to="/mainHiddenChapter">어두운 복도 (히든 페이지)</Link>
-        </li>
-        <li>
-          <Link to="/secondChapter">탐정의 열차칸</Link>
-        </li>
-        <li>
-          <Link to="/secondHiddenChaper">3B Jack의 방(히든 페이지)</Link>
-        </li>
-        <li>
-          <Link to="/thirdChapter">식당 칸</Link>
-        </li>
-        <li>
-          <Link to="/lastChapter">범인 검거</Link>
-        </li>
-        <li>
-          <Link to="/ending">엔딩</Link>
-        </li>
-        <li>
-          <Link to="/ending/deadEnding">??</Link>
-        </li>
-      </ul> */}
       <Switch>
         <Route path="/" exact>
           <Main />
@@ -73,7 +44,7 @@ function App() {
         <Route path="/ending" exact>
           <Success />
         </Route>
-        <Route path="/ending/fail">
+        <Route path="/ending/failure">
           <Failure />
         </Route>
       </Switch>

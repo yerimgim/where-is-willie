@@ -23,7 +23,7 @@ const Quiz = ({ setValue, value, quiz }) => {
   const goNextChapter = (event) => {
     event.preventDefault();
 
-    if (quiz.answer === finalResult) {
+    if (quiz.answer[0] === finalResult || quiz.answer[1] === finalResult) {
       history.push({
         pathname: quiz.success[0],
         state: { info: [quiz.success[1], quiz.successHint] },
@@ -75,9 +75,10 @@ const Quiz = ({ setValue, value, quiz }) => {
             </li>
           </ul>
 
-          <AiTwotoneBulb onClick={toggleHint} className="hint-icon">
-            ㅇㅇㅇㅇㅇ
-          </AiTwotoneBulb>
+          <AiTwotoneBulb
+            onClick={toggleHint}
+            className="hint-icon"
+          ></AiTwotoneBulb>
 
           <Link
             to={{ pathname: quiz.hint[1] }}

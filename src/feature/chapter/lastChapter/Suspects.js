@@ -9,7 +9,10 @@ const Suspects = () => {
   const history = useHistory();
   return (
     <Entry>
-      <h2>범인 검거 페이지</h2>
+      <TextBox>
+        <h2>범인 검거</h2>
+        <p>지금까지 얻은 내용을 토대로 범인 검거를 해주세요.</p>
+      </TextBox>
       <ul>
         {suspect.suspect.map((person, index) => {
           return (
@@ -30,8 +33,8 @@ const Suspects = () => {
               <div className="text-box">
                 <h3>{person.name}</h3>
                 <ul>
-                  {person.infos.map((info, ind) => {
-                    return <li key={ind}>{info}</li>;
+                  {person.infos.map((info, index) => {
+                    return <li key={index}>{info}</li>;
                   })}
                 </ul>
               </div>
@@ -43,13 +46,16 @@ const Suspects = () => {
   );
 };
 
+const TextBox = styled.div`
+  padding: 30px 0;
+`;
+
 const Entry = styled.section`
   width: 80%;
   height: 60%;
   text-align: center;
 
   h2 {
-    padding-bottom: 50px;
     font-size: 35px;
   }
 

@@ -21,8 +21,8 @@ const Entry = styled.ul`
   transform: translateY(-50%);
   font-family: var(--noto-sans-kr-font);
 
-  li:first-child {
-    font-size: 2.5rem;
+  li:first-of-type {
+    font-size: 2.6rem;
     font-weight: bold;
   }
 

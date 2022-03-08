@@ -3,13 +3,13 @@
   "willieInfo": "윌리의 정보",
   "willieInfos": [".."],
   "content": "와인잔에 와인을 채워 숨겨진 글씨를 확인하시오.",
-  "cssBefore": "#wine { \n ",
+  "cssBefore": "#wine { ",
   "cssAfter": "}",
-  "answer": "background:red",
-  "hint":"* background의 속성 사용해보자",
+  "answer": ["background:red", "background-color:red"],
+  "hint": ["* background의 속성 사용해보자", "https://developer.mozilla.org/ko/docs/Web/CSS/background"],
   "placeholder":"/* use background property */",
   "success": ["/lastChapter", "범인은 누구일까?"],
   "successHint": ["...음?"],
-  "fail": ["/ending/fail"],
+  "fail": ["/ending/failure"],
   "failureHint": "누군가 내 어깨를 잡는다."
 }

@@ -16,7 +16,7 @@ const LastChapter = () => {
   return (
     <Entry>
       <div className="button-box">
-        <button onClick={closeModal}>사건파일</button>
+        {/* <button onClick={closeModal}>사건파일</button> */}
       </div>
       <Content>
         {modalOpen && (
@@ -40,6 +40,7 @@ const Entry = styled.main`
   .button-box {
     text-align: right;
   }
+
   button {
     font-size: 50px;
     color: red;
