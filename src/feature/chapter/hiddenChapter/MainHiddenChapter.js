@@ -11,10 +11,9 @@ import Ticket from "./Ticket";
 
 const MainHiddenChapter = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [timer, setTimer] = useState(false);
   const [value, setValue] = useState("");
   const location = useLocation();
-
-  const [timer, setTimer] = useState(false);
 
   useEffect(() => {
     const delayTime = setTimeout(() => {

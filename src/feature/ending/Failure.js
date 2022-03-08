@@ -24,8 +24,14 @@ const Failure = () => {
 
   return (
     <Main>
+      <div className="deco">
+        <img src="/assets/policeline.png" />
+      </div>
       <h1 className="ending">{text}</h1>
       {location.state ? <Ending summary={location.state.info} /> : null}
+      <div className="bottom-deco">
+        <img src="/assets/policeline.png" />
+      </div>
     </Main>
   );
 };
@@ -33,15 +39,33 @@ const Failure = () => {
 const Main = styled.div`
   width: 100%;
   height: 100vh;
-
   position: relative;
+  background: var(--black-color) url("assets/blood.png") no-repeat right bottom;
+  overflow: hidden;
+
+  .deco {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(250px, 20px) rotate(20deg) scale(0.8);
+  }
+
+  .bottom-deco {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    transform: translate(-400px, 10px) rotate(20deg) scale(0.8);
+  }
 
   .ending {
-    text-align: center;
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-48%, -50%);
+    color: var(--white-color);
+    text-align: center;
+    font-size: 50px;
+    font-family: var(--nanum-myenogjo-font);
   }
 `;
 

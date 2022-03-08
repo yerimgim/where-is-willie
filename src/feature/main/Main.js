@@ -13,7 +13,7 @@ const Main = () => {
 
   const handleClick = (event) => {
     event.preventDefault();
-    history.push("/mainChapter");
+    history.push("/mainStory");
   };
 
   const onChange = (event) => {
@@ -74,7 +74,7 @@ const Section = styled.section`
 
   h1 {
     font-family: var(--black-hans-Sans-font);
-    font-size: 73px;
+    font-size: 4.5rem;
     font-weight: 400;
   }
 

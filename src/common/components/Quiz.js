@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
+import { AiTwotoneBulb } from "react-icons/ai";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 import { getResult } from "../../modules/quizSlice";
@@ -11,6 +12,8 @@ import StyledTextarea from "./StyledTextarea";
 
 const Quiz = ({ setValue, value, quiz }) => {
   const [isLoading, setIsLoading] = useState(false);
+  const [isToggle, setIsToggle] = useState(false);
+
   const dispatch = useDispatch();
   const history = useHistory();
   const result = useSelector((state) => state.quiz.result);
@@ -22,7 +25,7 @@ const Quiz = ({ setValue, value, quiz }) => {
   const goNextChapter = (event) => {
     event.preventDefault();
 
-    if (quiz.answer === finalResult) {
+    if (quiz.answer[0] === finalResult || quiz.answer[1] === finalResult) {
       history.push({
         pathname: quiz.success[0],
         state: { info: [quiz.success[1], quiz.successHint] },
@@ -43,6 +46,10 @@ const Quiz = ({ setValue, value, quiz }) => {
 
   const onChange = (event) => {
     setValue(event.target.value);
+  };
+
+  const toggleHint = () => {
+    setIsToggle(!isToggle);
   };
 
   return (
@@ -68,7 +75,19 @@ const Quiz = ({ setValue, value, quiz }) => {
               </span>
             </li>
           </ul>
-          <span className="hint">{quiz.hint}</span>
+
+          <AiTwotoneBulb
+            onClick={toggleHint}
+            className="hint-icon"
+          ></AiTwotoneBulb>
+
+          <Link
+            to={{ pathname: quiz.hint[1] }}
+            target="_blank"
+            className={isToggle ? "show-toggle" : "hide-toggle"}
+          >
+            <span className="hint">{quiz.hint[0]}</span>
+          </Link>
         </div>
         <form>
           <MarkupBox>
@@ -124,6 +143,19 @@ const QuizSection = styled.section`
       width: 95%;
       height: 93vh;
     }
+  }
+
+  .hint-icon {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .show-toggle {
+    display: inline-block;
+  }
+
+  .hide-toggle {
+    display: none;
   }
 
   .submit-box {

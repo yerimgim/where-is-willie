@@ -1,5 +1,6 @@
 import React from "react";
 
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const StyledTextarea = ({ placeholder, onChange, value }) => {
@@ -23,5 +24,11 @@ const Textarea = styled.textarea`
   left: 13px;
   line-height: 15px;
 `;
+
+StyledTextarea.propTypes = {
+  placeholder: PropTypes.string,
+  onChange: PropTypes.func,
+  value: PropTypes.string,
+};
 
 export default StyledTextarea;

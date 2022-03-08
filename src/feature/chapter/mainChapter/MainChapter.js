@@ -1,76 +1,69 @@
 import React, { useState, useEffect } from "react";
 
-import { AiOutlineMail, AiOutlineFile } from "react-icons/ai";
-import styled from "styled-components";
+import { IoMailUnreadOutline } from "react-icons/io5";
+import { useLocation } from "react-router-dom";
+import styled, { keyframes } from "styled-components";
 
-import Modal from "../../../common/components/modal/Modal";
+import Evidence from "../../../common/components/Evidence";
 import Quiz from "../../../common/components/Quiz";
 import SoundIcon from "../../../common/components/SoundIcon";
 import quiz from "../../../data/mainChapter.json";
-import Letter from "./Letter";
 
 const MainChapter = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [time, setTime] = useState(false);
-  const [isVisible, setVisible] = useState(false);
   const [value, setValue] = useState("");
-
-  const closeModal = () => {
-    setModalOpen(!modalOpen);
-  };
+  const [isVisible, setVisible] = useState(false);
+  const [timer, setTimer] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setTime(!time);
-    }, 6500);
+    const delayTime = setTimeout(() => {
+      setTimer(!timer);
+    }, 6000);
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(delayTime);
   }, []);
 
   const showQuiz = () => {
     setVisible(!isVisible);
   };
 
+  const location = useLocation();
+
   return (
     <>
       <Main>
-        {time === true ? (
-          <AiOutlineMail
-            className="mail-icon"
-            size="32px"
-            color="white"
-            onClick={closeModal}
-          />
-        ) : null}
-
         <VideoSection>
           <video height="100%" autoPlay>
             <source src="/assets/corridor-illustrator.mp4" type="video/mp4" />
           </video>
         </VideoSection>
 
-        {modalOpen && (
-          <Modal>
-            <Letter closeModal={closeModal} />
-          </Modal>
-        )}
-
-        {time === true ? (
-          <AiOutlineFile
-            size="30px"
-            color="white"
-            className="file-icon"
-            onClick={showQuiz}
-          />
-        ) : null}
+        <IoMailUnreadOutline
+          size="34px"
+          color="white"
+          className="file-icon"
+          onClick={showQuiz}
+        />
 
         <SoundIcon />
+
+        {location.state.info && timer === true ? (
+          <Evidence summary={location.state.info || null} className="info" />
+        ) : null}
 
         {isVisible && <Quiz setValue={setValue} value={value} quiz={quiz} />}
       </Main>
     </>
   );
 };
+
+const blink = keyframes`
+  from {
+    opacity: 1;
+    color: var(--yellow-color);
+  } to {
+    opacity: 0.3;
+  }
+`;
 
 const Main = styled.main`
   display: flex;
@@ -79,17 +72,13 @@ const Main = styled.main`
   height: 100vh;
   background-color: var(--black-color);
 
-  .mail-icon {
-    position: absolute;
-    top: 50px;
-    right: 150px;
-    transition: all 30000s ease-in-out;
-  }
-
   .file-icon {
     position: absolute;
     top: 50px;
     right: 100px;
+    animation: ${blink} 1.5s infinite;
+    animation-delay: 7s;
+    opacity: 0;
   }
 
   .play-icon {

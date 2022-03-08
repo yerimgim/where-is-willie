@@ -40,6 +40,14 @@ const GlobalStyle = createGlobalStyle`
   button {
     cursor: pointer;
   }
+
+  li {
+    list-style: none;
+  }
+
+  input[type="submit"] {
+    cursor: pointer;
+  }
 `;
 
 export default GlobalStyle;

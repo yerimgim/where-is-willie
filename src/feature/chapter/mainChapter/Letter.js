@@ -1,12 +1,23 @@
 import React from "react";
 
+import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 import letter from "../../../data/letter.json";
 
-const Letter = ({ closeModal }) => {
+const Letter = () => {
   const user = useSelector((state) => state.user.name);
+  const history = useHistory();
+
+  const onClick = () => {
+    history.push({
+      pathname: letter.success[0],
+      state: { info: [letter.success[1], letter.successHint] },
+    });
+  };
+
   return (
     <Entry>
       <div className="book">
@@ -17,7 +28,9 @@ const Letter = ({ closeModal }) => {
         </div>
 
         <div className="last-page">
-          <button onClick={closeModal}>XXXXXXX</button>
+          <div className="button-box">
+            <button onClick={onClick}>X 닫기</button>
+          </div>
           <h4>안녕하세요, {user} 탐정님</h4>
           <div className="content">{letter.content}</div>
         </div>
@@ -47,20 +60,23 @@ const Entry = styled.div`
   .cover {
     z-index: 1;
     transition: all 3s;
+    background: url("assets/left-folder.png") no-repeat center;
+    background-size: contain;
+    filter: drop-shadow(1px 1px 3px var(--black-color));
   }
 
   .back-cover {
     z-index: -2;
+    background: url("assets/right-folder.png") no-repeat center;
+    background-size: contain;
   }
 
   .cover,
   .back-cover {
     position: absolute;
     width: 40%;
-    height: 90%;
+    height: 100%;
     border-radius: 2px 20px 20px 2px;
-    background-color: #e5e5e5;
-    box-shadow: 1px 1px 10px var(--light-grey-color);
     transform: rotateX(10deg);
     transform-origin: center left;
   }
@@ -68,8 +84,8 @@ const Entry = styled.div`
   .page,
   .last-page {
     position: absolute;
-    width: 38%;
-    height: 85%;
+    width: 35%;
+    height: 75%;
     border-radius: 2px 10px 10px 2px;
     background-color: var(--white-color);
     transform: rotateX(10deg);
@@ -78,7 +94,7 @@ const Entry = styled.div`
   }
 
   .page:nth-child(2) {
-    transition-duration: 3s;
+    transition-duration: 0.1s;
   }
 
   .page:nth-child(3) {
@@ -94,21 +110,30 @@ const Entry = styled.div`
   }
 
   .last-page {
-    font-size: 40px;
+    font-size: 28px;
     line-height: 60px;
   }
 
   .last-page h4 {
-    margin: 40px;
+    margin: 10px 40px;
   }
 
   .last-page .content {
     margin: 40px;
   }
 
-  .last-page button {
-    font-size: 40px;
+  .button-box {
+    text-align: right;
+
+    button {
+      padding: 20px;
+      font-size: 30px;
+    }
   }
 `;
+
+Letter.propTypes = {
+  closeModal: PropTypes.func,
+};
 
 export default Letter;

@@ -1,15 +1,15 @@
 {
   "strangerInfo": "수상한 자의 정보",
   "willieInfo": "윌리의 정보",
-  "willieInfos": ["파랑색 상의를 자주 입는다는 정보가 들어 있었다"],
-  "content": "수상한 자가 떠난 자리를 살펴보시오.",
-  "cssBefore": "#table { \n display: grid; \n grid-template-columns: 20% 20% 20% 20% 20%;",
+  "willieInfos": [".."],
+  "content": "와인잔에 화이트 와인이 채워져있다.\n붉은색 와인을 채워 숨겨진 글씨를 확인하시오.",
+  "cssBefore": "#wine { ",
   "cssAfter": "}",
-  "answer": "align-content:space-around",
-  "hint":"* grid의 속성 사용해보자",
-  "placeholder":"/* use grid property */",
+  "answer": ["background:red", "background-color:red"],
+  "hint": ["* background의 속성 사용해보자", "https://developer.mozilla.org/ko/docs/Web/CSS/background"],
+  "placeholder":"/* use background property */",
   "success": ["/lastChapter", "범인은 누구일까?"],
   "successHint": ["...음?"],
-  "fail": ["/ending/fail", "The end"],
+  "fail": ["/ending/failure"],
   "failureHint": "누군가 내 어깨를 잡는다."
 }

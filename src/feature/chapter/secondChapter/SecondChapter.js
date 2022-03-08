@@ -41,6 +41,7 @@ const SecondChapter = () => {
         <Photo setIsOpen={setIsOpen} isOpen={isOpen} />
 
         <NewsPaperImg src="assets/newspaper.png" onClick={openModal} />
+
         {modalOpen && (
           <Modal>
             <NewsPaper closeModal={closeModal} />

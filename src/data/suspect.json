@@ -1,0 +1,39 @@
+{
+  "suspect" : [{
+    "no": "용의자 1",
+    "name": "Henry Jack James",
+    "infos": ["30대 남자이다.", "고장난 손목 시계를 차고 있다.", "파랑색 상의를 입고 있다."],
+    "success": "/ending",
+    "img": "assets/suspect1.png",
+    "result": "윌리를 검거하였습니다."
+  }, {
+    "no": "용의자 2",
+    "name": "Lily Winney Noah",
+    "infos": ["20대 여성이다.", "갈색의 자켓을 입고 있다.", "5A 칸의 이용중이다."],
+    "success": "/ending/failure",
+    "img": "assets/suspect2.png",
+    "result": "용의자 2는 범인 윌리가 아닙니다."
+  }, {
+    "no": "용의자 3",
+    "name": "Jason Jack Robert",
+    "infos": ["20대 남성이다.", "손에 물감이 묻어있다", "미들 네임이 Jack이다."],
+    "success": "/ending/failure",
+    "img": "assets/suspect1.png",
+    "result": "용의자 3는 범인 윌리가 아닙니다."
+  }, {
+    "no": "용의자 4",
+    "name": "Wendy Rose Ava",
+    "infos": ["40대 여성이다.", "기차의 승무원이다.", "손목 시계를 차고 있다."],
+    "success": "/ending/failure",
+    "img": "assets/suspect2.png",
+    "result": "용의자 4는 범인 윌리가 아닙니다."
+  }, {
+    "no": "용의자 5",
+    "name": "Wiliam Tomas John",
+    "infos": ["50대 남성이다.", "급하게 열차에 승차를 하였다.", "회색 바지에 물감이 묻어있다"],
+    "success": "/ending/failure",
+    "img": "assets/suspect1.png",
+    "result": "용의자 5는 범인 윌리가 아닙니다."
+  }]
+}
+
