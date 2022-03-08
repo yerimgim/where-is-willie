@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import PropTypes from "prop-types";
-// import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
-// import { getClue } from "../../modules/quizSlice";
+import { getClue } from "../../modules/quizSlice";
 
 const Evidence = ({ summary }) => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getClue(summary[1]));
+  }, [summary[1]]);
+
   return (
     <Entry>
       <h1 className="ending">{Text}</h1>

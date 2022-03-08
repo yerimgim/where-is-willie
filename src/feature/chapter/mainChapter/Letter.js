@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
+import Button from "../../../common/components/Button";
 import letter from "../../../data/letter.json";
 
 const Letter = () => {
@@ -24,13 +25,11 @@ const Letter = () => {
         <div className="cover"></div>
         <div className="page"></div>
         <div className="page first-page">
-          <img src="/assets/steam-train.jpg" />
+          <img src="/assets/steam-train.jpg" alt="기차 이미지" />
         </div>
 
         <div className="last-page">
-          <div className="button-box">
-            <button onClick={onClick}>X 닫기</button>
-          </div>
+          <Button closeModal={onClick} text="X 닫기" />
           <h4>안녕하세요, {user} 탐정님</h4>
           <div className="content">{letter.content}</div>
         </div>

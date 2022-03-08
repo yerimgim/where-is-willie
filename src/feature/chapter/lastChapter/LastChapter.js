@@ -36,15 +36,6 @@ const Entry = styled.main`
   background: url("assets/paper.png");
   border: 25px solid var(--yellow-color);
   box-sizing: border-box;
-
-  .button-box {
-    text-align: right;
-  }
-
-  button {
-    font-size: 50px;
-    color: red;
-  }
 `;
 
 const Content = styled.div`

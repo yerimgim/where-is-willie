@@ -5,7 +5,7 @@
   "cssBefore": "#photo li:first-child { ",
   "cssAfter": "}",
   "answer": ["z-index:1"],
-  "hint": ["* Z-index", "https://developer.mozilla.org/ko/docs/Web/CSS/z-index"],
+  "hint": ["* Z-index를 사용하자", "https://developer.mozilla.org/ko/docs/Web/CSS/z-index"],
   "placeholder":"/* use z-index */",
   "success": ["/secondHiddenChaper", "Chapter 2 - Hidden Page\nJack의 3B칸"],
   "successHint": "즐겨 입는 옷의 색상은 파랑색으로 확인하였다.\n수상한 자의 방을 살펴보세요.",

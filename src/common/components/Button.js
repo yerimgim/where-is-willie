@@ -17,9 +17,7 @@ const ButtonContainer = styled.div`
 
   button {
     padding: 10px;
-    background: var(--blue-color);
     font-size: 35px;
-    color: var(--white-color);
   }
 `;
 

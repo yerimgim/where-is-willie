@@ -37,12 +37,10 @@ const MainStory = () => {
           <p>
             <span>
               전형사: &ldquo; {user} 탐정님, 어제 밤 미술관에서 람브람스의
-              대작이 사라졌습니다. &quot;
+              대작이 사라졌습니다.
             </span>
-          </p>
-          <p>
-            <span>범인 윌리(가명)</span>로 추정되는 사람이 열차를 타고 유럽을
-            빠져나간다는 소문을 입수 하였습니다.
+            범인 윌리(가명) 로 추정되는 사람이 열차를 타고 유럽을 빠져나간다는
+            소문을 입수 하였습니다. &quot;
           </p>
           <p>
             수사에 참여하시려면 <span> 참여하기 버튼</span>을 클릭해주세요.
@@ -104,7 +102,7 @@ const Content = styled.div`
 `;
 
 const Text = styled.div`
-  width: 70%;
+  width: 40%;
   margin: 0 auto;
   padding: 35px 0;
   color: var(--light-grey-color);

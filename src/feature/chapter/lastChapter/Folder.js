@@ -7,13 +7,17 @@ import styled from "styled-components";
 import Button from "../../../common/components/Button";
 
 const Folder = ({ closeModal }) => {
-  const clue = useSelector((state) => console.log(state.clue));
-
-  console.log(clue);
+  const clueInfo = useSelector((state) => state.quiz.clues);
 
   return (
     <Entry>
       <Button closeModal={closeModal} text="X" />
+      <ul>
+        {clueInfo &&
+          clueInfo.map((clue, index) => {
+            return <li key={index}>{clue}</li>;
+          })}
+      </ul>
     </Entry>
   );
 };
@@ -22,6 +26,10 @@ const Entry = styled.div`
   width: 80%;
   height: 80%;
   background: white;
+
+  li {
+    /* color: red; */
+  }
 `;
 
 Folder.propTypes = {
