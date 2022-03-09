@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from "react";
 
-import { IoMailUnreadOutline } from "react-icons/io5";
+import { IoIosMailUnread } from "react-icons/io";
 import { useLocation } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 
 import Evidence from "../../../common/components/Evidence";
 import Quiz from "../../../common/components/Quiz";
-import SoundIcon from "../../../common/components/SoundIcon";
+// import SoundIcon from "../../../common/components/SoundIcon";
 import quiz from "../../../data/mainChapter.json";
 
 const MainChapter = () => {
   const [value, setValue] = useState("");
   const [isVisible, setVisible] = useState(false);
   const [timer, setTimer] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const delayTime = setTimeout(() => {
@@ -26,33 +27,29 @@ const MainChapter = () => {
     setVisible(!isVisible);
   };
 
-  const location = useLocation();
-
   return (
-    <>
-      <Main>
-        <VideoSection>
-          <video height="100%" autoPlay>
-            <source src="/assets/corridor-illustrator.mp4" type="video/mp4" />
-          </video>
-        </VideoSection>
+    <Main>
+      <VideoSection>
+        <video height="100%" poster="/assets/corridor-illustrator.png" autoPlay>
+          <source src="/assets/corridor-illustrator.mp4" type="video/mp4" />
+        </video>
+      </VideoSection>
 
-        <IoMailUnreadOutline
-          size="34px"
-          color="white"
-          className="file-icon"
-          onClick={showQuiz}
-        />
+      <IoIosMailUnread
+        size="34px"
+        color="white"
+        className="file-icon"
+        onClick={showQuiz}
+      />
 
-        <SoundIcon />
+      {/* <SoundIcon /> */}
 
-        {location.state.info && timer === true ? (
-          <Evidence summary={location.state.info || null} className="info" />
-        ) : null}
+      {location.state.info && timer === true ? (
+        <Evidence summary={location.state.info || null} className="info" />
+      ) : null}
 
-        {isVisible && <Quiz setValue={setValue} value={value} quiz={quiz} />}
-      </Main>
-    </>
+      {isVisible && <Quiz setValue={setValue} value={value} quiz={quiz} />}
+    </Main>
   );
 };
 
@@ -81,11 +78,11 @@ const Main = styled.main`
     opacity: 0;
   }
 
-  .play-icon {
+  /* .play-icon {
     position: absolute;
     top: 50px;
     right: 50px;
-  }
+  } */
 `;
 
 const VideoSection = styled.section`

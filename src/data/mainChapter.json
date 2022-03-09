@@ -1,6 +1,6 @@
 {
   "willieInfo": "윌리의 정보",
-  "content": "수상한 사람이 돌아오기 전에 숨겨둔 물체를 확인하세요.",
+  "content": "수상한 사람이 돌아오기 전에 숨겨둔 물체를 확인하세요.\n제한시간 60초 안에 물체를 확인하자",
   "cssBefore": "#hidden-object {",
   "cssAfter": "}",
   "answer": ["visibility:visible",""],
@@ -8,7 +8,8 @@
   "placeholder": "/* use visibility property */",
   "success": ["/mainHiddenChapter", "Chapter1 - Hidden Page 어두운 복도"],
   "successHint": "수상한 자가 숨겨둔 물체(티켓)을/를 확인했습니다.\n티켓을 클릭하여 임무를 확인하세요.",
-  "fail": ["/secondChapter", "Chapter2 탐정의 열차칸"],
-  "failureHint": "수상한 자가 숨겨둔 물체를 확인하지 못했습니다.\n전 형사가 숨겨둔 메시지를 확인하세요."
+  "fail": ["/secondChapter", "Chapter2 - 탐정의 열차칸"],
+  "failureHint": "수상한 자가 숨겨둔 물체를 확인하지 못했습니다.\n전 형사가 숨겨둔 메시지를 확인하세요.",
+  "timer": true
 }
 

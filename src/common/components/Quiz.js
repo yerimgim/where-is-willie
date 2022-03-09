@@ -6,9 +6,11 @@ import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 import { getResult } from "../../modules/quizSlice";
+import Icon from "../Icon";
 import makeKey from "../utils/makeKey";
 import NumberLine from "./NumberLine";
 import StyledTextarea from "./StyledTextarea";
+import Timer from "./Timer";
 
 const Quiz = ({ setValue, value, quiz }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -60,6 +62,7 @@ const Quiz = ({ setValue, value, quiz }) => {
 
       <div className="text-box">
         <div className="info-box">
+          {quiz.timer ? <Timer className="timer" /> : null}
           <h3>{quiz.willieInfos && quiz.willieInfo}</h3>
           <ul>
             {quiz.willieInfos &&
@@ -75,19 +78,18 @@ const Quiz = ({ setValue, value, quiz }) => {
               </span>
             </li>
           </ul>
-
-          <AiTwotoneBulb
-            onClick={toggleHint}
-            className="hint-icon"
-          ></AiTwotoneBulb>
-
-          <Link
-            to={{ pathname: quiz.hint[1] }}
-            target="_blank"
-            className={isToggle ? "show-toggle" : "hide-toggle"}
-          >
-            <span className="hint">{quiz.hint[0]}</span>
-          </Link>
+          <HintContainer>
+            <Icon text="Hint" onClick={toggleHint}>
+              <AiTwotoneBulb className="hint-icon" />
+            </Icon>
+            <Link
+              to={{ pathname: quiz.hint[1] }}
+              target="_blank"
+              className={isToggle ? "show-toggle" : "hide-toggle"}
+            >
+              <span className="hint">{quiz.hint[0]}</span>
+            </Link>
+          </HintContainer>
         </div>
         <form>
           <MarkupBox>
@@ -145,19 +147,6 @@ const QuizSection = styled.section`
     }
   }
 
-  .hint-icon {
-    display: inline-block;
-    cursor: pointer;
-  }
-
-  .show-toggle {
-    display: inline-block;
-  }
-
-  .hide-toggle {
-    display: none;
-  }
-
   .submit-box {
     display: flex;
     justify-content: flex-end;
@@ -187,14 +176,6 @@ const QuizSection = styled.section`
 
     .info-box {
       margin-bottom: 5%;
-    }
-
-    .hint {
-      padding: 3px;
-      font-size: 16px;
-      background-color: var(--light-grey-color);
-      color: var(--white-color);
-      font-family: var(--noto-sans-kr-font);
     }
 
     h3 {
@@ -232,6 +213,27 @@ const QuizSection = styled.section`
     .info-box:hover .highlight .pen {
       background-position: -100% 0;
     }
+  }
+`;
+
+const HintContainer = styled.div`
+  display: flex;
+  align-items: center;
+
+  .show-toggle {
+    visibility: visible;
+  }
+
+  .hide-toggle {
+    visibility: hidden;
+  }
+
+  .hint {
+    padding: 3px;
+    background-color: var(--light-grey-color);
+    color: var(--white-color);
+    font-size: 1rem;
+    font-family: var(--noto-sans-kr-font);
   }
 `;
 

@@ -28,7 +28,7 @@ const Suspects = () => {
             >
               <span>{person.no}</span>
               <div className="img-box">
-                <img src={person.img} alt="용의자 1" />
+                <img src={person.img} alt="용의자 이미지" />
               </div>
               <div className="text-box">
                 <h3>{person.name}</h3>

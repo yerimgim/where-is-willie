@@ -1,17 +1,21 @@
 import React from "react";
 
 import PropTypes from "prop-types";
+import { IoMdClose } from "react-icons/io";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 
-import Button from "../../../common/components/Button";
+import Icon from "../../../common/Icon";
 
 const Folder = ({ onClick }) => {
   const clueInfo = useSelector((state) => state.quiz.clues);
 
   return (
     <Entry>
-      <Button onClick={onClick} text="X 닫기" />
+      <Icon text="닫기" onClick={onClick} type="close">
+        <IoMdClose />
+      </Icon>
+
       <ClueData>
         <h2>단서</h2>
         <img src="assets/masterpiece.png" alt="람브람스의 작품" />

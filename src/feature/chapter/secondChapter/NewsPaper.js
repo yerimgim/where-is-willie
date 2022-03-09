@@ -25,21 +25,24 @@ const NewsPaper = ({ onClick }) => {
 
         <div className="main-article">
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industrys standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. Lorem Ipsum is simply
-            dummy text of the printing and typesetting industry. Lorem Ipsum has
-            been the industrys standard dummy text ever since the 1500s, when an
-            unknown printer took a galley of type and scrambled it to make a
-            type specimen book.
+            지난 15일, A 미술관에서 사상 최대의 미술품으로 인정받고 있는
+            람브람스의 대작이 사라졌다. 도난 당한 람브람스의 대작은 1억 6천만
+            달러로 추정되며 한화로 1550억원에 달하는 것으로 알려져 있다. 이번
+            도난 사건이 화제를 모으고 있는 이유는 지난 7일 B 미술관에서도
+            악센트스의 유화 2점(300만 달러 상당)이 도난 사건이 발생한지 얼마
+            되지 않아 도난 사건이 발생했다는 점에 았다. 경찰은 범인으로
+            윌리(가명)을 쓰는 비밀에 감싸여진 도둑으로 추정하고 있다고 알려왔다.
+            당시 범인은 경찰관으로 위장해 미술관에 들어와 경비원을 묶어두고
+            미술품으로 훔친 것으로 알려왔다. 이에 미술품을 되찾기 위해 B
+            미술관은 범인에 대한 현상금 3억달러를 내걸었다. 두 건의 이은 미술품
+            도난 사건에 우려가 높아지고 있다.
           </p>
         </div>
         <a href="#" className="picture">
           <img src="assets/main.png" height="100%" />
         </a>
         <div className="sub-article">
-          <h2>유명 화가의 예술품을 훔친자는 누구인가?</h2>
+          <h2>경찰은 무엇을 하고 있는가?</h2>
           <p>
             unknown printer took a galley of type and scrambled it to make a
             type specimen book.

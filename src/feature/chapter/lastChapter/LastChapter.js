@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 
-import { VscKey } from "react-icons/vsc";
+import { IoMdPaper } from "react-icons/io";
 import styled from "styled-components";
 
 import Modal from "../../../common/components/modal/Modal";
+import Icon from "../../../common/Icon";
 import Folder from "./Folder";
 import Suspects from "./Suspects";
 
@@ -16,7 +17,10 @@ const LastChapter = () => {
 
   return (
     <Entry>
-      <VscKey onClick={closeModal} size="30px" />
+      <Icon text="사건 파일" onClick={closeModal} type="close">
+        <IoMdPaper size="30px" />
+      </Icon>
+
       <Content>
         {modalOpen && (
           <Modal>
