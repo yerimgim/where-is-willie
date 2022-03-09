@@ -11,7 +11,7 @@ const Suspects = () => {
     <Entry>
       <TextBox>
         <h2>범인 검거</h2>
-        <p>지금까지 얻은 내용을 토대로 범인 검거를 해주세요.</p>
+        <p>지금까지 얻은 내용을 토대로 범인을 검거 해주세요.</p>
       </TextBox>
       <ul>
         {suspect.suspect.map((person, index) => {
@@ -47,16 +47,17 @@ const Suspects = () => {
 };
 
 const TextBox = styled.div`
-  padding: 30px 0;
+  padding: 40px 0;
 `;
 
 const Entry = styled.section`
-  width: 80%;
+  width: 85%;
   height: 60%;
   text-align: center;
 
   h2 {
     font-size: 35px;
+    padding-bottom: 10px;
   }
 
   ul {

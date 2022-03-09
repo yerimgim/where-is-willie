@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 
+import Button from "../../../common/components/Button";
 import Modal from "../../../common/components/modal/Modal";
 import Letter from "./Letter";
 
@@ -24,7 +25,7 @@ const MainStory = () => {
     <Entry>
       <Content>
         <div className="img-box">
-          <img src="assets/masterpiece.png" />
+          <img src="assets/masterpiece.png" alt="작품 이마자" />
         </div>
         <Text>
           <p>새벽 동이 틀 무렵,</p>
@@ -35,33 +36,24 @@ const MainStory = () => {
             </span>
           </p>
           <p>
-            <span>
-              전형사: &ldquo; {user} 탐정님, 어제 밤 미술관에서 람브람스의
-              대작이 사라졌습니다.
-            </span>
+            전형사: &ldquo;{user} 탐정님,{" "}
+            <span>어제 밤 미술관에서 람브람스의 대작이 사라졌습니다. </span>
             범인 윌리(가명) 로 추정되는 사람이 열차를 타고 유럽을 빠져나간다는
             소문을 입수 하였습니다. &quot;
           </p>
           <p>
-            수사에 참여하시려면 <span> 참여하기 버튼</span>을 클릭해주세요.
+            수사에 참여하시려면 <span>참여하기 버튼</span>을 클릭해주세요.
           </p>
         </Text>
 
-        <Buttons>
-          <button className="start" onClick={closeModal}>
-            참여하기
-          </button>
+        <Button onClick={closeModal} text="참여하기" type="start" />
+        <Button onClick={onClick} text="거절하기" type="start" />
 
-          {modalOpen && (
-            <Modal>
-              <Letter closeModal={closeModal} />
-            </Modal>
-          )}
-
-          <button className="start" onClick={onClick}>
-            거절하기
-          </button>
-        </Buttons>
+        {modalOpen && (
+          <Modal>
+            <Letter onClick={closeModal} />
+          </Modal>
+        )}
       </Content>
     </Entry>
   );
@@ -108,6 +100,7 @@ const Text = styled.div`
   color: var(--light-grey-color);
 
   p {
+    padding-top: 5px;
     text-align: left;
     line-height: 1.7;
   }
@@ -115,24 +108,6 @@ const Text = styled.div`
   span {
     color: var(--white-color);
     font-weight: bold;
-  }
-`;
-
-const Buttons = styled.div`
-  button.start {
-    margin: 0 5px;
-    padding: 10px 40px;
-    height: 100%;
-    font-size: 24px;
-    background-color: var(--yellow-color);
-    transition-duration: 0.4s;
-    cursor: pointer;
-
-    &:hover {
-      background: #fff;
-      box-shadow: 0px 2px 10px 5px #97b1bf;
-      color: #000;
-    }
   }
 `;
 

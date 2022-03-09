@@ -6,7 +6,7 @@
   "answer": ["visibility:visible",""],
   "hint": ["* visibility 속성을 사용하자", "https://developer.mozilla.org/ko/docs/Web/CSS/visibility"],
   "placeholder": "/* use visibility property */",
-  "success": ["/mainHiddenChapter", "Chapter 1 - Hidden Page 어두운 복도"],
+  "success": ["/mainHiddenChapter", "Chapter1 - Hidden Page 어두운 복도"],
   "successHint": "수상한 자가 숨겨둔 물체(티켓)을/를 확인했습니다.\n티켓을 클릭하여 임무를 확인하세요.",
   "fail": ["/secondChapter", "Chapter2 탐정의 열차칸"],
   "failureHint": "수상한 자가 숨겨둔 물체를 확인하지 못했습니다.\n전 형사가 숨겨둔 메시지를 확인하세요."

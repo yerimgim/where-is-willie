@@ -1,11 +1,11 @@
 import React from "react";
 
 import PropTypes from "prop-types";
+import { VscChromeClose } from "react-icons/vsc";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
-import Button from "../../../common/components/Button";
 import letter from "../../../data/letter.json";
 
 const Letter = () => {
@@ -29,7 +29,7 @@ const Letter = () => {
         </div>
 
         <div className="last-page">
-          <Button closeModal={onClick} text="X 닫기" />
+          <VscChromeClose onClick={onClick} className="close-button" />
           <h4>안녕하세요, {user} 탐정님</h4>
           <div className="content">{letter.content}</div>
         </div>
@@ -121,13 +121,8 @@ const Entry = styled.div`
     margin: 40px;
   }
 
-  .button-box {
+  .close-button {
     text-align: right;
-
-    button {
-      padding: 20px;
-      font-size: 30px;
-    }
   }
 `;
 

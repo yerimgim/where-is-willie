@@ -37,6 +37,10 @@ const GlobalStyle = createGlobalStyle`
     vertical-align: middle;
   }
 
+  h2 {
+    font-size: 2.2rem;
+  }
+
   button {
     cursor: pointer;
   }

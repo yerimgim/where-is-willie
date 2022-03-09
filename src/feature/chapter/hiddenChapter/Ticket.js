@@ -45,7 +45,7 @@ const Entry = styled.div`
   position: absolute;
   left: 20%;
   bottom: 0%;
-  transform: translate(-20%, 20%);
+  transform: translate(-20%, 0%);
 
   li {
     position: absolute;
@@ -58,11 +58,10 @@ const Entry = styled.div`
     width: 40rem;
     height: 40rem;
     background: none;
-    perspective: 300rem;
   }
 
   .ticket {
-    transform: translateY(300%);
+    transform: translateY(200%);
     background: url("/assets/ticket.png") no-repeat center center;
     background-size: contain;
     animation: ${deal} 3s cubic-bezier(0.1, 0.5, 0.3, 1.5) forwards;

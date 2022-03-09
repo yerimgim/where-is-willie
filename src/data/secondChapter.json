@@ -7,7 +7,7 @@
   "answer": ["z-index:1"],
   "hint": ["* Z-index를 사용하자", "https://developer.mozilla.org/ko/docs/Web/CSS/z-index"],
   "placeholder":"/* use z-index */",
-  "success": ["/secondHiddenChaper", "Chapter 2 - Hidden Page\nJack의 3B칸"],
+  "success": ["/secondHiddenChaper", "Chapter2 - Hidden Page\nJack의 3B칸"],
   "successHint": "즐겨 입는 옷의 색상은 파랑색으로 확인하였다.\n수상한 자의 방을 살펴보세요.",
   "fail": ["/thirdChapter", "Chapter3 북적거리는 식당"],
   "failureHint": "윌리에 대한 정보를 얻지 못했습니다.\n식당에 많은 사람들이 식사를 하고 있습니다.\n수상한 곳을 조사해보세요."

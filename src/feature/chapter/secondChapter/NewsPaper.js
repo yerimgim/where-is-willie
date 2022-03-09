@@ -5,17 +5,17 @@ import styled, { keyframes } from "styled-components";
 
 import Button from "../../../common/components/Button";
 
-const NewsPaper = ({ closeModal }) => {
+const NewsPaper = ({ onClick }) => {
   return (
     <Paper>
-      <Button closeModal={closeModal} text="X" />
+      <Button onClick={onClick} text="X" />
       <Main>
         <h1>The Detactive Times</h1>
 
         <aside>
           <div className="issue">ISSUE #1</div>
           <div className="date">FRIDAY, 16 MAY, XXXX</div>
-          <div className="no">No.11123</div>
+          <div className="no">No.1210</div>
         </aside>
 
         <h2 className="main-title">
@@ -112,7 +112,7 @@ const NewsPaper = ({ closeModal }) => {
 
 const showPaper = keyframes`
   from {
-    opacity: 0
+    opacity: 0;
   }
   to {
     opacity: 100;
@@ -126,7 +126,7 @@ const Paper = styled.div`
   background-size: cover;
   color: var(--blue-color);
   font-family: var(--nanum-myenogjo-font);
-  animation: ${showPaper} 2s;
+  animation: ${showPaper} 2s ease-in-out;
   overflow-y: scroll;
 
   .click-button {
