@@ -1,14 +1,14 @@
 {
   "strangerInfo": "수상한 자의 정보",
   "willieInfo": "윌리의 정보",
-  "willieInfos": ["파랑색 상의를 자주 입는다는 정보가 들어 있었다"],
-  "content": "쇼파 위의 쿠션 사이에 수상한게 있다.\n 쇼파를 가운데로 치워보자.",
+  "willieInfos": ["파랑색 상의를 자주 입는다는 정보가 들어 있었다."],
+  "content": "쇼파 위의 쿠션 사이에 수상한게 있다.\n쿠션을 가운데로 치워보자.",
   "cssBefore": "#letters {\n display: flex;",
   "cssAfter": "}",
   "answer": ["justify-content:center"],
   "hint": ["* flex의 속성 사용해보자", "https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"],
   "placeholder":"/* use flex property */",
-  "success": ["/thirdChapter", "Chapter3 북적거리는 식당칸"],
+  "success": ["/thirdChapter", "Chapter3 - 북적거리는 식당칸"],
   "successHint": "Jack은 윌리의 미들네임이었다는 것을 알게 되었고,\n접선 장소가 식당칸이라는 것을 알게되었다.",
   "fail": ["/ending/failure"],
   "failureHint": "나를 지켜보고 있던 윌리에게 들켰다."

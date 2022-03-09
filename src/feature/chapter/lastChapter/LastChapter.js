@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 
+import { IoMdPaper } from "react-icons/io";
 import styled from "styled-components";
 
 import Modal from "../../../common/components/modal/Modal";
+import Icon from "../../../common/Icon";
 import Folder from "./Folder";
 import Suspects from "./Suspects";
 
@@ -15,13 +17,14 @@ const LastChapter = () => {
 
   return (
     <Entry>
-      <div className="button-box">
-        <button onClick={closeModal}>..</button>
-      </div>
+      <Icon text="사건 파일" onClick={closeModal} type="close">
+        <IoMdPaper size="30px" />
+      </Icon>
+
       <Content>
         {modalOpen && (
           <Modal>
-            <Folder closeModal={closeModal} />
+            <Folder onClick={closeModal} />
           </Modal>
         )}
         <Suspects />
@@ -36,18 +39,11 @@ const Entry = styled.main`
   background: url("assets/paper.png");
   border: 25px solid var(--yellow-color);
   box-sizing: border-box;
-
-  .button-box {
-    text-align: right;
-  }
-
-  button {
-    font-size: 50px;
-    color: red;
-  }
+  position: relative;
 `;
 
 const Content = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;

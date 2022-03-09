@@ -15,40 +15,38 @@ import Main from "../feature/main/Main";
 
 function App() {
   return (
-    <>
-      <Switch>
-        <Route path="/" exact>
-          <Main />
-        </Route>
-        <Route path="/mainStory">
-          <MainStory />
-        </Route>
-        <Route path="/mainChapter">
-          <MainChapter />
-        </Route>
-        <Route path="/mainHiddenChapter">
-          <MainHiddenChapter />
-        </Route>
-        <Route path="/secondChapter">
-          <SecondChapter />
-        </Route>
-        <Route path="/secondHiddenChaper">
-          <SecondHiddenChapter />
-        </Route>
-        <Route path="/thirdChapter">
-          <ThirdChapter />
-        </Route>
-        <Route path="/lastChapter">
-          <LastChapter />
-        </Route>
-        <Route path="/ending" exact>
-          <Success />
-        </Route>
-        <Route path="/ending/failure">
-          <Failure />
-        </Route>
-      </Switch>
-    </>
+    <Switch>
+      <Route path="/" exact>
+        <Main />
+      </Route>
+      <Route path="/mainStory">
+        <MainStory />
+      </Route>
+      <Route path="/mainChapter">
+        <MainChapter />
+      </Route>
+      <Route path="/mainHiddenChapter">
+        <MainHiddenChapter />
+      </Route>
+      <Route path="/secondChapter">
+        <SecondChapter />
+      </Route>
+      <Route path="/secondHiddenChaper">
+        <SecondHiddenChapter />
+      </Route>
+      <Route path="/thirdChapter">
+        <ThirdChapter />
+      </Route>
+      <Route path="/lastChapter">
+        <LastChapter />
+      </Route>
+      <Route path="/ending" exact>
+        <Success />
+      </Route>
+      <Route path="/ending/failure">
+        <Failure />
+      </Route>
+    </Switch>
   );
 }
 

@@ -5,15 +5,19 @@ export const quizSlice = createSlice({
   initialState: {
     isLoading: true,
     result: null,
+    clues: [],
   },
   reducers: {
     getResult: (state, action) => {
       state.isLoading = false;
       state.result = action.payload;
     },
+    getClue: (state, action) => {
+      state.clues.push(action.payload);
+    },
   },
 });
 
-export const { getResult } = quizSlice.actions;
+export const { getResult, getClue } = quizSlice.actions;
 
 export default quizSlice.reducer;

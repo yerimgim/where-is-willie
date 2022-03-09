@@ -1,10 +1,12 @@
 import React from "react";
 
 import PropTypes from "prop-types";
+import { IoMdClose } from "react-icons/io";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
+import Icon from "../../../common/Icon";
 import letter from "../../../data/letter.json";
 
 const Letter = () => {
@@ -24,15 +26,20 @@ const Letter = () => {
         <div className="cover"></div>
         <div className="page"></div>
         <div className="page first-page">
-          <img src="/assets/steam-train.jpg" />
+          <img src="/assets/steam-train.jpg" alt="기차 이미지" />
         </div>
 
         <div className="last-page">
-          <div className="button-box">
-            <button onClick={onClick}>X 닫기</button>
-          </div>
+          <Icon text="닫기" onClick={onClick} type="close">
+            <IoMdClose />
+          </Icon>
+
           <h4>안녕하세요, {user} 탐정님</h4>
           <div className="content">{letter.content}</div>
+          <p className="notification">
+            상단의 <IoMdClose />
+            닫기 버튼을 누르면 게임이 시작됩니다.
+          </p>
         </div>
 
         <div className="back-cover"></div>
@@ -110,8 +117,8 @@ const Entry = styled.div`
   }
 
   .last-page {
-    font-size: 28px;
-    line-height: 60px;
+    font-size: 1.9rem;
+    line-height: 2;
   }
 
   .last-page h4 {
@@ -119,16 +126,18 @@ const Entry = styled.div`
   }
 
   .last-page .content {
-    margin: 40px;
+    margin: 20px;
   }
 
-  .button-box {
-    text-align: right;
-
-    button {
-      padding: 20px;
-      font-size: 30px;
-    }
+  .notification {
+    display: flex;
+    align-items: center;
+    width: calc(100% - 80px);
+    margin: 0 auto;
+    padding: 0 5px;
+    background-color: var(--light-grey-color);
+    font-size: 1rem;
+    font-family: var(--noto-sans-kr-font);
   }
 `;
 

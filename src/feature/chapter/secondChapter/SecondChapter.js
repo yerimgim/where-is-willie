@@ -44,7 +44,7 @@ const SecondChapter = () => {
 
         {modalOpen && (
           <Modal>
-            <NewsPaper closeModal={closeModal} />
+            <NewsPaper onClick={closeModal} />
           </Modal>
         )}
 

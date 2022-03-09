@@ -47,21 +47,21 @@ const Main = styled.div`
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(250px, 20px) rotate(20deg) scale(0.8);
+    transform: translate(300px, 25px) rotate(20deg) scale(0.8);
   }
 
   .bottom-deco {
     position: absolute;
     top: 100%;
     right: 0;
-    transform: translate(-400px, 10px) rotate(20deg) scale(0.8);
+    transform: translate(-250px, 10px) rotate(20deg) scale(0.8);
   }
 
   .ending {
     position: absolute;
-    top: 40%;
+    top: 38%;
     left: 50%;
-    transform: translate(-48%, -50%);
+    transform: translate(-38%, -50%);
     color: var(--white-color);
     text-align: center;
     font-size: 50px;
