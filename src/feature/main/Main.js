@@ -22,31 +22,29 @@ const Main = () => {
   };
 
   return (
-    <>
-      <MainContent>
-        <Section>
-          <span>유명 화가의 예술품을 훔친</span>
-          <h1 className="typing-title">윌리를 찾아서</h1>
-          <form>
-            <input
-              className="text-box"
-              type="text"
-              value={value}
-              onChange={onChange}
-              placeholder="이름을 입력해주세요."
-            />
-            <button
-              className="submit-button"
-              type="button"
-              disabled={!value}
-              onClick={handleClick}
-            >
-              게임 시작하기
-            </button>
-          </form>
-        </Section>
-      </MainContent>
-    </>
+    <MainContent>
+      <Section>
+        <span>유명 화가의 예술품을 훔친</span>
+        <h1 className="typing-title">윌리를 찾아서</h1>
+        <form>
+          <input
+            className="text-box"
+            type="text"
+            value={value}
+            onChange={onChange}
+            placeholder="이름을 입력해주세요."
+          />
+          <button
+            className="submit-button"
+            type="button"
+            disabled={!value}
+            onClick={handleClick}
+          >
+            게임 시작하기
+          </button>
+        </form>
+      </Section>
+    </MainContent>
   );
 };
 
@@ -91,12 +89,19 @@ const Section = styled.section`
 
   .submit-button {
     padding: 15px 20px;
-    background: var(--black-color);
+    background: var(--yellow-color);
     font-family: var(--noto-sans-kr-font);
-    color: white;
+    color: var(--black-color);
     font-size: var(--middle-font-size);
     font-weight: 500;
     cursor: pointer;
+  }
+
+  button:disabled,
+  button[disabled] {
+    background-color: var(--black-color);
+    color: var(--white-color);
+    transition: all 0.6s ease-in-out;
   }
 `;
 
