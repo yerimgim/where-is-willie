@@ -14,6 +14,7 @@ const ImgSection = ({ imgSrc, imgAlt }) => {
 const Img = styled.section`
   width: 55%;
   height: 100vh;
+  object-fit: cover;
 `;
 
 ImgSection.propTypes = {

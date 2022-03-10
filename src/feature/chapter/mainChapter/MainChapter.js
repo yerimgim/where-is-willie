@@ -30,7 +30,7 @@ const MainChapter = () => {
   return (
     <Main>
       <VideoSection>
-        <video height="100%" poster="/assets/corridor-illustrator.png" autoPlay>
+        <video height="100%" autoPlay>
           <source src="/assets/corridor-illustrator.mp4" type="video/mp4" />
         </video>
       </VideoSection>

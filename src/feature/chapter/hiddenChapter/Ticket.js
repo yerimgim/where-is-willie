@@ -15,7 +15,7 @@ const Ticket = ({ setIsOpen, isOpen, style, quiz }) => {
           <ul>
             {quiz.ticket.map((quiz, index) => {
               return (
-                <li style={style} key={index}>
+                <li style={style} key={index} value={style}>
                   {quiz}
                 </li>
               );
@@ -72,6 +72,10 @@ const Entry = styled.div`
     font-family: var(--lora-font);
     letter-spacing: -0.8px;
     opacity: 0.7;
+
+    ${(props) => {
+      console.log(props);
+    }}
   }
 
   .ticket-container {

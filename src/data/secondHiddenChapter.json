@@ -3,7 +3,7 @@
   "willieInfo": "윌리의 정보",
   "willieInfos": ["파랑색 상의를 자주 입는다는 정보가 들어 있었다."],
   "content": "쇼파 위의 쿠션 사이에 수상한게 있다.\n쿠션을 가운데로 치워보자.",
-  "cssBefore": "#letters {\n display: flex;",
+  "cssBefore": "#letters {\n   display: flex;",
   "cssAfter": "}",
   "answer": ["justify-content:flex-end"],
   "hint": ["* flex의 속성 사용해보자", "https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"],

@@ -169,8 +169,6 @@ const QuizSection = styled.section`
     padding: 10px 0;
     background: var(--yellow-color);
     color: var(--black-color);
-    border: 2px solid var(--black-color);
-    box-sizing: border-box;
   }
 
   .text-box {
