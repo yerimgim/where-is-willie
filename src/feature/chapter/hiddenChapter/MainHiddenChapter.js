@@ -23,10 +23,16 @@ const MainHiddenChapter = () => {
     return () => clearTimeout(delayTime);
   }, []);
 
+  const cssInfo = value.replace(/\s/g, "").split(/[\n:;]+/);
+
+  const style = {
+    [cssInfo[0]]: cssInfo[1],
+  };
+
   return (
     <Main>
       <ImgSection imgSrc="/assets/corridor.png" imgAlt="기차 복도 이미지" />
-      <Ticket setIsOpen={setIsOpen} isOpen={isOpen} />
+      <Ticket setIsOpen={setIsOpen} isOpen={isOpen} style={style} quiz={quiz} />
       {!isOpen && location.state && timer === true ? (
         <Evidence summary={location.state.info || null} />
       ) : null}

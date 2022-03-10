@@ -7,7 +7,8 @@ const GlobalStyle = createGlobalStyle`
     --black-hans-Sans-font: "BlackHansSans", sans-serif;
     --nanum-guri-font: "nanum-guri-diary", sans-serif;
     --noto-sans-kr-font: "NotoSansKr", sans-serif;
-    --nanum-my-daughter-font :"NanumMyDaughter", sans-serif;
+    --nanum-my-daughter-font : "NanumMyDaughter", sans-serif;
+    --lora-font: "Lora", sans-serif;
 
     --black-color: #070400;
     --light-grey-color: #C4C4C4;

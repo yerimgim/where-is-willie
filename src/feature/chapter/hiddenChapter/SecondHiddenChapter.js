@@ -23,10 +23,16 @@ const SecondHiddenChapter = () => {
     return () => clearTimeout(delayTime);
   }, [location.state]);
 
+  const cssInfo = value.replace(/\s/g, "").split(/[\n:;]+/);
+
+  const style = {
+    [cssInfo[0]]: cssInfo[1],
+  };
+
   return (
     <Main>
       <ImgSection imgSrc="/assets/passengerRoom.png" imgAlt="수상한자의 방" />
-      <SecretLetter setIsOpen={setIsOpen} isOpen={isOpen} />
+      <SecretLetter setIsOpen={setIsOpen} isOpen={isOpen} style={style} />
 
       {location.state && timer === true ? (
         <Evidence summary={location.state.info || null} />

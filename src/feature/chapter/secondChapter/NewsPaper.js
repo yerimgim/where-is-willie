@@ -57,7 +57,7 @@ const NewsPaper = ({ onClick }) => {
         </div>
         <div className="side-last-article">
           <a href="#" className="picture">
-            <img src="assets/main.png" />
+            <img src="assets/newspaper/poster.jpg" />
           </a>
         </div>
         <div className="advertisement">

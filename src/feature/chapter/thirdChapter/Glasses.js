@@ -3,7 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-const Glasses = ({ setIsOpen, isOpen }) => {
+const Glasses = ({ setIsOpen, isOpen, style }) => {
   const onClick = () => {
     setIsOpen(!isOpen);
   };
@@ -11,7 +11,7 @@ const Glasses = ({ setIsOpen, isOpen }) => {
   return (
     <Entry>
       <div className="photo-container" onClick={onClick}>
-        <img src="assets/wine.png" alt="와인 이미지" />
+        <img src="assets/wine.png" alt="와인 이미지" style={style} />
       </div>
     </Entry>
   );
