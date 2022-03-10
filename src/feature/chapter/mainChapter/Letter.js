@@ -66,7 +66,7 @@ const Entry = styled.div`
 
   .cover {
     z-index: 1;
-    transition: all 3s;
+    transition: all 3s ease-in-out;
     background: url("assets/left-folder.png") no-repeat center;
     background-size: contain;
     filter: drop-shadow(1px 1px 3px var(--black-color));

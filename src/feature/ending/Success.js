@@ -11,8 +11,6 @@ const Success = () => {
   const [text, setText] = useState("");
   const [count, setCount] = useState(0);
 
-  console.log(location.state);
-
   useEffect(() => {
     const interval = setTimeout(() => {
       setText(text + txt[count]);
@@ -39,9 +37,9 @@ const Success = () => {
 };
 
 const Main = styled.div`
+  position: relative;
   width: 100%;
   height: 100vh;
-  position: relative;
   background-color: var(--black-color);
   overflow: hidden;
 
@@ -60,12 +58,12 @@ const Main = styled.div`
   }
 
   .ending {
-    color: var(--white-color);
-    text-align: center;
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-48%, -50%);
+    color: var(--white-color);
+    text-align: center;
     font-size: 50px;
   }
 `;
