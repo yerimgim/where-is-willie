@@ -47,7 +47,6 @@ const Main = styled.main`
   width: 100%;
   height: 100vh;
   background-color: var(--black-color);
-  overflow-y: hidden;
 `;
 
 export default MainHiddenChapter;

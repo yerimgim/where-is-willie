@@ -8,8 +8,6 @@ const SecretLetter = ({ setIsOpen, isOpen, style }) => {
     setIsOpen(!isOpen);
   };
 
-  console.log(style);
-
   return (
     <Entry>
       <div className="hidden-space" style={style}>
@@ -61,9 +59,9 @@ const Entry = styled.div`
 
   img {
     width: 60%;
+    opacity: 0.85;
     cursor: pointer;
     filter: grayscale(100%) drop-shadow(0.1rem 0.1rem 1rem var(--black-color));
-    opacity: 0.85;
 
     &:hover {
       filter: grayscale(0) drop-shadow(0.2rem 0.3rem 1rem var(--yellow-color));

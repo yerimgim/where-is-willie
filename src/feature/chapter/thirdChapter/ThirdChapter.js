@@ -41,7 +41,6 @@ const ThirdChapter = () => {
 
       {isOpen && (
         <Quiz setValue={setValue} value={value} quiz={quiz}>
-          {/* <Letter style={style}></Letter> */}
           <p className="clock" style={style}>
             1210
           </p>
@@ -79,21 +78,9 @@ const Main = styled.main`
     .clock {
       position: absolute;
       top: 340px;
+      background: ;
     }
   }
 `;
-
-// const Letter = styled.div`
-//   position: absolute;
-//   top: 260px;
-//   left: -85px;
-//   transform: perspective(340px) rotateX(46deg);
-//   width: 146px;
-//   height: 120px;
-
-//   opacity: 0.7;
-
-//   filter: blur(16px);
-// `;
 
 export default ThirdChapter;
