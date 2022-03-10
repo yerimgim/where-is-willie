@@ -3,7 +3,7 @@
   "content": "수상한 사람이 돌아오기 전에 숨겨둔 물체를 확인하세요.\n제한시간 60초 안에 물체를 확인하자",
   "cssBefore": "#hidden-object {",
   "cssAfter": "}",
-  "answer": ["visibility:visible",""],
+  "answer": ["visibility:visible", ""],
   "hint": ["* visibility 속성을 사용하자", "https://developer.mozilla.org/ko/docs/Web/CSS/visibility"],
   "placeholder": "/* use visibility property */",
   "success": ["/mainHiddenChapter", "Chapter1 - Hidden Page 어두운 복도"],

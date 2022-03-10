@@ -12,7 +12,7 @@ import NumberLine from "./NumberLine";
 import StyledTextarea from "./StyledTextarea";
 import Timer from "./Timer";
 
-const Quiz = ({ setValue, value, quiz }) => {
+const Quiz = ({ setValue, value, quiz, children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isToggle, setIsToggle] = useState(false);
 
@@ -55,78 +55,88 @@ const Quiz = ({ setValue, value, quiz }) => {
   };
 
   return (
-    <QuizSection>
-      <div className="img-box">
-        <img src="/assets/file-folder.png" alt="파일 폴더 이미지" />
-      </div>
-
-      <div className="text-box">
-        <div className="info-box">
-          {quiz.timer ? <Timer className="timer" /> : null}
-          <h3>{quiz.willieInfos && quiz.willieInfo}</h3>
-          <ul>
-            {quiz.willieInfos &&
-              quiz.willieInfos.map((info) => {
-                return <li key={makeKey()}>{info}</li>;
-              })}
-          </ul>
-          <h3>임무</h3>
-          <ul>
-            <li>
-              <span className="highlight">
-                <span className="pen">{quiz.content}</span>
-              </span>
-            </li>
-          </ul>
-          <HintContainer>
-            <Icon text="Hint" onClick={toggleHint}>
-              <AiTwotoneBulb className="hint-icon" />
-            </Icon>
-            <Link
-              to={{ pathname: quiz.hint[1] }}
-              target="_blank"
-              className={isToggle ? "show-toggle" : "hide-toggle"}
-            >
-              <span className="hint">{quiz.hint[0]}</span>
-            </Link>
-          </HintContainer>
+    <>
+      <View>{children}</View>
+      <QuizSection>
+        <div className="img-box">
+          <img src="/assets/file-folder.png" alt="파일 폴더 이미지" />
         </div>
-        <form>
-          <MarkupBox>
-            <NumberLine />
-            <Markup>
-              {quiz.cssBefore}
-              <StyledTextarea
-                placeholder={quiz.placeholder}
-                onChange={onChange}
-                value={value}
-              />
-              {quiz.cssAfter}
-            </Markup>
-          </MarkupBox>
-          {isLoading || (
+
+        <div className="text-box">
+          <div className="info-box">
+            {quiz.timer ? <Timer className="timer" /> : null}
+            <h3>{quiz.willieInfos && quiz.willieInfo}</h3>
+            <ul>
+              {quiz.willieInfos &&
+                quiz.willieInfos.map((info) => {
+                  return <li key={makeKey()}>{info}</li>;
+                })}
+            </ul>
+            <h3>임무</h3>
+            <ul>
+              <li>
+                <span className="highlight">
+                  <span className="pen">{quiz.content}</span>
+                </span>
+              </li>
+            </ul>
+            <HintContainer>
+              <Icon text="Hint" onClick={toggleHint}>
+                <AiTwotoneBulb className="hint-icon" />
+              </Icon>
+              <Link
+                to={{ pathname: quiz.hint[1] }}
+                target="_blank"
+                className={isToggle ? "show-toggle" : "hide-toggle"}
+              >
+                <span className="hint">{quiz.hint[0]}</span>
+              </Link>
+            </HintContainer>
+          </div>
+          <form>
+            <MarkupBox>
+              <NumberLine />
+              <Markup>
+                {quiz.cssBefore}
+                <StyledTextarea
+                  placeholder={quiz.placeholder}
+                  onChange={onChange}
+                  value={value}
+                />
+                {quiz.cssAfter}
+              </Markup>
+            </MarkupBox>
+            {isLoading || (
+              <div className="submit-box">
+                <input
+                  type="submit"
+                  onClick={handleClick}
+                  disabled={!value}
+                  value="확인"
+                />
+              </div>
+            )}
+          </form>
+
+          {isLoading && (
             <div className="submit-box">
-              <input
-                type="submit"
-                onClick={handleClick}
-                disabled={!value}
-                value="확인"
-              />
+              <button onClick={goNextChapter} className="next-btn">
+                계속
+              </button>
             </div>
           )}
-        </form>
-
-        {isLoading && (
-          <div className="submit-box">
-            <button onClick={goNextChapter} className="next-btn">
-              계속
-            </button>
-          </div>
-        )}
-      </div>
-    </QuizSection>
+        </div>
+      </QuizSection>
+    </>
   );
 };
+
+const View = styled.div`
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  transform: translate(-25%, -40%);
+`;
 
 const QuizSection = styled.section`
   position: relative;
@@ -157,8 +167,10 @@ const QuizSection = styled.section`
     width: 30%;
     margin: 10px 0;
     padding: 10px 0;
-    background-color: var(--black-color);
-    color: var(--white-color);
+    background: var(--yellow-color);
+    color: var(--black-color);
+    border: 2px solid var(--black-color);
+    box-sizing: border-box;
   }
 
   .text-box {

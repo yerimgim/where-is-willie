@@ -34,6 +34,12 @@ const SecondChapter = () => {
     setModalOpen(!modalOpen);
   };
 
+  const cssInfo = value.replace(/\s/g, "").split(/[\n:;]+/);
+
+  const style = {
+    [cssInfo[0]]: cssInfo[1],
+  };
+
   return (
     <>
       <Main>
@@ -52,7 +58,40 @@ const SecondChapter = () => {
           <Evidence summary={location.state.info || null} />
         ) : null}
 
-        {isOpen && <Quiz setValue={setValue} value={value} quiz={quiz} />}
+        {isOpen && (
+          <Quiz setValue={setValue} value={value} quiz={quiz}>
+            <PhotoList
+              onClick={() => {
+                setIsOpen(!isOpen);
+              }}
+            >
+              <li style={style}>
+                <img src="assets/photo/person.png" alt="첫번째사진 이미지" />
+              </li>
+              <li>
+                <img src="assets/photo/person1.png" alt="두번째 사진 이미지" />
+              </li>
+              <li>
+                <img src="assets/photo/person2.png" alt="세번째 사진 이미지" />
+              </li>
+              <li>
+                <img src="assets/photo/person3.png" alt="네번째 사진 이미지" />
+              </li>
+              <li>
+                <img
+                  src="assets/photo/person4.png"
+                  alt="다섯번째 사진 이미지"
+                />
+              </li>
+              <li>
+                <img
+                  src="assets/photo/person5.png"
+                  alt="여섯번째 사진 이미지"
+                />
+              </li>
+            </PhotoList>
+          </Quiz>
+        )}
       </Main>
     </>
   );
@@ -79,6 +118,20 @@ const NewsPaperImg = styled.img`
     filter: grayscale(0);
     filter: drop-shadow(0.2rem 0.3rem 1rem var(--yellow-color));
     transition: all 0.3s ease-in-out;
+  }
+`;
+
+const PhotoList = styled.ul`
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  animation-delay: 1s;
+  top: 40%;
+  left: 25%;
+  transform: translate(-25%, -40%);
+
+  li {
+    position: absolute;
   }
 `;
 

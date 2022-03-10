@@ -5,7 +5,7 @@
   "content": "쇼파 위의 쿠션 사이에 수상한게 있다.\n쿠션을 가운데로 치워보자.",
   "cssBefore": "#letters {\n display: flex;",
   "cssAfter": "}",
-  "answer": ["justify-content:center"],
+  "answer": ["justify-content:flex-end"],
   "hint": ["* flex의 속성 사용해보자", "https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"],
   "placeholder":"/* use flex property */",
   "success": ["/thirdChapter", "Chapter3 - 북적거리는 식당칸"],
