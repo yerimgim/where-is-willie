@@ -6,8 +6,8 @@ import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 import { getResult } from "../../modules/quizSlice";
-import Icon from "../Icon";
 import makeKey from "../utils/makeKey";
+import Icon from "./Icon";
 import NumberLine from "./NumberLine";
 import StyledTextarea from "./StyledTextarea";
 import Timer from "./Timer";

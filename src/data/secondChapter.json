@@ -5,7 +5,6 @@
   "cssBefore": "#photo li {\n   position: absolute; \n} \n\n#photo li:first-child { ",
   "cssAfter": "}",
   "answer": ["z-index:1"],
-  "pictures": ["assets/photo/person.png", "assets/photo/person1.png", "assets/photo/person2.png", "assets/photo/person3.png", "assets/photo/person4.png", "assets/photo/person5.png"],
   "hint": ["* Z-index를 사용하자", "https://developer.mozilla.org/ko/docs/Web/CSS/z-index"],
   "placeholder":"/* use z-index */",
   "success": ["/secondHiddenChaper", "Chapter2 - Hidden Page\nJack의 3B칸"],

@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
-import Icon from "../../../common/Icon";
+import Icon from "../../../common/components/Icon";
 import letter from "../../../data/letter.json";
 
 const Letter = () => {

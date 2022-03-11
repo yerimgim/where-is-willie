@@ -1,14 +1,18 @@
 import React from "react";
 
 import PropTypes from "prop-types";
+import { IoMdClose } from "react-icons/io";
 import styled, { keyframes } from "styled-components";
 
-import Button from "../../../common/components/Button";
+import Icon from "../../../common/components/Icon";
 
 const NewsPaper = ({ onClick }) => {
   return (
     <Paper>
-      <Button onClick={onClick} text="X" />
+      <Icon onClick={onClick} type="close" text="닫기">
+        <IoMdClose />
+      </Icon>
+
       <Main>
         <h1>The Detactive Times</h1>
 
@@ -49,7 +53,7 @@ const NewsPaper = ({ onClick }) => {
           </p>
         </div>
         <div className="side-middle-article">
-          <h2>유명 화가의 예술품을 훔친자는 누구인가?</h2>
+          <h2>사라진 </h2>
           <p>
             unknown printer took a galley of type and scrambled it to make a
             type specimen book.

@@ -26,6 +26,7 @@ const Entry = styled.div`
 
   img {
     width: 56%;
+
     &:hover {
       cursor: pointer;
       filter: drop-shadow(0.1rem 0.1rem 0.8rem var(--yellow-color));
@@ -34,6 +35,7 @@ const Entry = styled.div`
 
   @media all and (min-width: 1700px) and (max-width: 1920px) {
     left: 29%;
+
     img {
       min-width: 69%;
     }

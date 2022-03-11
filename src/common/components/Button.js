@@ -28,9 +28,11 @@ const ButtonContainer = styled.div`
       display: inline-block;
       width: 16%;
 
+
+
       button {
         height: 100%;
-        margin: 0 5px;
+        // margin: 0 5px;
         padding: 10px 40px;
         background-color: var(--yellow-color);
         font-size: 24px;

@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { IoMdPaper } from "react-icons/io";
 import styled from "styled-components";
 
+import Icon from "../../../common/components/Icon";
 import Modal from "../../../common/components/modal/Modal";
-import Icon from "../../../common/Icon";
 import Folder from "./Folder";
 import Suspects from "./Suspects";
 

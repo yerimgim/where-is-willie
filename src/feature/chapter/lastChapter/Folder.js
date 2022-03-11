@@ -5,7 +5,7 @@ import { IoMdClose } from "react-icons/io";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 
-import Icon from "../../../common/Icon";
+import Icon from "../../../common/components/Icon";
 
 const Folder = ({ onClick }) => {
   const clueInfo = useSelector((state) => state.quiz.clues);

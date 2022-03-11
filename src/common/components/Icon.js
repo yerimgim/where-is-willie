@@ -29,7 +29,6 @@ const ButtonContainer = styled.div`
       font-size: 30px;
 
       span {
-        padding: 10px 0;
         font-size: 1rem;
       }
     `
