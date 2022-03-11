@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
+import Modal from "../../../common/components/modal/Modal";
 import suspect from "../../../data/suspect.json";
+import Folder from "./Folder";
 
 const Suspects = () => {
-  const history = useHistory();
+  // const history = useHistory();
+
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const closeModal = () => {
+    setModalOpen(!modalOpen);
+  };
+
   return (
     <Entry>
       <TextBox>
@@ -16,16 +25,7 @@ const Suspects = () => {
       <ul>
         {suspect.suspect.map((person, index) => {
           return (
-            <li
-              className="suspect"
-              key={index}
-              onClick={() => {
-                history.push({
-                  pathname: person.success,
-                  state: { info: [null, person.result] },
-                });
-              }}
-            >
+            <li className="suspect" key={index} onClick={closeModal}>
               <span>{person.no}</span>
               <div className="img-box">
                 <img src={person.img} alt="용의자 이미지" />
@@ -41,6 +41,12 @@ const Suspects = () => {
             </li>
           );
         })}
+
+        {modalOpen && (
+          <Modal>
+            <Folder onClick={closeModal} />
+          </Modal>
+        )}
       </ul>
     </Entry>
   );

@@ -64,17 +64,17 @@ const NewsPaper = ({ onClick }) => {
             <img src="assets/newspaper/poster.jpg" />
           </a>
         </div>
-        <div className="advertisement">
+        <div className="artwork-info">
           <a href="#">
             <img src="assets/main.png" height="10%" />
           </a>
         </div>
 
         <div className="side-bar">
-          <h3>example1</h3>
+          <h3>사라진 람브람스의 예술품</h3>
           <div>
             <a href="#" className="picture">
-              <img src="assets/main.png" />
+              <img src="assets/masterpiece.png" alt="그림" />
             </a>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -208,9 +208,18 @@ const Main = styled.main`
     div {
       padding: 0.5rem 0;
     }
+
+    img {
+      filter: grayscale(100%);
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        filter: grayscale(0%);
+      }
+    }
   }
 
-  .advertisement {
+  .artwork-info {
     grid-column: 1 / -1;
     grid-row: 6;
     padding-top: 1rem;

@@ -1,32 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 
-import { IoMdPaper } from "react-icons/io";
+// import { IoMdPaper } from "react-icons/io";
 import styled from "styled-components";
 
-import Icon from "../../../common/components/Icon";
-import Modal from "../../../common/components/modal/Modal";
-import Folder from "./Folder";
+// import Icon from "../../../common/components/Icon";
+
 import Suspects from "./Suspects";
 
 const LastChapter = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-
-  const closeModal = () => {
-    setModalOpen(!modalOpen);
-  };
-
   return (
     <Entry>
-      <Icon text="사건 파일" onClick={closeModal} type="close">
-        <IoMdPaper size="30px" />
-      </Icon>
+      {/* <Icon text="사건 파일" onClick={closeModal} type="close"> */}
+      {/* <IoMdPaper size="30px" /> */}
+      {/* </Icon> */}
 
       <Content>
-        {modalOpen && (
-          <Modal>
-            <Folder onClick={closeModal} />
-          </Modal>
-        )}
         <Suspects />
       </Content>
     </Entry>
