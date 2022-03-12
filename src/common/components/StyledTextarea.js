@@ -5,14 +5,12 @@ import styled from "styled-components";
 
 const StyledTextarea = ({ placeholder, onChange, value }) => {
   return (
-    <>
-      <Textarea
-        placeholder={placeholder}
-        onChange={onChange}
-        value={value}
-        autoFocus
-      ></Textarea>
-    </>
+    <Textarea
+      placeholder={placeholder}
+      onChange={onChange}
+      value={value}
+      autoFocus
+    ></Textarea>
   );
 };
 

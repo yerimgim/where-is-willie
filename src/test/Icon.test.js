@@ -1,11 +1,24 @@
 import React from "react";
 
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 
 import Icon from "../common/components/Icon";
 
 describe("<Icon />", () => {
-  test("Icon test", () => {
-    const utils = render(<Icon text="닫기" />);
+  test("<Icon /> - getByText", () => {
+    const text = "닫기";
+
+    render(<Icon text={text} />);
+
+    expect(screen.getByText(text)).toBeInTheDocument();
+  });
+
+  test("<Icon /> - onClick", () => {
+    const handleClick = jest.fn();
+
+    render(<Icon onClick={handleClick}>close</Icon>);
+
+    fireEvent.click(screen.getByText(/close/i));
+    expect(handleClick).toHaveBeenCalledTimes(1);
   });
 });

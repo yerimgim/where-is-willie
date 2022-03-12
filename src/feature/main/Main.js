@@ -33,6 +33,7 @@ const Main = () => {
             value={value}
             onChange={onChange}
             placeholder="이름을 입력해주세요."
+            data-testid="add-input"
           />
           <button
             className="submit-button"
