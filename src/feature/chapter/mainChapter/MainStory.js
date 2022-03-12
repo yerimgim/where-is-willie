@@ -25,7 +25,7 @@ const MainStory = () => {
     <Entry>
       <Content>
         <div className="img-box">
-          <img src="assets/masterpiece.png" alt="작품 이마자" />
+          <img src="assets/masterpiece.png" alt="작품 이미지" />
         </div>
         <Text>
           <p>새벽 동이 틀 무렵,</p>

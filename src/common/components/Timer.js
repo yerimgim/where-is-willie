@@ -12,12 +12,12 @@ const Timer = () => {
   const history = useHistory();
 
   useEffect(() => {
-    const countDown = setInterval(() => {
+    const countDown = setTimeout(() => {
       if (parseInt(seconds) > 0) {
         setSeconds(parseInt(seconds) - 1);
       } else if (parseInt(seconds) === 0) {
         if (parseInt(minutes) === 0) {
-          clearInterval(countDown);
+          clearTimeout(countDown);
           history.push({
             pathname: quiz.fail[0],
             state: { info: [quiz.fail[1], quiz.failureHint] },
@@ -28,18 +28,16 @@ const Timer = () => {
         }
       }
     }, 1000);
-    return () => clearInterval(countDown);
+    return () => clearTimeout(countDown);
   }, [minutes, seconds]);
 
   return (
-    <>
-      <Time>
-        <IoMdAlarm size="25" />
-        <p>
-          {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
-        </p>
-      </Time>
-    </>
+    <Time>
+      <IoMdAlarm size="25" title="alarm icon" />
+      <p>
+        {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
+      </p>
+    </Time>
   );
 };
 

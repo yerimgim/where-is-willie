@@ -1,8 +1,10 @@
 import React from "react";
 
-import { fireEvent, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 
 import Icon from "../common/components/Icon";
+
+afterEach(cleanup);
 
 describe("<Icon />", () => {
   test("<Icon /> - getByText", () => {
@@ -20,5 +22,11 @@ describe("<Icon />", () => {
 
     fireEvent.click(screen.getByText(/close/i));
     expect(handleClick).toHaveBeenCalledTimes(1);
+  });
+
+  test("<Icon /> - type", () => {
+    const { container } = render(<Icon variant="default" />);
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

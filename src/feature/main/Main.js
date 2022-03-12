@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 import { getUserName } from "../../modules/nameSlice";
 
@@ -35,6 +35,7 @@ const Main = () => {
             placeholder="이름을 입력해주세요."
             data-testid="add-input"
           />
+
           <button
             className="submit-button"
             type="button"
@@ -50,14 +51,48 @@ const Main = () => {
 };
 
 const MainContent = styled.main`
+  position: relative;
   width: 100%;
   height: 100vh;
   background: beige;
-  position: relative;
   background-image: url("/assets/main.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+`;
+
+const shake = keyframes`
+  0%,
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transform-origin: 50% 0;
+            transform-origin: 50% 0;
+  }
+  10% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: rotate(-4deg);
+            transform: rotate(-4deg);
+  }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: rotate(4deg);
+            transform: rotate(4deg);
+  }
+  80% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+  90% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
 `;
 
 const Section = styled.section`
@@ -103,6 +138,10 @@ const Section = styled.section`
     background-color: var(--black-color);
     color: var(--white-color);
     transition: all 0.6s ease-in-out;
+
+    &:hover {
+      animation: ${shake} 0.8s cubic-bezier(0.5, 0.3, 0.5, 1);
+    }
   }
 `;
 

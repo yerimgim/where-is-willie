@@ -9,13 +9,11 @@ const Photo = ({ setIsOpen, isOpen }) => {
   };
 
   return (
-    <>
-      <Entry>
-        <div className="photo-container" onClick={onClick}>
-          <img src="assets/people.png" alt="사진 모음 이미지" />
-        </div>
-      </Entry>
-    </>
+    <Entry>
+      <div className="photo-container" onClick={onClick}>
+        <img src="assets/people.png" alt="사진 모음 이미지" />
+      </div>
+    </Entry>
   );
 };
 

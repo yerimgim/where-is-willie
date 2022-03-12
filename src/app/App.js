@@ -2,6 +2,7 @@ import React from "react";
 
 import { Route, Switch } from "react-router-dom";
 
+import Notfound from "../common/components/Notfound";
 import MainHiddenChapter from "../feature/chapter/hiddenChapter/MainHiddenChapter";
 import SecondHiddenChapter from "../feature/chapter/hiddenChapter/SecondHiddenChapter";
 import LastChapter from "../feature/chapter/lastChapter/LastChapter";
@@ -16,36 +17,17 @@ import Main from "../feature/main/Main";
 function App() {
   return (
     <Switch>
-      <Route path="/" exact>
-        <Main />
-      </Route>
-      <Route path="/mainStory">
-        <MainStory />
-      </Route>
-      <Route path="/mainChapter">
-        <MainChapter />
-      </Route>
-      <Route path="/mainHiddenChapter">
-        <MainHiddenChapter />
-      </Route>
-      <Route path="/secondChapter">
-        <SecondChapter />
-      </Route>
-      <Route path="/secondHiddenChaper">
-        <SecondHiddenChapter />
-      </Route>
-      <Route path="/thirdChapter">
-        <ThirdChapter />
-      </Route>
-      <Route path="/lastChapter">
-        <LastChapter />
-      </Route>
-      <Route path="/ending" exact>
-        <Success />
-      </Route>
-      <Route path="/ending/failure">
-        <Failure />
-      </Route>
+      <Route path="/" component={Main} exact />
+      <Route path="/mainStory" component={MainStory} />
+      <Route path="/mainChapter" component={MainChapter} />
+      <Route path="/mainHiddenChapter" component={MainHiddenChapter} />
+      <Route path="/secondChapter" component={SecondChapter} />
+      <Route path="/secondHiddenChaper" component={SecondHiddenChapter} />
+      <Route path="/thirdChapter" component={ThirdChapter} />
+      <Route path="/lastChapter" component={LastChapter} />
+      <Route path="/ending" component={Success} exact />
+      <Route path="/ending/failure" component={Failure} />
+      <Route path="*" component={Notfound} />
     </Switch>
   );
 }

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Photo /> <Photo /> - onClick 1`] = `
+<div
+  class="sc-bdvvtL gFPPuV"
+>
+  <div
+    class="photo-container"
+  >
+    <img
+      alt="사진 모음 이미지"
+      src="assets/people.png"
+    />
+  </div>
+</div>
+`;

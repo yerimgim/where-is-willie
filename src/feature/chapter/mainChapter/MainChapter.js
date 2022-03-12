@@ -6,7 +6,6 @@ import styled, { keyframes } from "styled-components";
 
 import Evidence from "../../../common/components/Evidence";
 import Quiz from "../../../common/components/Quiz";
-// import SoundIcon from "../../../common/components/SoundIcon";
 import quiz from "../../../data/mainChapter.json";
 
 const MainChapter = () => {
@@ -41,8 +40,6 @@ const MainChapter = () => {
         className="file-icon"
         onClick={showQuiz}
       />
-
-      {/* <SoundIcon /> */}
 
       {location.state.info && timer === true ? (
         <Evidence summary={location.state.info || null} className="info" />
