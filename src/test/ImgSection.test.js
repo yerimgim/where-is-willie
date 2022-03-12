@@ -12,7 +12,5 @@ describe("<ImgSection />", () => {
     const image = render(<ImgSection imgSrc={imgSrc} imgAlt={imgAlt} />);
 
     expect(image).toBeTruthy();
-
-    // expect(inp).toHaveAttribute("placeholder", "test")
   });
 });

@@ -10,6 +10,10 @@ const Ending = ({ summary }) => {
     history.push("/");
   };
 
+  if (!summary || !summary.length) {
+    return <div>empty</div>;
+  }
+
   return (
     <Entry>
       {summary.map((value, index) => {
