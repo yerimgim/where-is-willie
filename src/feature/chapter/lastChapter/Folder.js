@@ -50,7 +50,8 @@ const Entry = styled.section`
 `;
 
 Folder.propTypes = {
-  closeModal: PropTypes.func,
+  onClick: PropTypes.func,
+  personInfo: PropTypes.object,
 };
 
 export default Folder;

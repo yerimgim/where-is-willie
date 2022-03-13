@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import PropTypes from "prop-types";
 import { IoMdClose } from "react-icons/io";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
@@ -75,5 +76,9 @@ const ClueContainer = styled.div`
   overflow-y: scroll;
   font-family: var(--nanum-my-daughter-font);
 `;
+
+Suspects.propTypes = {
+  inference: PropTypes.arrayOf(PropTypes.string),
+};
 
 export default Suspects;

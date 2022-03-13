@@ -28,7 +28,7 @@ const Textarea = styled.textarea`
 `;
 
 StyledTextarea.propTypes = {
-  placeholder: PropTypes.string,
+  placeholder: PropTypes.string.isRequired,
   onChange: PropTypes.func,
   value: PropTypes.string,
 };

@@ -21,8 +21,8 @@ const Watch = ({ setModalOpen, modalOpen }) => {
 
 const Main = styled.div`
   position: absolute;
-  width: 30%;
   left: 10%;
+  width: 30%;
 
   img {
     width: 60%;
@@ -30,11 +30,11 @@ const Main = styled.div`
   }
 
   p {
-    text-align: center;
     padding: 5px;
     background-color: var(--black-color);
-    font-size: 2rem;
     color: var(--white-color);
+    text-align: center;
+    font-size: 2rem;
   }
 `;
 

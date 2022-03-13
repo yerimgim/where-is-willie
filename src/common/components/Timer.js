@@ -18,6 +18,7 @@ const Timer = () => {
       } else if (parseInt(seconds) === 0) {
         if (parseInt(minutes) === 0) {
           clearTimeout(countDown);
+
           history.push({
             pathname: quiz.fail[0],
             state: { info: [quiz.fail[1], quiz.failureHint] },
@@ -33,7 +34,7 @@ const Timer = () => {
 
   return (
     <Time>
-      <IoMdAlarm size="25" title="alarm icon" />
+      <IoMdAlarm size="25" title="시계 아이콘 이미지" />
       <p>
         {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
       </p>
@@ -42,10 +43,10 @@ const Timer = () => {
 };
 
 const Time = styled.div`
-  position: absolute;
-  right: 0;
   display: flex;
   align-items: center;
+  position: absolute;
+  right: 0;
   padding: 0 10px;
 
   p {

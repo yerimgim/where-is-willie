@@ -14,9 +14,9 @@ import Watch from "./Watch";
 const SecondHiddenChapter = () => {
   const [value, setValue] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
   const [timer, setTimer] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const delayTime = setTimeout(() => {

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import PropTypes from "prop-types";
 import { AiTwotoneBulb } from "react-icons/ai";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
@@ -262,5 +263,12 @@ const Markup = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
+Quiz.propTypes = {
+  setValue: PropTypes.func,
+  value: PropTypes.string,
+  quiz: PropTypes.object,
+  children: PropTypes.element,
+};
 
 export default Quiz;

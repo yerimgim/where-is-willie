@@ -105,15 +105,15 @@ const SecondChapter = () => {
 
 const Main = styled.main`
   display: flex;
+  position: relative;
   width: 100%;
   height: 100vh;
-  position: relative;
   background-color: var(--black-color);
 `;
 
 const NewsPaperImg = styled.img`
-  width: 9%;
   position: absolute;
+  width: 9%;
   top: 72%;
   left: 12%;
   opacity: 0.8;
@@ -128,12 +128,12 @@ const NewsPaperImg = styled.img`
 `;
 
 const PhotoList = styled.ul`
-  width: 350px;
-  height: 350px;
   position: absolute;
-  animation-delay: 1s;
   top: 40%;
   left: 25%;
+  width: 350px;
+  height: 350px;
+  animation-delay: 1s;
   transform: translate(-25%, -40%);
 
   li {
@@ -142,6 +142,7 @@ const PhotoList = styled.ul`
 
   li:first-child {
     filter: drop-shadow(0.2rem 0.3rem 1.5rem var(--black-color));
+
     &:hover {
       filter: drop-shadow(0.2rem 0.3rem 1rem var(--yellow-color));
       transition: all 0.3s ease-in-out;

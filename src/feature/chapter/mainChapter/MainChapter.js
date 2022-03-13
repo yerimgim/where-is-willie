@@ -52,8 +52,8 @@ const MainChapter = () => {
 
 const blink = keyframes`
   from {
-    opacity: 1;
     color: var(--yellow-color);
+    opacity: 1;
   } to {
     opacity: 0.3;
   }

@@ -1,5 +1,6 @@
 import React from "react";
 
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Button = ({ onClick, text, type }) => {
@@ -46,5 +47,11 @@ const ButtonContainer = styled.div`
       : null;
   }}
 `;
+
+Button.propTypes = {
+  onClick: PropTypes.func,
+  text: PropTypes.string,
+  type: PropTypes.string,
+};
 
 export default Button;

@@ -28,7 +28,6 @@ const List = styled.ul`
     align-items: center;
     justify-content: flex-end;
     height: 15px;
-    padding: 0;
     font-size: 0.9rem;
     text-align: right;
   }

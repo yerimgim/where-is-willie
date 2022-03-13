@@ -3,7 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-const Glasses = ({ setIsOpen, isOpen }) => {
+const Wine = ({ setIsOpen, isOpen }) => {
   const onClick = () => {
     setIsOpen(!isOpen);
   };
@@ -42,9 +42,9 @@ const Entry = styled.div`
   }
 `;
 
-Glasses.propTypes = {
+Wine.propTypes = {
   setIsOpen: PropTypes.func,
   isOpen: PropTypes.bool,
 };
 
-export default Glasses;
+export default Wine;

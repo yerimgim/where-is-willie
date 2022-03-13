@@ -34,8 +34,8 @@ const fadeIn = keyframes`
 
 const Entry = styled.ul`
   position: absolute;
-  left: 58%;
   top: 40%;
+  left: 58%;
   transform: translateY(-50%);
   font-family: var(--noto-sans-kr-font);
   animation: ${fadeIn} 2s ease-in-out;

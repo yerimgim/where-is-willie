@@ -49,6 +49,7 @@ Icon.propTypes = {
   text: PropTypes.string,
   onClick: PropTypes.func,
   children: PropTypes.any,
+  type: PropTypes.string,
 };
 
 export default Icon;

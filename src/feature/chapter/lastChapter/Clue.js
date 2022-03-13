@@ -1,5 +1,6 @@
 import React from "react";
 
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Clue = ({ infos, clueInfo, handleEnding, inference }) => {
@@ -58,9 +59,9 @@ const ClueData = styled.div`
   font-size: 1.3rem;
 
   img {
-    width: 25%;
     position: absolute;
     right: 7%;
+    width: 25%;
     box-shadow: 2px 1px 3px var(--light-grey-color);
   }
 
@@ -83,10 +84,16 @@ const ClueData = styled.div`
     background-color: var(--black-color);
     color: var(--white-color);
     font-family: var(--noto-sans-kr-font);
-
     font-size: var(--middle-font-size);
     font-weight: 500;
   }
 `;
+
+Clue.propTypes = {
+  info: PropTypes.object,
+  clueInfo: PropTypes.array,
+  handleEnding: PropTypes.func,
+  inference: PropTypes.array,
+};
 
 export default Clue;
