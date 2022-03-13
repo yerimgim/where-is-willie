@@ -6,7 +6,7 @@ import styled, { keyframes } from "styled-components";
 
 import Button from "../../../common/components/Button";
 import Modal from "../../../common/components/modal/Modal";
-import Letter from "./Letter";
+import Flipfile from "./Flipfile";
 
 const MainStory = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -25,7 +25,7 @@ const MainStory = () => {
     <Entry>
       <Content>
         <div className="img-box">
-          <img src="assets/masterpiece.png" alt="작품 이마자" />
+          <img src="assets/masterpiece.png" alt="작품 이미지" />
         </div>
         <Text>
           <p>새벽 동이 틀 무렵,</p>
@@ -36,10 +36,11 @@ const MainStory = () => {
             </span>
           </p>
           <p>
-            전형사: &ldquo; {user} 탐정님,{" "}
-            <span>어젯밤 미술관에서 람브람스의 대작이 사라졌습니다. </span>
-            범인 윌리(가명)로 추정되는 사람이 열차를 타고 유럽을 빠져나간다는
-            소문을 입수하였습니다. &quot;
+            <span>
+              전형사: &ldquo; {user} 탐정님, 어젯밤 미술관에서 람브람스의 대작이
+              사라졌습니다. 범인 윌리(가명)로 추정되는 사람이 열차를 타고 도시를
+              빠져나간다는 소문을 입수하였습니다. &quot;
+            </span>
           </p>
           <p>
             수사에 참여하시려면 <span>참여하기 버튼</span>을 클릭해 주세요.
@@ -51,7 +52,7 @@ const MainStory = () => {
 
         {modalOpen && (
           <Modal>
-            <Letter onClick={closeModal} />
+            <Flipfile />
           </Modal>
         )}
       </Content>

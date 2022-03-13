@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 
+import PropTypes from "prop-types";
 import { AiTwotoneBulb } from "react-icons/ai";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 import { getResult } from "../../modules/quizSlice";
-import Icon from "../Icon";
 import makeKey from "../utils/makeKey";
+import Icon from "./Icon";
 import NumberLine from "./NumberLine";
 import StyledTextarea from "./StyledTextarea";
 import Timer from "./Timer";
@@ -30,7 +31,9 @@ const Quiz = ({ setValue, value, quiz, children }) => {
     if (quiz.answer[0] === finalResult || quiz.answer[1] === finalResult) {
       history.push({
         pathname: quiz.success[0],
-        state: { info: [quiz.success[1], quiz.successHint] },
+        state: {
+          info: [quiz.success[1], quiz.successHint],
+        },
       });
     } else {
       return history.push({
@@ -260,5 +263,12 @@ const Markup = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
+Quiz.propTypes = {
+  setValue: PropTypes.func,
+  value: PropTypes.string,
+  quiz: PropTypes.object,
+  children: PropTypes.element,
+};
 
 export default Quiz;

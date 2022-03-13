@@ -6,7 +6,6 @@ import styled, { keyframes } from "styled-components";
 
 import Evidence from "../../../common/components/Evidence";
 import Quiz from "../../../common/components/Quiz";
-// import SoundIcon from "../../../common/components/SoundIcon";
 import quiz from "../../../data/mainChapter.json";
 
 const MainChapter = () => {
@@ -42,8 +41,6 @@ const MainChapter = () => {
         onClick={showQuiz}
       />
 
-      {/* <SoundIcon /> */}
-
       {location.state.info && timer === true ? (
         <Evidence summary={location.state.info || null} className="info" />
       ) : null}
@@ -55,8 +52,8 @@ const MainChapter = () => {
 
 const blink = keyframes`
   from {
-    opacity: 1;
     color: var(--yellow-color);
+    opacity: 1;
   } to {
     opacity: 0.3;
   }
@@ -77,12 +74,6 @@ const Main = styled.main`
     animation-delay: 7s;
     opacity: 0;
   }
-
-  /* .play-icon {
-    position: absolute;
-    top: 50px;
-    right: 50px;
-  } */
 `;
 
 const VideoSection = styled.section`

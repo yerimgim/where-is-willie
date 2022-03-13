@@ -46,7 +46,11 @@ const SecondChapter = () => {
         <ImgSection imgSrc="/assets/detective-room.png" imgAlt="탐정의 방" />
         <Photo setIsOpen={setIsOpen} isOpen={isOpen} />
 
-        <NewsPaperImg src="assets/newspaper.png" onClick={openModal} />
+        <NewsPaperImg
+          src="assets/newspaper.png"
+          alt="신문 이미지"
+          onClick={openModal}
+        />
 
         {modalOpen && (
           <Modal>
@@ -77,16 +81,18 @@ const SecondChapter = () => {
               <li>
                 <img src="assets/photo/person3.png" alt="네번째 사진 이미지" />
               </li>
-              <li>
-                <img
-                  src="assets/photo/person4.png"
-                  alt="다섯번째 사진 이미지"
-                />
-              </li>
+
               <li>
                 <img
                   src="assets/photo/person5.png"
-                  alt="여섯번째 사진 이미지"
+                  alt="일곱번째 사진 이미지"
+                />
+              </li>
+
+              <li>
+                <img
+                  src="assets/photo/person7.png"
+                  alt="아홉번째 사진 이미지"
                 />
               </li>
             </PhotoList>
@@ -99,15 +105,15 @@ const SecondChapter = () => {
 
 const Main = styled.main`
   display: flex;
+  position: relative;
   width: 100%;
   height: 100vh;
-  position: relative;
   background-color: var(--black-color);
 `;
 
 const NewsPaperImg = styled.img`
-  width: 9%;
   position: absolute;
+  width: 9%;
   top: 72%;
   left: 12%;
   opacity: 0.8;
@@ -122,16 +128,25 @@ const NewsPaperImg = styled.img`
 `;
 
 const PhotoList = styled.ul`
-  width: 350px;
-  height: 350px;
   position: absolute;
-  animation-delay: 1s;
   top: 40%;
   left: 25%;
+  width: 350px;
+  height: 350px;
+  animation-delay: 1s;
   transform: translate(-25%, -40%);
 
   li {
     position: absolute;
+  }
+
+  li:first-child {
+    filter: drop-shadow(0.2rem 0.3rem 1.5rem var(--black-color));
+
+    &:hover {
+      filter: drop-shadow(0.2rem 0.3rem 1rem var(--yellow-color));
+      transition: all 0.3s ease-in-out;
+    }
   }
 `;
 

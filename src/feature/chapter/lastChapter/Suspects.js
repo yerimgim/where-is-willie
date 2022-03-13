@@ -1,102 +1,84 @@
-import React from "react";
+import React, { useState } from "react";
 
+import PropTypes from "prop-types";
+import { IoMdClose } from "react-icons/io";
+import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
+import Icon from "../../../common/components/Icon";
+import Modal from "../../../common/components/modal/Modal";
 import suspect from "../../../data/suspect.json";
+import Clue from "./Clue";
+import Folder from "./Folder";
+import TextBox from "./TextBox";
 
-const Suspects = () => {
+const Suspects = ({ inference }) => {
+  const [infos, setInfos] = useState({});
+  const [isShow, setIsShow] = useState(false);
+  const clueInfo = useSelector((state) => state.quiz.clues);
   const history = useHistory();
+
+  const handleClose = () => {
+    setIsShow(false);
+  };
+
+  const handleShow = (info) => {
+    setIsShow(true);
+    setInfos(info);
+  };
+
+  const handleEnding = () => {
+    history.push({
+      pathname: infos.success,
+      state: { info: [null, infos.result] },
+    });
+  };
+
   return (
     <Entry>
-      <TextBox>
-        <h2>범인 검거</h2>
-        <p>지금까지 얻은 내용을 토대로 범인을 검거 해주세요.</p>
-      </TextBox>
-      <ul>
-        {suspect.suspect.map((person, index) => {
-          return (
-            <li
-              className="suspect"
-              key={index}
-              onClick={() => {
-                history.push({
-                  pathname: person.success,
-                  state: { info: [null, person.result] },
-                });
-              }}
-            >
-              <span>{person.no}</span>
-              <div className="img-box">
-                <img src={person.img} alt="용의자 이미지" />
-              </div>
-              <div className="text-box">
-                <h3>{person.name}</h3>
-                <ul>
-                  {person.infos.map((info, index) => {
-                    return <li key={index}>{info}</li>;
-                  })}
-                </ul>
-              </div>
-            </li>
-          );
-        })}
-      </ul>
+      <TextBox />
+
+      {suspect.suspect.map((person, index) => {
+        return <Folder key={index} personInfo={person} onClick={handleShow} />;
+      })}
+
+      {isShow && (
+        <Modal onClick={handleClose}>
+          <ClueContainer>
+            <Icon text="닫기" onClick={handleClose} type="close">
+              <IoMdClose />
+            </Icon>
+            <Clue
+              infos={infos}
+              clueInfo={clueInfo}
+              handleEnding={handleEnding}
+              inference={inference}
+            />
+          </ClueContainer>
+        </Modal>
+      )}
     </Entry>
   );
 };
-
-const TextBox = styled.div`
-  padding: 40px 0;
-`;
 
 const Entry = styled.section`
   width: 85%;
   height: 60%;
   text-align: center;
-
-  h2 {
-    font-size: 35px;
-    padding-bottom: 10px;
-  }
-
-  ul {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-  }
-
-  .suspect {
-    width: 20%;
-    margin: 0 3px;
-    padding: 10px 0;
-    background-color: var(--white-color);
-    box-sizing: border-box;
-
-    h3 {
-      padding: 10px 0;
-      background-color: var(--yellow-color);
-    }
-
-    p {
-      padding: 10px 0;
-      background-color: var(--white-color);
-    }
-
-    &:hover {
-      border: 3px solid var(--yellow-color);
-    }
-  }
-
-  .text-box ul {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .text-box ul li {
-    text-align: left;
-  }
 `;
+
+const ClueContainer = styled.div`
+  width: 80%;
+  height: 80vh;
+  background-color: white;
+  text-align: left;
+  overflow-y: scroll;
+  font-family: var(--nanum-my-daughter-font);
+`;
+
+Suspects.propTypes = {
+  inference: PropTypes.arrayOf(PropTypes.string),
+};
 
 export default Suspects;
