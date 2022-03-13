@@ -5,15 +5,18 @@ import styled from "styled-components";
 
 import Evidence from "../../../common/components/Evidence";
 import ImgSection from "../../../common/components/ImgSection";
+import Modal from "../../../common/components/modal/Modal";
 import Quiz from "../../../common/components/Quiz";
 import quiz from "../../../data/secondHiddenChapter.json";
 import SecretLetter from "./SecretLetter";
+import Watch from "./Watch";
 
 const SecondHiddenChapter = () => {
   const [value, setValue] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
   const [timer, setTimer] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const delayTime = setTimeout(() => {
@@ -29,14 +32,26 @@ const SecondHiddenChapter = () => {
     [cssInfo[0]]: cssInfo[1],
   };
 
+  const openModal = () => {
+    setModalOpen(!modalOpen);
+  };
+
   return (
     <Main>
-      <ImgSection imgSrc="/assets/passengerRoom.png" imgAlt="수상한자의 방" />
+      <ImgSection imgSrc="/assets/passengerRoom.png" imgAlt="수상한 자의 방" />
       <SecretLetter setIsOpen={setIsOpen} isOpen={isOpen} style={style} />
 
       {location.state && timer === true ? (
         <Evidence summary={location.state.info || null} />
       ) : null}
+
+      <WatchImg src="assets/watch.png" alt="시계 이미지" onClick={openModal} />
+
+      {modalOpen && (
+        <Modal>
+          <Watch modalOpen={modalOpen} setModalOpen={setModalOpen} />
+        </Modal>
+      )}
 
       {isOpen && <Quiz setValue={setValue} value={value} quiz={quiz} />}
     </Main>
@@ -49,6 +64,20 @@ const Main = styled.main`
   width: 100%;
   height: 100vh;
   background-color: var(--black-color);
+`;
+
+const WatchImg = styled.img`
+  position: absolute;
+  width: 2%;
+  top: 65%;
+  left: 38%;
+  transform: rotate(-90deg) translate(-38%, -65%);
+  filter: grayscale(100%) drop-shadow(0.2rem 0.3rem 1rem var(--black-color));
+  opacity: 0.8;
+
+  &:hover {
+    filter: grayscale(0) drop-shadow(0.2rem 0.3rem 1rem var(--yellow-color));
+  }
 `;
 
 export default SecondHiddenChapter;

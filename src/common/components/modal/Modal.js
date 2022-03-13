@@ -19,10 +19,10 @@ const ModalWrapper = styled.div`
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
   opacity: 1;
+  transform: translate(-50%, -50%);
   z-index: 10;
 `;
 
@@ -33,7 +33,6 @@ const Overlay = styled.div`
   width: 100%;
   height: 100%;
   background: #00000080;
-
   z-index: 1;
 `;
 
@@ -45,10 +44,10 @@ const Container = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
+  font-family: var(--nanum-my-daughter-font);
   overflow: hidden;
   z-index: 10;
   perspective: 1000px;
-  font-family: var(--nanum-my-daughter-font);
   white-space: pre-wrap;
 `;
 

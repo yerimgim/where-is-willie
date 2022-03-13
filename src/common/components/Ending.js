@@ -10,6 +10,10 @@ const Ending = ({ summary }) => {
     history.push("/");
   };
 
+  if (!summary || !summary.length) {
+    return <div>empty</div>;
+  }
+
   return (
     <Entry>
       {summary.map((value, index) => {
@@ -23,18 +27,18 @@ const Ending = ({ summary }) => {
 const Entry = styled.ul`
   position: relative;
   top: 50%;
-  transform: translateY(-50%);
   width: 50%;
   margin: 0 auto;
   color: var(--white-color);
   font-size: 35px;
   text-align: center;
   list-style: none;
+  transform: translateY(-50%);
 
   button {
     padding: 10px;
-    font-size: 26px;
     color: var(--white-color);
+    font-size: 26px;
   }
 
   li:last-child {

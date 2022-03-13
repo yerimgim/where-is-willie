@@ -25,12 +25,12 @@ const Failure = () => {
   return (
     <Main>
       <div className="deco">
-        <img src="/assets/policeline.png" />
+        <img src="/assets/policeline.png" alt="폴리스 라인 이미지" />
       </div>
       <h1 className="ending">{text}</h1>
       {location.state ? <Ending summary={location.state.info} /> : null}
       <div className="bottom-deco">
-        <img src="/assets/policeline.png" />
+        <img src="/assets/policeline.png" alt="폴리스 라인 이미지" />
       </div>
     </Main>
   );
@@ -68,10 +68,10 @@ const Main = styled.div`
     font-family: var(--nanum-myenogjo-font);
   }
 
-
   @media all and (min-width: 1700px) and (max-width: 1920px) {
-  .bottom-deco {
-    transform: translate(-580px, 0px) rotate(20deg) scale(0.8);
+    .bottom-deco {
+      transform: translate(-580px, 0px) rotate(20deg) scale(0.8);
+    }
   }
 `;
 

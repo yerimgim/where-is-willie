@@ -54,16 +54,15 @@ const Entry = styled.div`
 
   ul {
     position: relative;
-    height: 12%;
     top: 52%;
     right: 33px;
+    height: 12%;
     transform: translate(-33%, -52%);
     transform: rotate(-5deg) scaleX(-1);
   }
 
   li {
     position: absolute;
-    transform: rotate(-2deg);
     width: 70%;
     margin: 3px 0;
     border-bottom: 0.5px solid #3c1208;
@@ -72,6 +71,7 @@ const Entry = styled.div`
     font-family: var(--lora-font);
     letter-spacing: -0.8px;
     opacity: 0.7;
+    transform: rotate(-2deg);
   }
 
   .ticket-container {
@@ -80,19 +80,20 @@ const Entry = styled.div`
   }
 
   .ticket {
-    transform: translateY(200%);
     background: url("/assets/ticket.png") no-repeat center center;
     background-size: contain;
-
     animation: ${deal} 3s cubic-bezier(0.1, 0.5, 0.3, 1.5) forwards;
     animation-delay: 1s;
     filter: drop-shadow(0rem 0.3rem 3rem var(--yellow-color));
+    transform: translateY(200%);
   }
 `;
 
 Ticket.propTypes = {
   setIsOpen: PropTypes.func,
   isOpen: PropTypes.bool,
+  style: PropTypes.object,
+  quiz: PropTypes.object.isRequired,
 };
 
 export default Ticket;
