@@ -32,7 +32,6 @@ const ThirdChapter = () => {
   return (
     <Main>
       <ImgSection imgSrc="/assets/restaurant.png" imgAlt="북적거리는 식당칸" />
-
       <Glasses setIsOpen={setIsOpen} isOpen={isOpen} style={style} />
 
       {location.state && timer === true ? (

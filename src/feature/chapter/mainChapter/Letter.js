@@ -121,10 +121,6 @@ const Entry = styled.div`
     line-height: 2;
   }
 
-  .last-page h4 {
-    margin: 10px 40px;
-  }
-
   .last-page .content {
     margin: 20px;
   }

@@ -23,16 +23,13 @@ const ButtonContainer = styled.div`
   ${({ type }) => {
     return type === "start"
       ? `
-      justify-content: center;
+      display: inline-flex;
       flex-direction: row;
-      display: inline-block;
+      justify-content: center;
       width: 16%;
-
-
 
       button {
         height: 100%;
-        // margin: 0 5px;
         padding: 10px 40px;
         background-color: var(--yellow-color);
         font-size: 24px;
@@ -41,8 +38,8 @@ const ButtonContainer = styled.div`
 
         &:hover {
           background: #fff;
-          box-shadow: 0px 2px 10px 5px #97b1bf;
           color: #000;
+          box-shadow: 0px 2px 10px 5px #97b1bf;
         }
       }
     `

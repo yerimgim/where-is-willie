@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 import { getClue } from "../../modules/quizSlice";
 
@@ -23,12 +23,22 @@ const Evidence = ({ summary }) => {
   );
 };
 
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
 const Entry = styled.ul`
   position: absolute;
   left: 58%;
   top: 40%;
   transform: translateY(-50%);
   font-family: var(--noto-sans-kr-font);
+  animation: ${fadeIn} 2s ease-in-out;
 
   li:first-of-type {
     font-size: 2.2rem;

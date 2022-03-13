@@ -1,14 +1,17 @@
 import React from "react";
 
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 import Suspects from "./Suspects";
 
 const LastChapter = () => {
+  const location = useLocation();
+
   return (
     <Entry>
       <Content>
-        <Suspects />
+        {location.state && <Suspects inference={location.state.info} />}
       </Content>
     </Entry>
   );

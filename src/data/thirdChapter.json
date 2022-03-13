@@ -8,8 +8,8 @@
   "answer": ["background:red", "background-color:red"],
   "hint": ["* background의 속성 사용해보자", "https://developer.mozilla.org/ko/docs/Web/CSS/background"],
   "placeholder":"/* use background property */",
-  "success": ["/lastChapter"],
-  "successHint": "",
+  "success": ["/lastChapter", ""],
+  "successHint": "1011과 관련이 있는 자가 범인일 확률이 높을 것으로 추론하였다.\n그렇다면 범인은 바로...",
   "fail": ["/ending/failure"],
   "failureHint": "누군가 내 어깨를 잡는다."
 }
