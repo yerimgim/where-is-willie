@@ -18,6 +18,7 @@ const ButtonContainer = styled.div`
   span {
     font-size: 0.8rem;
     font-family: var(--noto-sans-kr-font);
+    padding: 5px;
   }
 
   ${({ type }) => {
@@ -27,24 +28,9 @@ const ButtonContainer = styled.div`
       display: flex;
       justify-content: flex-end;
       font-size: 30px;
+      padding: 10px 0;
 
       span {
-        font-size: 1rem;
-      }
-    `
-      : null;
-  }}
-
-  ${({ type }) => {
-    return type === "close"
-      ? `
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
-      font-size: 30px;
-
-      span {
-        padding: 10px 0;
         font-size: 1rem;
       }
     `

@@ -32,6 +32,7 @@ const Main = () => {
             type="text"
             value={value}
             onChange={onChange}
+            maxLength="10"
             placeholder="이름을 입력해주세요."
             data-testid="add-input"
           />
@@ -130,7 +131,6 @@ const Section = styled.section`
     color: var(--black-color);
     font-size: var(--middle-font-size);
     font-weight: 500;
-    cursor: pointer;
   }
 
   button:disabled,

@@ -8,6 +8,7 @@ import ImgSection from "../../../common/components/ImgSection";
 import Quiz from "../../../common/components/Quiz";
 import quiz from "../../../data/secondHiddenChapter.json";
 import SecretLetter from "./SecretLetter";
+import Watch from "./Watch";
 
 const SecondHiddenChapter = () => {
   const [value, setValue] = useState("");
@@ -31,13 +32,15 @@ const SecondHiddenChapter = () => {
 
   return (
     <Main>
-      <ImgSection imgSrc="/assets/passengerRoom.png" imgAlt="수상한자의 방" />
+      <ImgSection imgSrc="/assets/passengerRoom.png" imgAlt="수상한 자의 방" />
       <SecretLetter setIsOpen={setIsOpen} isOpen={isOpen} style={style} />
 
       {location.state && timer === true ? (
         <Evidence summary={location.state.info || null} />
       ) : null}
 
+      <WatchImg src="assets/watch.png" alt="시계 이미지" />
+      <Watch />
       {isOpen && <Quiz setValue={setValue} value={value} quiz={quiz} />}
     </Main>
   );
@@ -49,6 +52,22 @@ const Main = styled.main`
   width: 100%;
   height: 100vh;
   background-color: var(--black-color);
+`;
+
+const WatchImg = styled.img`
+  position: absolute;
+  width: 4%;
+  top: 64%;
+  left: 37%;
+
+  transform: rotate(-90deg) translate(-37%, -64%);
+  filter: grayscale(100%);
+  opacity: 0.8;
+
+  &:hover {
+    filter: grayscale(0);
+    filter: drop-shadow(0.2rem 0.3rem 1rem var(--yellow-color));
+  }
 `;
 
 export default SecondHiddenChapter;

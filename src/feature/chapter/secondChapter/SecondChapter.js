@@ -46,7 +46,11 @@ const SecondChapter = () => {
         <ImgSection imgSrc="/assets/detective-room.png" imgAlt="탐정의 방" />
         <Photo setIsOpen={setIsOpen} isOpen={isOpen} />
 
-        <NewsPaperImg src="assets/newspaper.png" onClick={openModal} />
+        <NewsPaperImg
+          src="assets/newspaper.png"
+          alt="신문 이미지"
+          onClick={openModal}
+        />
 
         {modalOpen && (
           <Modal>
@@ -77,16 +81,18 @@ const SecondChapter = () => {
               <li>
                 <img src="assets/photo/person3.png" alt="네번째 사진 이미지" />
               </li>
-              <li>
-                <img
-                  src="assets/photo/person4.png"
-                  alt="다섯번째 사진 이미지"
-                />
-              </li>
+
               <li>
                 <img
                   src="assets/photo/person5.png"
-                  alt="여섯번째 사진 이미지"
+                  alt="일곱번째 사진 이미지"
+                />
+              </li>
+
+              <li>
+                <img
+                  src="assets/photo/person7.png"
+                  alt="아홉번째 사진 이미지"
                 />
               </li>
             </PhotoList>
@@ -132,6 +138,14 @@ const PhotoList = styled.ul`
 
   li {
     position: absolute;
+  }
+
+  li:first-child {
+    filter: drop-shadow(0.2rem 0.3rem 1.5rem var(--black-color));
+    &:hover {
+      filter: drop-shadow(0.2rem 0.3rem 1rem var(--yellow-color));
+      transition: all 0.3s ease-in-out;
+    }
   }
 `;
 
