@@ -7,7 +7,7 @@
   "cssAfter": "}",
   "answer": ["justify-content:flex-end"],
   "hint": ["* flex의 속성 사용해보자", "https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"],
-  "placeholder":"/* use flex property */",
+  "placeholder":"/* use justify-content property */",
   "success": ["/thirdChapter", "Chapter3 - 북적거리는 식당칸"],
   "successHint": "Jack은 윌리의 미들 네임이었다는 것을 알게 되었고,\n접선 장소가 식당칸이라는 것을 알게되었다.",
   "fail": ["/ending/failure", ""],

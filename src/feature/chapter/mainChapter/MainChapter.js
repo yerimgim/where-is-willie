@@ -29,7 +29,7 @@ const MainChapter = () => {
   return (
     <Main>
       <VideoSection>
-        <video height="100%" poster="/assets/corridor-illustrator.png" autoPlay>
+        <video height="100%" autoPlay>
           <source src="/assets/corridor-illustrator.mp4" type="video/mp4" />
         </video>
       </VideoSection>
@@ -74,12 +74,6 @@ const Main = styled.main`
     animation-delay: 7s;
     opacity: 0;
   }
-
-  /* .play-icon {
-    position: absolute;
-    top: 50px;
-    right: 50px;
-  } */
 `;
 
 const VideoSection = styled.section`

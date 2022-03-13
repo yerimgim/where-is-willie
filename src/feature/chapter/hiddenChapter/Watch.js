@@ -13,7 +13,7 @@ const Watch = ({ setModalOpen, modalOpen }) => {
       <img src="assets/watch.png" onClick={onClick} />
       <p>
         고장난 시계를 발견하였다. <br />
-        10시 11분을 가리키고있다.
+        10시 11분을 가리키고 있다.
       </p>
     </Main>
   );

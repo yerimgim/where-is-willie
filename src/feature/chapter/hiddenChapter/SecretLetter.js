@@ -45,7 +45,6 @@ const Entry = styled.div`
     top: 25%;
     left: 30%;
     transform: translate(-25%, -30%) skew(2deg);
-    color: red;
   }
 
   .letter {
@@ -66,6 +65,12 @@ const Entry = styled.div`
     &:hover {
       filter: grayscale(0) drop-shadow(0.2rem 0.3rem 1rem var(--yellow-color));
       transition: all 0.3s ease-in-out;
+    }
+  }
+
+  @media screen and (min-width: 1700px) and (max-width: 1920px) {
+    img {
+      transform: scale(1.2);
     }
   }
 `;

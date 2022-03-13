@@ -20,14 +20,12 @@ const Clue = ({ infos, clueInfo, handleEnding, inference }) => {
         </li>
       </ul>
 
-      <SuspectInfo>
-        <h3>유력 용의자 특이 사항 - {infos.name}</h3>
-        <ul>
-          {infos.infos.map((suspectData, index) => {
-            return <li key={index}>{suspectData}</li>;
-          })}
-        </ul>
-      </SuspectInfo>
+      <h3>유력 용의자 특이 사항 - {infos.name}</h3>
+      <ul>
+        {infos.infos.map((suspectData, index) => {
+          return <li key={index}>{suspectData}</li>;
+        })}
+      </ul>
 
       <ul>
         <h3>현장에서 찾은 단서</h3>
@@ -90,7 +88,5 @@ const ClueData = styled.div`
     font-weight: 500;
   }
 `;
-
-const SuspectInfo = styled.div``;
 
 export default Clue;

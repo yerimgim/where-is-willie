@@ -60,24 +60,32 @@ const Main = styled.main`
   .clock {
     position: absolute;
     top: 260px;
-    left: -85px;
+    left: -70px;
+    /* left: 60%; */
     color: white;
     text-align: center;
-    width: 146px;
-    height: 120px;
+
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2.5rem;
     transform: perspective(340px) rotateX(46deg);
     transition: all 0.6s ease-out;
+
+    width: 120px;
+    min-width: 30%;
+    height: 110px;
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    overflow: hidden;
+    opacity: 0.8;
+    box-shadow: inset 0px 0px 35px 13px white;
+    font-family: var(--lora-font);
   }
 
   @media all and (min-width: 1700px) and (max-width: 1920px) {
     .clock {
       position: absolute;
       top: 340px;
-      background: ;
     }
   }
 `;

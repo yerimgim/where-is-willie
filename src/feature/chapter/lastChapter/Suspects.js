@@ -10,6 +10,7 @@ import Modal from "../../../common/components/modal/Modal";
 import suspect from "../../../data/suspect.json";
 import Clue from "./Clue";
 import Folder from "./Folder";
+import TextBox from "./TextBox";
 
 const Suspects = ({ inference }) => {
   const [infos, setInfos] = useState({});
@@ -35,15 +36,7 @@ const Suspects = ({ inference }) => {
 
   return (
     <Entry>
-      <TextBox>
-        <h2>최종 범인 지목</h2>
-        <p>
-          윌리로 추정되는 유력한 용의자 5명을 소환하였습니다.
-          <br />
-          현장에서 찾은 단서와 용의자의 특이 사항을 참고하여 범인을
-          지목해주세요.
-        </p>
-      </TextBox>
+      <TextBox />
 
       {suspect.suspect.map((person, index) => {
         return <Folder key={index} personInfo={person} onClick={handleShow} />;
@@ -81,10 +74,6 @@ const ClueContainer = styled.div`
   text-align: left;
   overflow-y: scroll;
   font-family: var(--nanum-my-daughter-font);
-`;
-
-const TextBox = styled.div`
-  padding-bottom: 3rem;
 `;
 
 export default Suspects;

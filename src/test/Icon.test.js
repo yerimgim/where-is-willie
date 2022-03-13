@@ -23,10 +23,4 @@ describe("<Icon />", () => {
     fireEvent.click(screen.getByText(/close/i));
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
-
-  test("<Icon /> - type", () => {
-    const { container } = render(<Icon variant="default" />);
-
-    expect(container.firstChild).toMatchSnapshot();
-  });
 });

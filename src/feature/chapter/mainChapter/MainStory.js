@@ -6,7 +6,7 @@ import styled, { keyframes } from "styled-components";
 
 import Button from "../../../common/components/Button";
 import Modal from "../../../common/components/modal/Modal";
-import Letter from "./Letter";
+import Flipfile from "./Flipfile";
 
 const MainStory = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -52,7 +52,7 @@ const MainStory = () => {
 
         {modalOpen && (
           <Modal>
-            <Letter onClick={closeModal} />
+            <Flipfile />
           </Modal>
         )}
       </Content>

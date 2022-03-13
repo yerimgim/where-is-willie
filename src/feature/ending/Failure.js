@@ -68,10 +68,10 @@ const Main = styled.div`
     font-family: var(--nanum-myenogjo-font);
   }
 
-
   @media all and (min-width: 1700px) and (max-width: 1920px) {
-  .bottom-deco {
-    transform: translate(-580px, 0px) rotate(20deg) scale(0.8);
+    .bottom-deco {
+      transform: translate(-580px, 0px) rotate(20deg) scale(0.8);
+    }
   }
 `;
 
