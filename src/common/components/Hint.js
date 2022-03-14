@@ -1,5 +1,6 @@
 import React from "react";
 
+import PropTypes from "prop-types";
 import { AiTwotoneBulb } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -43,5 +44,11 @@ const HintContainer = styled.div`
     font-family: var(--noto-sans-kr-font);
   }
 `;
+
+Hint.propTypes = {
+  toggleHint: PropTypes.func,
+  isToggle: PropTypes.bool,
+  quiz: PropTypes.object,
+};
 
 export default Hint;
