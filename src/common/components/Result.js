@@ -4,10 +4,12 @@ import PropTypes from "prop-types";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
-const Ending = ({ summary }) => {
+import constants from "../utils/constants";
+
+const Result = ({ summary }) => {
   const history = useHistory();
   const onClick = () => {
-    history.push("/");
+    history.push(constants.ROUTE_MAIN);
   };
 
   if (!summary || !summary.length) {
@@ -16,9 +18,7 @@ const Ending = ({ summary }) => {
 
   return (
     <Entry>
-      {summary.map((value, index) => {
-        return <li key={index}>{value}</li>;
-      })}
+      <li>{summary}</li>
       <button onClick={onClick}>다시 하기</button>
     </Entry>
   );
@@ -48,8 +48,8 @@ const Entry = styled.ul`
   }
 `;
 
-Ending.propTypes = {
-  summary: PropTypes.arrayOf(PropTypes.string),
+Result.propTypes = {
+  summary: PropTypes.string,
 };
 
-export default Ending;
+export default Result;

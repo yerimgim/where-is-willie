@@ -3,6 +3,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
+import constants from "../../../common/utils/constants";
+
 const SecretLetter = ({ setIsOpen, isOpen, style }) => {
   const onClick = () => {
     setIsOpen(!isOpen);
@@ -13,13 +15,13 @@ const SecretLetter = ({ setIsOpen, isOpen, style }) => {
       <div className="hidden-space" style={style}>
         <div className="secretletter-container">
           <img
-            src="assets/secreatletter.png"
+            src={constants.ASSETS_SECRET_LETTER_IMG}
             alt="비밀 편지"
             className="letter"
           />
         </div>
         <img
-          src="assets/cushion.png"
+          src={constants.ASSETS_CUSSION_IMG}
           alt="쿠션 이미지"
           style={style}
           onClick={onClick}
@@ -31,8 +33,9 @@ const SecretLetter = ({ setIsOpen, isOpen, style }) => {
 
 const Entry = styled.div`
   position: absolute;
-  top: 75%;
+  top: 100%;
   left: 3%;
+  transform: translate(-3%, -100%);
   width: 200px;
   opacity: 0.9;
 

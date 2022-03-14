@@ -1,7 +1,9 @@
 import React from "react";
 
 import PropTypes from "prop-types";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
+
+import { deal } from "../../../styles/keyframes/keyframes";
 
 const Ticket = ({ setIsOpen, isOpen, style, quiz }) => {
   const onClick = () => {
@@ -26,20 +28,6 @@ const Ticket = ({ setIsOpen, isOpen, style, quiz }) => {
     </Entry>
   );
 };
-
-const deal = keyframes`
-  0% {
-    transform: scale(1.3) rotateY(12deg) translateY(100%) rotate(40deg)
-      scaleX(0.5) scaleY(0.55);
-  }
-  40% {
-    transform: rotateY(-15deg) rotateY(3deg) rotate(-20deg) translateY(0%)
-      scale(0.8);
-  }
-  100% {
-    transform: rotateY(180deg) rotate(-2deg) translateY(40%);
-  }
-`;
 
 const Entry = styled.div`
   * {

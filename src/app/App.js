@@ -10,8 +10,7 @@ import MainChapter from "../feature/chapter/mainChapter/MainChapter";
 import MainStory from "../feature/chapter/mainChapter/MainStory";
 import SecondChapter from "../feature/chapter/secondChapter/SecondChapter";
 import ThirdChapter from "../feature/chapter/thirdChapter/ThirdChapter";
-import Failure from "../feature/ending/Failure";
-import Success from "../feature/ending/Success";
+import Ending from "../feature/ending/Ending";
 import Main from "../feature/main/Main";
 
 function App() {
@@ -22,11 +21,10 @@ function App() {
       <Route path="/mainChapter" component={MainChapter} />
       <Route path="/mainHiddenChapter" component={MainHiddenChapter} />
       <Route path="/secondChapter" component={SecondChapter} />
-      <Route path="/secondHiddenChaper" component={SecondHiddenChapter} />
+      <Route path="/SecondHiddenChapter" component={SecondHiddenChapter} />
       <Route path="/thirdChapter" component={ThirdChapter} />
       <Route path="/lastChapter" component={LastChapter} />
-      <Route path="/ending" component={Success} exact />
-      <Route path="/ending/failure" component={Failure} />
+      <Route path="/ending" component={Ending} exact />
       <Route path="*" component={Notfound} />
     </Switch>
   );

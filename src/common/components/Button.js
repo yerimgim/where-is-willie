@@ -49,8 +49,8 @@ const ButtonContainer = styled.div`
 `;
 
 Button.propTypes = {
-  onClick: PropTypes.func,
-  text: PropTypes.string,
+  onClick: PropTypes.func.isRequired,
+  text: PropTypes.string.isRequired,
   type: PropTypes.string,
 };
 

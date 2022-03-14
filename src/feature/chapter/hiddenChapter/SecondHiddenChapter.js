@@ -7,7 +7,9 @@ import Evidence from "../../../common/components/Evidence";
 import ImgSection from "../../../common/components/ImgSection";
 import Modal from "../../../common/components/modal/Modal";
 import Quiz from "../../../common/components/Quiz";
+import constants from "../../../common/utils/constants";
 import quiz from "../../../data/secondHiddenChapter.json";
+import { fadeIn } from "../../../styles/keyframes/keyframes";
 import SecretLetter from "./SecretLetter";
 import Watch from "./Watch";
 
@@ -38,14 +40,21 @@ const SecondHiddenChapter = () => {
 
   return (
     <Main>
-      <ImgSection imgSrc="/assets/passengerRoom.png" imgAlt="수상한 자의 방" />
+      <ImgSection
+        imgSrc={constants.ASSETS_PASSENGER_ROOM_IMG}
+        imgAlt="수상한 자의 방"
+      />
       <SecretLetter setIsOpen={setIsOpen} isOpen={isOpen} style={style} />
 
       {location.state && timer === true ? (
         <Evidence summary={location.state.info || null} />
       ) : null}
 
-      <WatchImg src="assets/watch.png" alt="시계 이미지" onClick={openModal} />
+      <WatchImg
+        src={constants.ASSETS_WATCH_IMG}
+        alt="시계 이미지"
+        onClick={openModal}
+      />
 
       {modalOpen && (
         <Modal>
@@ -64,6 +73,7 @@ const Main = styled.main`
   width: 100%;
   height: 100vh;
   background-color: var(--black-color);
+  animation: ${fadeIn} 1s ease-in-out;
 `;
 
 const WatchImg = styled.img`

@@ -15,4 +15,5 @@ const createStore = () => {
 };
 
 const store = createStore();
+
 export default store;

@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 
 import { IoIosMailUnread } from "react-icons/io";
 import { useLocation } from "react-router-dom";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 import Evidence from "../../../common/components/Evidence";
 import Quiz from "../../../common/components/Quiz";
+import constants from "../../../common/utils/constants";
 import quiz from "../../../data/mainChapter.json";
+import { blink, fadeIn } from "../../../styles/keyframes/keyframes";
 
 const MainChapter = () => {
   const [value, setValue] = useState("");
@@ -30,7 +32,7 @@ const MainChapter = () => {
     <Main>
       <VideoSection>
         <video height="100%" autoPlay>
-          <source src="/assets/corridor-illustrator.mp4" type="video/mp4" />
+          <source src={constants.ASSETS_MAIN_CORRIDOR_GIF} type="video/mp4" />
         </video>
       </VideoSection>
 
@@ -50,21 +52,13 @@ const MainChapter = () => {
   );
 };
 
-const blink = keyframes`
-  from {
-    color: var(--yellow-color);
-    opacity: 1;
-  } to {
-    opacity: 0.3;
-  }
-`;
-
 const Main = styled.main`
   display: flex;
   position: relative;
   width: 100%;
   height: 100vh;
   background-color: var(--black-color);
+  animation: ${fadeIn} 1s ease-in-out;
 
   .file-icon {
     position: absolute;

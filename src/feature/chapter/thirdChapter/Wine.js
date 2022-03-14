@@ -3,6 +3,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
+import constants from "../../../common/utils/constants";
+
 const Wine = ({ setIsOpen, isOpen }) => {
   const onClick = () => {
     setIsOpen(!isOpen);
@@ -11,7 +13,7 @@ const Wine = ({ setIsOpen, isOpen }) => {
   return (
     <Entry>
       <div className="photo-container" onClick={onClick}>
-        <img src="assets/wine.png" alt="와인 이미지" />
+        <img src={constants.ASSETS_WINE_IMG} alt="와인 이미지" />
       </div>
     </Entry>
   );

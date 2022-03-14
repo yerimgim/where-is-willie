@@ -2,9 +2,10 @@ import React, { useState } from "react";
 
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 import { getUserName } from "../../modules/nameSlice";
+import { fadeIn, shake } from "../../styles/keyframes/keyframes";
 
 const Main = () => {
   const [value, setValue] = useState("");
@@ -60,40 +61,7 @@ const MainContent = styled.main`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-`;
-
-const shake = keyframes`
-  0%,
-  100% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-    -webkit-transform-origin: 50% 0;
-            transform-origin: 50% 0;
-  }
-  10% {
-    -webkit-transform: rotate(2deg);
-            transform: rotate(2deg);
-  }
-  20%,
-  40%,
-  60% {
-    -webkit-transform: rotate(-4deg);
-            transform: rotate(-4deg);
-  }
-  30%,
-  50%,
-  70% {
-    -webkit-transform: rotate(4deg);
-            transform: rotate(4deg);
-  }
-  80% {
-    -webkit-transform: rotate(-2deg);
-            transform: rotate(-2deg);
-  }
-  90% {
-    -webkit-transform: rotate(2deg);
-            transform: rotate(2deg);
-  }
+  animation: ${fadeIn} 1s ease-in-out;
 `;
 
 const Section = styled.section`
