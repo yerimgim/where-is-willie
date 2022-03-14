@@ -29,7 +29,6 @@ const Suspects = ({ inference }) => {
     setInfos(info);
   };
 
-  console.log(infos);
   const handleEnding = () => {
     history.push({
       pathname: infos.success,

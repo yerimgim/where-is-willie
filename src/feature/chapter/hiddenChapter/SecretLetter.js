@@ -33,8 +33,9 @@ const SecretLetter = ({ setIsOpen, isOpen, style }) => {
 
 const Entry = styled.div`
   position: absolute;
-  top: 75%;
+  top: 100%;
   left: 3%;
+  transform: translate(-3%, -100%);
   width: 200px;
   opacity: 0.9;
 

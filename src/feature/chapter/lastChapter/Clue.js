@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Clue = ({ infos, clueInfo, handleEnding, inference }) => {
-  console.log(clueInfo);
   return (
     <ClueData>
       <h2>단서</h2>

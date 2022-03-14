@@ -4,10 +4,8 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 import constants from "../../../common/utils/constants";
-constants;
 
 const PhotoList = ({ setIsOpen, isOpen, style, photos }) => {
-  console.log(style);
   return (
     <List
       onClick={() => {
@@ -49,6 +47,12 @@ const List = styled.ul`
     &:hover {
       filter: drop-shadow(0.2rem 0.3rem 1rem var(--yellow-color));
       transition: all 2s ease-in-out;
+    }
+  }
+
+  @media screen and (min-width: 1700px) and (max-width: 1920px) {
+    li img {
+      transform: scale(1.2);
     }
   }
 `;

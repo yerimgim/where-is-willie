@@ -1,6 +1,6 @@
 {
   "willieInfo": "윌리의 정보",
-  "content": "제한시간 60초\n수상한 사람이 돌아오기 전에 숨겨둔 물체를 확인하세요.",
+  "content": "제한시간 60초,\n수상한 사람이 돌아오기 전에 숨겨둔 물체를 확인하세요.",
   "cssBefore": "#hidden-object {",
   "cssAfter": "}",
   "answer": ["visibility:visible"],
