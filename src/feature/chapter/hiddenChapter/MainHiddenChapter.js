@@ -7,6 +7,7 @@ import Evidence from "../../../common/components/Evidence";
 import ImgSection from "../../../common/components/ImgSection";
 import Quiz from "../../../common/components/Quiz";
 import quiz from "../../../data/mainHiddenChapterQuiz.json";
+import { fadeIn } from "../../../styles/keyframes/keyframes";
 import Ticket from "./Ticket";
 
 const MainHiddenChapter = () => {
@@ -47,6 +48,7 @@ const Main = styled.main`
   width: 100%;
   height: 100vh;
   background-color: var(--black-color);
+  animation: ${fadeIn} 1s ease-in-out;
 `;
 
 export default MainHiddenChapter;

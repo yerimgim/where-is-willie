@@ -13,7 +13,7 @@ import NumberLine from "./NumberLine";
 import StyledTextarea from "./StyledTextarea";
 import Timer from "./Timer";
 
-const Quiz = ({ setValue, value, quiz, children }) => {
+const AnotherQuiz = ({ setValue, value, quiz, children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isToggle, setIsToggle] = useState(false);
 
@@ -21,14 +21,20 @@ const Quiz = ({ setValue, value, quiz, children }) => {
   const history = useHistory();
   const result = useSelector((state) => state.quiz.result);
 
-  const finalResult = result
-    ? result.replace(/\s/g, "").match(/[^;]/g).join("").trim()
-    : null;
+  const finalResult = result ? result.match(/(\d+)(\w+)/i) : null;
+
+  let total = "z-index";
+  if (finalResult ? finalResult : null) {
+    if (finalResult.input.includes(total)) {
+      console.log(finalResult[0]);
+      total += ":" + (finalResult[0] > 9);
+    }
+  }
 
   const goNextChapter = (event) => {
     event.preventDefault();
 
-    if (quiz.answer[0] === finalResult || quiz.answer[1] === finalResult) {
+    if (quiz.answer[0] === total) {
       history.push({
         pathname: quiz.success[0],
         state: {
@@ -62,7 +68,6 @@ const Quiz = ({ setValue, value, quiz, children }) => {
       <View>{children}</View>
       <QuizSection>
         <ImgSection type="folder" />
-
         <div className="text-box">
           <div className="info-box">
             {quiz.timer ? <Timer className="timer" /> : null}
@@ -108,7 +113,6 @@ const Quiz = ({ setValue, value, quiz, children }) => {
               </div>
             )}
           </form>
-
           {isLoading && (
             <div className="submit-box">
               <button onClick={goNextChapter} className="next-btn">
@@ -136,6 +140,18 @@ const QuizSection = styled.section`
   font-family: var(--nanum-my-daughter-font);
   white-space: pre-wrap;
 
+  .img-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    img {
+      width: 95%;
+      height: 93vh;
+    }
+  }
+
   .submit-box {
     display: flex;
     justify-content: flex-end;
@@ -161,6 +177,7 @@ const QuizSection = styled.section`
 
     li {
       font-size: var(--middle-font-size);
+      margin-bottom: 10px;
     }
 
     .info-box {
@@ -170,10 +187,6 @@ const QuizSection = styled.section`
     h3 {
       margin-bottom: 10px;
       font-size: 30px;
-    }
-
-    li {
-      margin-bottom: 10px;
     }
 
     input[type="submit"] {
@@ -219,11 +232,11 @@ const Markup = styled.div`
   flex-direction: column;
 `;
 
-Quiz.propTypes = {
+AnotherQuiz.propTypes = {
   setValue: PropTypes.func,
   value: PropTypes.string,
   quiz: PropTypes.object,
   children: PropTypes.element,
 };
 
-export default Quiz;
+export default AnotherQuiz;

@@ -2,7 +2,7 @@
   "strangerInfo": "수상한 자의 정보",
   "willieInfo": "윌리의 정보",
   "willieInfos": ["블루, 브라운, 고장난 손목 시계 단서를 얻었다."],
-  "content": "쇼파 위의 쿠션 사이에 수상한게 있다. 이 쿠션을 오른쪽으로 치워보자.",
+  "content": "쇼파 위의 쿠션 사이에 수상한게 있다. 이 쿠션을 오른쪽으로 치워 보자.",
   "cssBefore": "#secret-letter {\n   display: flex;",
   "cssAfter": "}",
   "answer": ["justify-content:flex-end"],

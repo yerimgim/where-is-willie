@@ -3,13 +3,15 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
+import AnotherQuiz from "../../../common/components/AnotherQuiz";
 import Evidence from "../../../common/components/Evidence";
 import ImgSection from "../../../common/components/ImgSection";
 import Modal from "../../../common/components/modal/Modal";
-import Quiz from "../../../common/components/Quiz";
 import quiz from "../../../data/secondChapter.json";
+import { fadeIn } from "../../../styles/keyframes/keyframes";
 import NewsPaper from "./NewsPaper";
 import Photo from "./Photo";
+import PhotoList from "./PhotoList";
 
 const SecondChapter = () => {
   const [value, setValue] = useState("");
@@ -63,40 +65,14 @@ const SecondChapter = () => {
         ) : null}
 
         {isOpen && (
-          <Quiz setValue={setValue} value={value} quiz={quiz}>
+          <AnotherQuiz setValue={setValue} value={value} quiz={quiz}>
             <PhotoList
-              onClick={() => {
-                setIsOpen(!isOpen);
-              }}
-            >
-              <li style={style}>
-                <img src="assets/photo/person.png" alt="첫번째사진 이미지" />
-              </li>
-              <li>
-                <img src="assets/photo/person1.png" alt="두번째 사진 이미지" />
-              </li>
-              <li>
-                <img src="assets/photo/person2.png" alt="세번째 사진 이미지" />
-              </li>
-              <li>
-                <img src="assets/photo/person3.png" alt="네번째 사진 이미지" />
-              </li>
-
-              <li>
-                <img
-                  src="assets/photo/person5.png"
-                  alt="일곱번째 사진 이미지"
-                />
-              </li>
-
-              <li>
-                <img
-                  src="assets/photo/person7.png"
-                  alt="아홉번째 사진 이미지"
-                />
-              </li>
-            </PhotoList>
-          </Quiz>
+              setIsOpen={setIsOpen}
+              isOpen={isOpen}
+              style={style}
+              photos={quiz.photoList}
+            />
+          </AnotherQuiz>
         )}
       </Main>
     </>
@@ -109,6 +85,7 @@ const Main = styled.main`
   width: 100%;
   height: 100vh;
   background-color: var(--black-color);
+  animation: ${fadeIn} 2s ease-in-out;
 `;
 
 const NewsPaperImg = styled.img`
@@ -124,29 +101,6 @@ const NewsPaperImg = styled.img`
     filter: grayscale(0);
     filter: drop-shadow(0.2rem 0.3rem 1rem var(--yellow-color));
     transition: all 0.3s ease-in-out;
-  }
-`;
-
-const PhotoList = styled.ul`
-  position: absolute;
-  top: 40%;
-  left: 25%;
-  width: 350px;
-  height: 350px;
-  animation-delay: 1s;
-  transform: translate(-25%, -40%);
-
-  li {
-    position: absolute;
-  }
-
-  li:first-child {
-    filter: drop-shadow(0.2rem 0.3rem 1.5rem var(--black-color));
-
-    &:hover {
-      filter: drop-shadow(0.2rem 0.3rem 1rem var(--yellow-color));
-      transition: all 0.3s ease-in-out;
-    }
   }
 `;
 

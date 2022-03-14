@@ -2,10 +2,11 @@ import React, { useState } from "react";
 
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 import Button from "../../../common/components/Button";
 import Modal from "../../../common/components/modal/Modal";
+import { fadeInText } from "../../../styles/keyframes/keyframes";
 import Flipfile from "./Flipfile";
 
 const MainStory = () => {
@@ -60,17 +61,6 @@ const MainStory = () => {
   );
 };
 
-const fadeIn = keyframes`
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-`;
-
 const Entry = styled.div`
   display: flex;
   flex-direction: column;
@@ -84,7 +74,7 @@ const Entry = styled.div`
 const Content = styled.div`
   margin: 0 auto;
   text-align: center;
-  animation: ${fadeIn} 3s ease-in-out;
+  animation: ${fadeInText} 3s ease-in-out;
 
   .img-box {
     img {

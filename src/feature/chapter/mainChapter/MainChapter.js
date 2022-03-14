@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 
 import { IoIosMailUnread } from "react-icons/io";
 import { useLocation } from "react-router-dom";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 import Evidence from "../../../common/components/Evidence";
 import Quiz from "../../../common/components/Quiz";
 import quiz from "../../../data/mainChapter.json";
+import { blink } from "../../../styles/keyframes/keyframes";
 
 const MainChapter = () => {
   const [value, setValue] = useState("");
@@ -49,15 +50,6 @@ const MainChapter = () => {
     </Main>
   );
 };
-
-const blink = keyframes`
-  from {
-    color: var(--yellow-color);
-    opacity: 1;
-  } to {
-    opacity: 0.3;
-  }
-`;
 
 const Main = styled.main`
   display: flex;
