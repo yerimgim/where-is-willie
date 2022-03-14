@@ -10,6 +10,7 @@
   "placeholder":"/* use justify-content property */",
   "success": ["/thirdChapter", "Chapter3 - 북적거리는 식당칸"],
   "successHint": "Jack은 윌리의 미들 네임이었다는 것을 알게 되었고,\n접선 장소가 식당칸이라는 것을 알게되었다.",
-  "fail": ["/ending/failure", ""],
-  "failureHint": "나를 지켜보고 있던 윌리에게 들켰다."
+  "fail": ["/ending"],
+  "failureHint": "나를 지켜보고 있던 사람이 있었다.",
+  "result": "The end"
 }

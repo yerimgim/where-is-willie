@@ -6,6 +6,7 @@ import styled from "styled-components";
 import Evidence from "../../../common/components/Evidence";
 import ImgSection from "../../../common/components/ImgSection";
 import Quiz from "../../../common/components/Quiz";
+import constants from "../../../common/utils/constants";
 import quiz from "../../../data/mainHiddenChapterQuiz.json";
 import { fadeIn } from "../../../styles/keyframes/keyframes";
 import Ticket from "./Ticket";
@@ -32,7 +33,10 @@ const MainHiddenChapter = () => {
 
   return (
     <Main>
-      <ImgSection imgSrc="/assets/corridor.png" imgAlt="기차 복도 이미지" />
+      <ImgSection
+        imgSrc={constants.ASSETS_CORRIDOR_IMG}
+        imgAlt="기차 복도 이미지"
+      />
       <Ticket setIsOpen={setIsOpen} isOpen={isOpen} style={style} quiz={quiz} />
       {!isOpen && location.state && timer === true ? (
         <Evidence summary={location.state.info || null} />

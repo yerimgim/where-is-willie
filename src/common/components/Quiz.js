@@ -16,7 +16,6 @@ import Timer from "./Timer";
 const Quiz = ({ setValue, value, quiz, children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isToggle, setIsToggle] = useState(false);
-
   const dispatch = useDispatch();
   const history = useHistory();
   const result = useSelector((state) => state.quiz.result);
@@ -38,7 +37,7 @@ const Quiz = ({ setValue, value, quiz, children }) => {
     } else {
       return history.push({
         pathname: quiz.fail[0],
-        state: { info: [quiz.fail[1], quiz.failureHint] },
+        state: { info: [quiz.fail[1], quiz.failureHint, quiz.result] },
       });
     }
   };

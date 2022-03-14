@@ -9,6 +9,7 @@ import styled from "styled-components";
 import Icon from "../../../common/components/Icon";
 import Modal from "../../../common/components/modal/Modal";
 import suspect from "../../../data/suspect.json";
+import { fadeIn } from "../../../styles/keyframes/keyframes";
 import Clue from "./Clue";
 import Folder from "./Folder";
 import TextBox from "./TextBox";
@@ -28,10 +29,11 @@ const Suspects = ({ inference }) => {
     setInfos(info);
   };
 
+  console.log(infos);
   const handleEnding = () => {
     history.push({
       pathname: infos.success,
-      state: { info: [null, infos.result] },
+      state: { info: [null, infos.description, infos.result] },
     });
   };
 
@@ -66,6 +68,7 @@ const Entry = styled.section`
   width: 85%;
   height: 60%;
   text-align: center;
+  animation: ${fadeIn} 1s ease-in-out;
 `;
 
 const ClueContainer = styled.div`

@@ -7,6 +7,7 @@ import AnotherQuiz from "../../../common/components/AnotherQuiz";
 import Evidence from "../../../common/components/Evidence";
 import ImgSection from "../../../common/components/ImgSection";
 import Modal from "../../../common/components/modal/Modal";
+import constants from "../../../common/utils/constants";
 import quiz from "../../../data/secondChapter.json";
 import { fadeIn } from "../../../styles/keyframes/keyframes";
 import NewsPaper from "./NewsPaper";
@@ -45,11 +46,14 @@ const SecondChapter = () => {
   return (
     <>
       <Main>
-        <ImgSection imgSrc="/assets/detective-room.png" imgAlt="탐정의 방" />
+        <ImgSection
+          imgSrc={constants.ASSETS_DETECTIVE_ROOM_IMG}
+          imgAlt="탐정의 방"
+        />
         <Photo setIsOpen={setIsOpen} isOpen={isOpen} />
 
         <NewsPaperImg
-          src="assets/newspaper.png"
+          src={constants.ASSETS_NEWSPAPER_IMG}
           alt="신문 이미지"
           onClick={openModal}
         />

@@ -3,6 +3,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
+import constants from "../../../common/utils/constants";
+constants;
+
 const PhotoList = ({ setIsOpen, isOpen, style, photos }) => {
   console.log(style);
   return (
@@ -12,7 +15,7 @@ const PhotoList = ({ setIsOpen, isOpen, style, photos }) => {
       }}
     >
       <li style={style}>
-        <img src="assets/photo/person.png" alt="단서 이미지" />
+        <img src={constants.ASSETS_PERSON_IMG} alt="단서 이미지" />
       </li>
 
       {photos.map((photo, index) => {

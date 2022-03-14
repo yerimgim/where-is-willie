@@ -16,25 +16,23 @@ import Timer from "./Timer";
 const AnotherQuiz = ({ setValue, value, quiz, children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isToggle, setIsToggle] = useState(false);
-
   const dispatch = useDispatch();
   const history = useHistory();
   const result = useSelector((state) => state.quiz.result);
 
-  const finalResult = result ? result.match(/(\d+)(\w+)/i) : null;
+  const regexResult = result ? result.match(/(\d+)(\w+)/i) : null;
+  let finalResult = "z-index";
 
-  let total = "z-index";
-  if (finalResult ? finalResult : null) {
-    if (finalResult.input.includes(total)) {
-      console.log(finalResult[0]);
-      total += ":" + (finalResult[0] > 9);
+  if (regexResult || null) {
+    if (regexResult.input.includes(finalResult)) {
+      finalResult += ":" + (regexResult[0] > 9);
     }
   }
 
   const goNextChapter = (event) => {
     event.preventDefault();
 
-    if (quiz.answer[0] === total) {
+    if (quiz.answer[0] === finalResult) {
       history.push({
         pathname: quiz.success[0],
         state: {
@@ -157,7 +155,6 @@ const QuizSection = styled.section`
     justify-content: flex-end;
     width: 100%;
   }
-
   .next-btn {
     width: 30%;
     margin: 10px 0;

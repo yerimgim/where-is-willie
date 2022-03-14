@@ -6,8 +6,9 @@ import styled from "styled-components";
 
 import Evidence from "../../../common/components/Evidence";
 import Quiz from "../../../common/components/Quiz";
+import constants from "../../../common/utils/constants";
 import quiz from "../../../data/mainChapter.json";
-import { blink } from "../../../styles/keyframes/keyframes";
+import { blink, fadeIn } from "../../../styles/keyframes/keyframes";
 
 const MainChapter = () => {
   const [value, setValue] = useState("");
@@ -31,7 +32,7 @@ const MainChapter = () => {
     <Main>
       <VideoSection>
         <video height="100%" autoPlay>
-          <source src="/assets/corridor-illustrator.mp4" type="video/mp4" />
+          <source src={constants.ASSETS_MAIN_CORRIDOR_GIF} type="video/mp4" />
         </video>
       </VideoSection>
 
@@ -57,6 +58,7 @@ const Main = styled.main`
   width: 100%;
   height: 100vh;
   background-color: var(--black-color);
+  animation: ${fadeIn} 1s ease-in-out;
 
   .file-icon {
     position: absolute;

@@ -7,6 +7,7 @@ import Evidence from "../../../common/components/Evidence";
 import ImgSection from "../../../common/components/ImgSection";
 import Quiz from "../../../common/components/Quiz";
 import quiz from "../../../data/thirdChapter.json";
+import { fadeIn } from "../../../styles/keyframes/keyframes";
 import Wine from "./Wine";
 
 const ThirdChapter = () => {
@@ -56,6 +57,7 @@ const Main = styled.main`
   height: 100vh;
   background-color: var(--black-color);
   object-fit: cover;
+  animation: ${fadeIn} 1s ease-in-out;
 
   .clock {
     display: flex;

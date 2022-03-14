@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 import Icon from "../../../common/components/Icon";
+import constants from "../../../common/utils/constants";
 import letter from "../../../data/letter.json";
 import { File, Cover, Page, LastPage, BackCover } from "./FlipfileElement";
 
@@ -25,7 +26,7 @@ const Flipfile = () => {
       <Page></Page>
 
       <Page>
-        <img src="/assets/steam-train.png" alt="기차 이미지" />
+        <img src={constants.ASSETS_STEAM_TRAIN} alt="기차 이미지" />
       </Page>
 
       <LastPage>

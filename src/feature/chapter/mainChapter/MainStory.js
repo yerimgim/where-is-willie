@@ -6,6 +6,7 @@ import styled from "styled-components";
 
 import Button from "../../../common/components/Button";
 import Modal from "../../../common/components/modal/Modal";
+import constants from "../../../common/utils/constants";
 import { fadeInText } from "../../../styles/keyframes/keyframes";
 import Flipfile from "./Flipfile";
 
@@ -19,14 +20,14 @@ const MainStory = () => {
   };
 
   const onClick = () => {
-    history.push("/");
+    history.push(constants.ROUTE_MAIN);
   };
 
   return (
     <Entry>
       <Content>
         <div className="img-box">
-          <img src="assets/masterpiece.png" alt="작품 이미지" />
+          <img src={constants.ASSETS_MASTERPIECE_IMG} alt="작품 이미지" />
         </div>
         <Text>
           <p>새벽 동이 틀 무렵,</p>

@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 import { getUserName } from "../../modules/nameSlice";
-import { shake } from "../../styles/keyframes/keyframes";
+import { fadeIn, shake } from "../../styles/keyframes/keyframes";
 
 const Main = () => {
   const [value, setValue] = useState("");
@@ -61,6 +61,7 @@ const MainContent = styled.main`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  animation: ${fadeIn} 1s ease-in-out;
 `;
 
 const Section = styled.section`
