@@ -5,6 +5,7 @@ import { IoMdClose } from "react-icons/io";
 import styled, { keyframes } from "styled-components";
 
 import Icon from "../../../common/components/Icon";
+import constants from "../../../common/utils/constants";
 
 const NewsPaper = ({ onClick }) => {
   return (
@@ -72,7 +73,7 @@ const NewsPaper = ({ onClick }) => {
         </div>
         <div className="side-last-article">
           <a href="#" className="picture">
-            <img src="assets/newspaper/poster.jpg" alt="포스터 이미지" />
+            <img src={constants.ASSETS_POSTER_IMG} alt="포스터 이미지" />
           </a>
         </div>
         <div className="artwork-info">
@@ -85,7 +86,7 @@ const NewsPaper = ({ onClick }) => {
           <h3>사라진 람브람스의 예술품</h3>
           <div>
             <a href="#" className="picture">
-              <img src="assets/masterpiece.png" alt="그림" />
+              <img src={constants.ASSETS_MASTERPIECE_IMG} alt="그림 이미지" />
             </a>
             <p>
               세계적인 화가 람브람스의 작품은 도시 에서 옮겨져 6월 10일부터 8월

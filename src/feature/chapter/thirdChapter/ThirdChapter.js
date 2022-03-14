@@ -7,6 +7,7 @@ import Evidence from "../../../common/components/Evidence";
 import ImgSection from "../../../common/components/ImgSection";
 import Quiz from "../../../common/components/Quiz";
 import quiz from "../../../data/thirdChapter.json";
+import { fadeIn } from "../../../styles/keyframes/keyframes";
 import Wine from "./Wine";
 
 const ThirdChapter = () => {
@@ -41,7 +42,7 @@ const ThirdChapter = () => {
       {isOpen && (
         <Quiz setValue={setValue} value={value} quiz={quiz}>
           <p className="clock" style={style}>
-            1210
+            1011
           </p>
         </Quiz>
       )}
@@ -56,6 +57,7 @@ const Main = styled.main`
   height: 100vh;
   background-color: var(--black-color);
   object-fit: cover;
+  animation: ${fadeIn} 1s ease-in-out;
 
   .clock {
     display: flex;
@@ -76,6 +78,8 @@ const Main = styled.main`
     opacity: 0.8;
     transform: perspective(340px) rotateX(46deg);
     transition: all 0.6s ease-out;
+    &: {
+    }
   }
 
   @media all and (min-width: 1700px) and (max-width: 1920px) {

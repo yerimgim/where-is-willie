@@ -1,6 +1,5 @@
 {
   "strangerInfo": "수상한 자의 정보",
-  "willieInfo": "윌리의 정보",
   "willieInfos": [""],
   "content": "냅킨에 숨겨진 글씨가 있는 것 같다. 레드 와인을 부어 숨겨진 글자를 확인하세요",
   "cssBefore": "#napkin { ",
@@ -9,7 +8,8 @@
   "hint": ["* background의 속성 사용하자", "https://developer.mozilla.org/ko/docs/Web/CSS/background"],
   "placeholder":"/* use background property */",
   "success": ["/lastChapter", ""],
-  "successHint": "그렇다면 범인은 바로...",
-  "fail": ["/ending/failure"],
-  "failureHint": "누군가 내 어깨를 잡는다."
+  "successHint": "유력 용의자의 특이 사항과 현장에서 찾은 단서로 범인을 지목하자.",
+  "fail": ["/ending"],
+  "failureHint": "누군가 내 어깨를 잡았다.",
+  "result": "The end"
 }

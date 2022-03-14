@@ -3,6 +3,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
+import constants from "../../../common/utils/constants";
+
 const Photo = ({ setIsOpen, isOpen }) => {
   const onClick = () => {
     setIsOpen(!isOpen);
@@ -11,7 +13,7 @@ const Photo = ({ setIsOpen, isOpen }) => {
   return (
     <Entry>
       <div className="photo-container" onClick={onClick}>
-        <img src="assets/people.png" alt="사진 모음 이미지" />
+        <img src={constants.ASSETS_PHOTO_LIST_IMG} alt="사진 모음 이미지" />
       </div>
     </Entry>
   );

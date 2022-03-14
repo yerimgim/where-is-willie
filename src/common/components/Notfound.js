@@ -3,6 +3,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+import constants from "../utils/constants";
+
 const Notfound = () => {
   return (
     <Main>
@@ -11,9 +13,9 @@ const Notfound = () => {
         <p>
           <span>해당 페이지</span>를 찾을 수 없습니다.
         </p>
-        <Link to="/">메인페이지</Link>
+        <Link to={constants.ROUTE_MAIN}>메인페이지</Link>
       </div>
-      <img src="assets/error.png" alt="에러 페이지 이미지" />
+      <img src={constants.ASSETS_ERROR_IMG} alt="에러 페이지 이미지" />
     </Main>
   );
 };

@@ -3,6 +3,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
+import { fadeIn } from "../../../styles/keyframes/keyframes";
 import Suspects from "./Suspects";
 
 const LastChapter = () => {
@@ -25,6 +26,7 @@ const Entry = styled.main`
   background: url("assets/paper.png");
   border: 25px solid var(--yellow-color);
   box-sizing: border-box;
+  animation: ${fadeIn} 1s ease-in-out;
 `;
 
 const Content = styled.div`

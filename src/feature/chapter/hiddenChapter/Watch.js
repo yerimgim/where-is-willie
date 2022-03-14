@@ -3,6 +3,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
+import constants from "../../../common/utils/constants";
+
 const Watch = ({ setModalOpen, modalOpen }) => {
   const onClick = () => {
     setModalOpen(!modalOpen);
@@ -10,7 +12,11 @@ const Watch = ({ setModalOpen, modalOpen }) => {
 
   return (
     <Main>
-      <img src="assets/watch.png" onClick={onClick} />
+      <img
+        src={constants.ASSETS_WATCH_IMG}
+        onClick={onClick}
+        alt="고장난 시계 이미지"
+      />
       <p>
         고장난 시계를 발견하였다. <br />
         10시 11분을 가리키고 있다.
@@ -27,6 +33,7 @@ const Main = styled.div`
   img {
     width: 60%;
     padding: 2rem;
+    cursor: pointer;
   }
 
   p {
