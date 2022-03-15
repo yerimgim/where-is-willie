@@ -80,6 +80,7 @@ export const LastPage = styled.div`
   transform-origin: center left;
   z-index: -1;
   font-size: 1.66rem;
+  font-family: var(--nanum-my-daughter-font);
   line-height: 1.5;
 
   h4 {
@@ -99,6 +100,10 @@ export const LastPage = styled.div`
     background-color: var(--light-grey-color);
     font-size: 1rem;
     font-family: var(--noto-sans-kr-font);
+  }
+
+  @media screen and (min-width: 1700px) and (max-width: 1920px) {
+    div {font-size: 1.9rem;
   }
 `;
 
