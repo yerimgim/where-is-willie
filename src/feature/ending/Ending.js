@@ -45,6 +45,7 @@ const Main = styled.div`
   background-color: var(--black-color);
   overflow: hidden;
   animation: ${fadeIn} 1s ease-in-out;
+  font-family: var(--nanum-guri-font);
 
   .deco {
     position: absolute;
@@ -67,7 +68,7 @@ const Main = styled.div`
     transform: translate(-48%, -50%);
     color: var(--white-color);
     text-align: center;
-    font-size: 50px;
+    font-size: 4rem;
   }
 
   @media screen and (min-width: 1700px) and (max-width: 1920px) {

@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# Where's Willie?
+윌리를 찾아서는 CSS를 이용하여 문제 풀고 단서를 얻어 범인 검거하는 탐정 게임입니다.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img width="1437" alt="main" src="https://user-images.githubusercontent.com/95286903/158206280-919309d6-f7ce-4b4d-9fc0-8ac842c5a19b.png">
 
-## Available Scripts
+<br /><br />
 
-In the project directory, you can run:
+## Links
+---
+### Service: [whereiswillie.fun](https://www.whereiswillie.fun/)
+### Client: [where-is-willie](https://github.com/yerimgim/where-is-willie)
 
-### `npm start`
+<br /><br />
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 동기
+---
+아이디어 선정시
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<br /><br />
 
-### `npm test`
+## 기술 스택
+---
+|Client | Common|
+|----- | -----|
+| React | Netlify |
+| Redux-toolkit | Eslint |
+| React-router | Prettier |
+| Styled-component| |
+| Jest | |
+| Testing-library| |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br /><br />
 
-### `npm run build`
+## 스케줄
+---
+### 일정 2022 년 2 월 21 일 ~ 3 월 14 일 <br />
+<br /><br />
+---
+### 1주차 [ 22년 2월 21일 ~ 2월 27일 ]
+- 아이디어 선정
+- 기술 선정
+- [Mockup UI](https://www.figma.com/file/YGAjNztmPxXRJZG8TJzBh9/Where's-Willie%3F?node-id=0%3A1) 작업
+- 퀴즈 문제 작성
+- Git Repository 생성
+- 사용할 이미지 정리
+<br /><br />
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 2주차 [ 22년 2월 28일 ~ 22년 3월 6일 ]
+- 클라이언트 ( React ) 초기 설정
+- 전반적인 컴포넌트 UI 구현
+- 퀴즈 문제 연결하기
+<br /><br />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 3주차 [ 22년 3월 7일 ~ 22년 3월 14일 ]
+- 추가 기능 구현
+- 퀴즈 문제 수정
+- 테스트 코드 작성
+- 리팩토링 진행
+- Netlify 배포
+- README 작성
+<br /><br />
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 게임 구현
+---
 
-### `npm run eject`
+|                                                              |                                                              |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [메인 페이지] <img width="100%" alt="main" src="https://user-images.githubusercontent.com/95286903/158206280-919309d6-f7ce-4b4d-9fc0-8ac842c5a19b.png">배포된 사이트에 들어가게 되면 처음으로 보게 될 페이지입니다. 이름 또는 닉네임을 입력해야만 게임을 시작할 수 있습니다. | [메인 스토리 페이지]<img width="100%" alt="main" src="https://user-images.githubusercontent.com/95286903/158216700-d9dcace6-e0df-4133-bd55-2f906c57c5b9.png"> 게임의 줄거리를 간단하게 소개하고 하단에 버튼 중 참가 하기 클릭시 게임 진행되고 거절 시 메인페이지로 돌아갑니다. |
+|[메인 줄거리 페이지 - 1]![](https://user-images.githubusercontent.com/95286903/158218773-24dd4927-7dc8-4be0-874f-b900ffe192e3.gif) 게임을 시작하게 되면 사건 파일을 받고 간단한 전달 사항을<br/> 받습니다. | [게임 - 메인 챕터]![](https://user-images.githubusercontent.com/95286903/158220634-342576dd-7640-4c5b-b78a-15bc35054d14.gif) 범인으로 추정되는 윌리가 기차를 타고 도시를 빠져나가기 전에 <br /> 그를 잡아야 합니다. 그로 추정되는 단서가 곳곳에 있습니다. |
+|[메인 히든 스토리 페이지]![ezgif com-gif-maker](https://user-images.githubusercontent.com/95286903/158224911-1bf1ef0f-bed6-4a79-bba3-5f1d8047d241.gif) 받은 임무를 잘 수행하면 단서를 얻을 수 있습니다.해당 단서는 범인을 지목시 확일 할 수 있습니다. | [두번째 챕터 페이지]!<img width="100%" alt="두" src="https://user-images.githubusercontent.com/95286903/158227167-3e50b1bb-ac43-4233-a894-c501e4861a4c.png"> 메인 히든 챕터까지 잘 마무리 헀다면 그 다음 페이지에서도 단서를 얻기 쉬워집니다. |
+|[범인 검거페이지] <img width="100%" alt="스크린샷 2022-03-15 오전 2 32 36" src="https://user-images.githubusercontent.com/95286903/158228479-44bfed67-d62e-4630-b069-f6c691c82643.png"> 문제는 위 문제들을 포함하여 총 5문제입니다. 전달 받은 임무를 잘 수행할 경우 범인 검거 페이지에 도달하여 범인을 검거하실 수 있습니다.  | [게임 도중 실패 - ennding] <img width="100%" alt="스크린샷 2022-03-15 오전 2 32 59" src="https://user-images.githubusercontent.com/95286903/158228498-22d1d882-fc04-4de5-ab9f-18d65377bfb6.png"> 게임의 난이도는 갈수록 어려워질 것 입니다. 또한 한 글자라도 잘 못 작성시 바로 게임이 끝날 수 있습니다. 범인을 검거하고 싶다면 확인 버튼을 신중하게 누르시길 권장합니다.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<br/> <br/>
+## 어려웠던 점
+---
+기존에 기획했던 내용과 달라져서 
+css 생동적으로 보이는 느낌을 주는게 정말 어려웠다. 
+원래 기획하고 있던 것과는 좀 다른 느낌으로 방향성으로 갔지만 바꾼 기획안이 횔씬 마음에 듭니다.
+기존 이미지는 문제 풀이의 성공시, 효과 
+<br /><br />
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 마무리
+---
+이번 프로젝트를 진행하면서 기획부터 개발까지 혼자서 해내야 한다는 부담감, 흐름, 스토리가 중요한 게임인 만큼 내용 흐름이 잘 이어지는지에 대해 고민, 만들어보고 싶었던 것을 만들어 본다는 설렘이 공존하는 혼돈의 기간이었던 거 같습니다.
 
-## Learn More
+개인 프로젝트를 작업하면서 현재의 나에 대해서 돌아보는 계기가 된 거 같습니다.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+새로운 스택을 배울 때마다 매번 어딜 어떻게 작업을 해야 할지 감도 못 잡아서 멘토님, 동기분들께 도움을 요청하며 힘겹게 과제를 해 나아갔는데, 지금의 나는 이번 프로젝트를 만들 정도로 많은 고민과 공부를 하지 않았나? 하는 스스로를 격려하게 된 것 같습니다.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+마지막으로 부트캠프에서 공부를 하는 동안 정말 많은 분들께 도움을 받았습니다. 이 자리를 빌려 모든 분께 정말 감사하다는 말씀 전하고 싶습니다!
