@@ -1,6 +1,7 @@
 import React from "react";
 
 import PropTypes from "prop-types";
+import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
@@ -8,6 +9,7 @@ import constants from "../utils/constants";
 
 const Result = ({ summary }) => {
   const history = useHistory();
+  const userName = useSelector((state) => state.user.name);
   const onClick = () => {
     history.push(constants.ROUTE_MAIN);
   };
@@ -18,7 +20,11 @@ const Result = ({ summary }) => {
 
   return (
     <Entry>
-      <li>{summary}</li>
+      <li>
+        <span>{userName} 탐정님, </span>
+        <br />
+        {summary}
+      </li>
       <button onClick={onClick}>다시 하기</button>
     </Entry>
   );
@@ -26,19 +32,21 @@ const Result = ({ summary }) => {
 
 const Entry = styled.ul`
   position: relative;
-  top: 50%;
+  top: 60%;
   width: 50%;
   margin: 0 auto;
   color: var(--white-color);
-  font-size: 35px;
+  font-size: 3.1rem;
   text-align: center;
+  font-family: var(--nanum-guri-font);
   list-style: none;
-  transform: translateY(-50%);
+  transform: translateY(-60%);
 
   button {
     padding: 10px;
     color: var(--white-color);
-    font-size: 26px;
+    font-size: 2rem;
+    font-family: var(--nanum-guri-font);
   }
 
   li:last-child {

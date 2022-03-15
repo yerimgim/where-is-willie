@@ -10,6 +10,6 @@
   "success": ["/lastChapter", ""],
   "successHint": "유력 용의자의 특이 사항과 현장에서 찾은 단서로 범인을 지목하자.",
   "fail": ["/ending"],
-  "failureHint": "누군가 내 어깨를 잡았다.",
-  "result": "The end"
+  "failureHint": "누군가 당신의 어깨를 잡았습니다.",
+  "result": "The end.."
 }
