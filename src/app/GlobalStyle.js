@@ -24,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     background: none;
     border: none;
+    user-select:none;
   }
 
   html,
