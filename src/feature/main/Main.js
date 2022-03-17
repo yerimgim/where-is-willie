@@ -37,7 +37,6 @@ const Main = () => {
             placeholder="이름을 입력해주세요."
             data-testid="add-input"
           />
-
           <button
             className="submit-button"
             type="button"
@@ -62,6 +61,10 @@ const MainContent = styled.main`
   background-repeat: no-repeat;
   background-size: cover;
   animation: ${fadeIn} 1s ease-in-out;
+
+  @media screen and (max-width: 768px) {
+    background-image: url("/assets/error.png");
+  }
 `;
 
 const Section = styled.section`
@@ -110,6 +113,28 @@ const Section = styled.section`
 
     &:hover {
       animation: ${shake} 0.8s cubic-bezier(0.5, 0.3, 0.5, 1);
+    }
+  }
+
+  @media all and (max-width: 768px) {
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    color: var(--white-color);
+    text-align: center;
+    transform: translate(-50%, -50%);
+    transition: all 0.3 ease-out;
+
+    h1:after {
+      content: "게임 불가!";
+    }
+
+    form {
+      display: none;
+    }
+
+    span {
+      display: none;
     }
   }
 `;
