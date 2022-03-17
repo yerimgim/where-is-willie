@@ -45,9 +45,9 @@ const NewsPaper = ({ onClick }) => {
             </span>
           </p>
         </div>
-        <a href="#" className="picture">
-          <img src="assets/main.png" height="100%" />
-        </a>
+        <div className="picture">
+          <img src={constants.ASSETS_NEWSPAPER_MAIN_IMG} height="100%" />
+        </div>
         <div className="sub-article">
           <h3>경찰은 무엇을 하고 있는가?</h3>
           <p>
@@ -75,22 +75,16 @@ const NewsPaper = ({ onClick }) => {
           </p>
         </div>
         <div className="side-last-article">
-          <a href="#" className="picture">
-            <img src={constants.ASSETS_POSTER_IMG} alt="포스터 이미지" />
-          </a>
+          <img src={constants.ASSETS_POSTER_IMG} alt="포스터 이미지" />
         </div>
         <div className="artwork-info">
-          <a href="#">
-            <img src="assets/main.png" height="10%" alt="광고 이미지" />
-          </a>
+          <img src={constants.ASSETS_ADVERTISEMENT_IMG} alt="광고 이미지" />
         </div>
 
         <div className="side-bar">
           <h3>사라진 람브람스의 예술품</h3>
-          <div>
-            <a href="#" className="picture">
-              <img src={constants.ASSETS_MASTERPIECE_IMG} alt="그림 이미지" />
-            </a>
+          <div className="picture">
+            <img src={constants.ASSETS_MASTERPIECE_IMG} alt="그림 이미지" />
             <p>
               세계적인 화가 람브람스의 작품은 도시 에서 옮겨져 6월 10일부터 8월
               31일까지 C 사립미술관에서 진행되는 교류전에 전시될 예정이었다. 첫
@@ -105,7 +99,6 @@ const NewsPaper = ({ onClick }) => {
               것이다.
             </p>
           </div>
-
           <div className="center">
             <h3>C 사립 미술관 입장표명</h3>
             <p>
@@ -149,8 +142,13 @@ const Paper = styled.div`
   animation: ${showPaper} 2s ease-in-out;
   overflow-y: scroll;
 
-  &:hover {
-    font-weight: bold;
+  img {
+    filter: grayscale(100%);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      filter: grayscale(0%);
+    }
   }
 
   .click-button {
@@ -211,20 +209,15 @@ const Main = styled.main`
     border: 1px solid var(--blue-color);
   }
 
+  h3 {
+    padding: 0.25rem 0;
+  }
+
   .side-bar {
     grid-row: 3/6;
     grid-column: 5/6;
     padding-left: 1rem;
     border-left: 1px solid var(--blue-color);
-
-    img {
-      filter: grayscale(100%);
-      transition: all 0.3s ease-in-out;
-
-      &:hover {
-        filter: grayscale(0%);
-      }
-    }
   }
 
   .artwork-info {
@@ -234,7 +227,7 @@ const Main = styled.main`
     border-top: 1px solid var(--blue-color);
 
     img {
-      height: 100px;
+      height: 100%;
     }
   }
 `;
