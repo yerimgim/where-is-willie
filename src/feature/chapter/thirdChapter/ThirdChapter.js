@@ -71,19 +71,17 @@ const Main = styled.main`
     height: 110px;
     border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
     color: white;
-    text-align: center;
     font-size: 2.5rem;
+    text-align: center;
     font-family: var(--lora-font);
     box-shadow: inset 0px 0px 35px 13px white;
     opacity: 0.8;
     transform: perspective(340px) rotateX(46deg);
     transition: all 0.6s ease-out;
-    &: {
-    }
   }
 
   @media all and (min-width: 1700px) and (max-width: 1920px) {
-    .clock {
+    .clue {
       position: absolute;
       top: 340px;
     }
