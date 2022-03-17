@@ -1,13 +1,13 @@
 # Where's Willie?
 
+<img width="1437" alt="main" src="https://user-images.githubusercontent.com/95286903/158206280-919309d6-f7ce-4b4d-9fc0-8ac842c5a19b.png">
+
 ## 소개
 ### 윌리를 찾아서는 CSS를 이용하여 문제 풀고 단서를 얻어 범인 검거하는 추리 탐정 게임입니다.
 - 수상해 보이는 물체를 클릭하여 임무를 확인하고 수행 완료 시 단서 획득, <br/> 틀리면 어떠한 단서도 얻지 못하고 다음 챕터로 넘어갑니다.
 - CSS를 작성 시 실시간으로 해당 단서의 물체의 변화를 확인할 수 있습니다.
 <br />단, 실시간으로 화면이 바뀌었다고, 문제를 푼 게 아닐 수도 있습니다. 임무를 꼭 확인하셔야 합니다.
 - 문제를 풀지 못했더라도, 챕터 속에서 단서를 획득할 수 있습니다.
-
-<img width="1437" alt="main" src="https://user-images.githubusercontent.com/95286903/158206280-919309d6-f7ce-4b4d-9fc0-8ac842c5a19b.png">
 
 <br /><br />
 
@@ -57,7 +57,8 @@ CSS를 잘 활용한 기획들을 보고 이번 프로젝트는 CSS를 생동적
 - Kanban ( Task card ) 작성
 - 퀴즈 문제 작성
 - Git Repository 생성
-- 사용할 이미지 정리
+- [사용할 이미지 정리, 링크 정리](https://happy-stingray-0cc.notion.site/Mockup-99df8bd5e7c44fc1a2f102bfcfb7d784)
+
 <br /><br />
 
 ### 2주차 [ 22년 2월 28일 ~ 22년 3월 6일 ]

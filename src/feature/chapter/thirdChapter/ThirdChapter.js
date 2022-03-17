@@ -78,12 +78,10 @@ const Main = styled.main`
     opacity: 0.8;
     transform: perspective(340px) rotateX(46deg);
     transition: all 0.6s ease-out;
-    &: {
-    }
   }
 
   @media all and (min-width: 1700px) and (max-width: 1920px) {
-    .clock {
+    .clue {
       position: absolute;
       top: 340px;
     }
