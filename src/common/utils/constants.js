@@ -15,6 +15,8 @@ const constants = {
   ASSETS_DETECTIVE_ROOM_IMG: "/assets/detective-room.png",
   ASSETS_NEWSPAPER_IMG: "/assets/newspaper.png",
   ASSETS_WINE_IMG: "/assets/wine.png",
+  ASSETS_ADVERTISEMENT_IMG: "/assets/newspaper/advertisement.png",
+  ASSETS_NEWSPAPER_MAIN_IMG: "/assets/newspaper/news-main.png",
   ASSETS_POLICE_LINE_IMG: "/assets/policeline.png",
   ROUTE_MAIN: "/",
 };

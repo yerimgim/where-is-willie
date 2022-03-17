@@ -41,8 +41,8 @@ const ThirdChapter = () => {
 
       {isOpen && (
         <Quiz setValue={setValue} value={value} quiz={quiz}>
-          <p className="clock" style={style}>
-            1011
+          <p className="clue" style={style}>
+            {quiz.napkin}
           </p>
         </Quiz>
       )}
@@ -59,7 +59,7 @@ const Main = styled.main`
   object-fit: cover;
   animation: ${fadeIn} 1s ease-in-out;
 
-  .clock {
+  .clue {
     display: flex;
     align-items: center;
     justify-content: center;
