@@ -1,6 +1,7 @@
 # Where's Willie?
 
 <img width="1437" alt="main" src="https://user-images.githubusercontent.com/95286903/158206280-919309d6-f7ce-4b4d-9fc0-8ac842c5a19b.png">
+<br />
 
 ## 소개
 ### 윌리를 찾아서는 CSS를 이용하여 문제 풀고 단서를 얻어 범인 검거하는 추리 탐정 게임입니다.
