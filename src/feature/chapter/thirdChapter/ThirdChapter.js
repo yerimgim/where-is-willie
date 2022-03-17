@@ -71,8 +71,8 @@ const Main = styled.main`
     height: 110px;
     border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
     color: white;
-    text-align: center;
     font-size: 2.5rem;
+    text-align: center;
     font-family: var(--lora-font);
     box-shadow: inset 0px 0px 35px 13px white;
     opacity: 0.8;
